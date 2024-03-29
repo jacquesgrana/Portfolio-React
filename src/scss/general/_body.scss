@@ -1,0 +1,17 @@
+body {
+    min-height: 100vh;
+  }
+  
+  main {
+    flex-grow: 1;
+    background-color: $color-blue-1;
+  }
+  
+  #container_all {
+  
+    min-width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
