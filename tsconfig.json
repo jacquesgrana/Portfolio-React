@@ -21,6 +21,10 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src/component",
+    "src/component/template",
+    "src/component/home",
+
+    "src/scss",
   ]
 }
