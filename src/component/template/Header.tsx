@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Header() {
+const Header = () => {
     
     return (
         <footer id="app-header">

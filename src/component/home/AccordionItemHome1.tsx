@@ -1,22 +1,16 @@
 import Accordion from 'react-bootstrap/Accordion';
 
 
-function AccordionItemHome1() {
+const AccordionItemHome1 = (props: any) => {
 
     return (
         <Accordion.Item eventKey="0" className="mb-2">
             <Accordion.Header>
-                <h3 className="title-2-bold text-white text-center mt-3"><span className="text-orange me-1">•</span> A propos de moi</h3>
+                <h3 className="title-2-bold text-white text-center mt-3 ms-0"><span className="text-orange me-1">•</span> <span id="accordion-title-0" className="accordion-title transition-03s">A propos de moi</span></h3>
             </Accordion.Header>
-            <Accordion.Body>
+            <Accordion.Body >
                 <p className="text-1-home text-blue-5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum.
+                <strong>Infographiste</strong> pendant plus de 20 ans, j'ai bifurqué en 2008 vers la <strong>maintenance informatique</strong>, pour finir par me reconvertir, dès 2019, vers le <strong>développement logiciel.</strong>
                 </p>
 
             </Accordion.Body>

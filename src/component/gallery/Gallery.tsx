@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Gallery() {
+const Gallery = () => {
     
     return (
         <div id="app-gallery">

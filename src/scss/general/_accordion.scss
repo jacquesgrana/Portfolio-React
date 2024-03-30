@@ -12,39 +12,48 @@
   
 .accordion-button {
     background-color: $color-blue-3 !important;
+    position: relative;
 }
 
 .accordion-button:focus {
     box-shadow: none;
+    border: solid 2px $color-blue-0 !important;
+}
+
+.accordion-button:active {
+    // marche pas
+    border: solid 2px $color-light-orange !important;
 }
 
 .accordion-button:not(.collapsed) {
     background-color: $color-blue-2 !important;
+    //color: $color-light-orange !important;
 }
 
 
 .accordion-button::after {
+    position: absolute;
+    top: 25px;
+    right: 20px;
     background-image: none;
     content: "\2B07";
     font-size: 2rem;
     transform: rotate(0deg);
-    //transform: translateX(-3px);
-    transform: translateY(-15px);
     transition: 0.5s;
     color: $color-blue-1 !important;
 }
 
 .accordion-button:not(.collapsed)::after {
+    position: absolute;
+    right: 12px;
+    top: 40px;
     background-image: none;
     content: "\2B07";
     font-size: 2rem;
-    transform: translateY(15px);
-    transform: translateX(3px);
     transform: rotate(180deg);
     transition: 0.5s;
     color: $color-orange !important;
 }
-
 
 /*
 .accordion-body {

@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 
 //import githubLogo from './../../image/github_logo.png';
 
-function AccordionItemHome4(props: any) {
+const AccordionItemHome4 = (props: any) => {
 
     const cvPdf = require("../../asset/pdf/cv_jacques_granarolo_links_v1.0.pdf");
 
     return (
         <Accordion.Item eventKey="3" className="mb-2">
             <Accordion.Header>
-                <h3 className="title-2-bold text-white text-center mt-3"><span className="text-orange me-1">•</span> Liens & CV</h3>
+                <h3 className="title-2-bold text-white text-center mt-3 ms-0"><span className="text-orange me-1">•</span> <span id="accordion-title-3" className="accordion-title transition-03s">Liens & CV</span></h3>
             </Accordion.Header>
-            <Accordion.Body>
+            <Accordion.Body >
                 <div className="body-accordion-container">
                     <Link className="" to={props.githubRPersoUrl} title="Lien vers mon Github" target="_blank" rel="noopener noreferrer">
                     <span className="logo-container-accordion-home">

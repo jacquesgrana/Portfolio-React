@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Contact() {
+const Contact = () => {
     
     return (
         <div id="app-contact">

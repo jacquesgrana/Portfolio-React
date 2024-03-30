@@ -3,8 +3,11 @@ import Accordion from 'react-bootstrap/Accordion';
 import AccordionHome from "./AccordionHome";
 import ConfigUrl from "../../config/configUrl";
 import ConfigImage from "../../config/configImage";
+import { useEffect, useRef, useState } from "react";
 
-function Home() {
+const Home = () => {
+    const accordionId = useRef(3);
+
     const githubRPersoUrl = ConfigUrl.GITHUB_PERSO_URL;
     const linkedinPersoUrl = ConfigUrl.LINKEDIN_PERSO_URL;
     const opquastCertificateUrl = ConfigUrl.OPQUAST_CERTIFICATE_URL;
@@ -13,6 +16,23 @@ function Home() {
     const linkedInLogo =  ConfigImage.LOGO_LINKEDIN;
     const opquastCertificateLogo =  ConfigImage.LOGO_OPQUAST_CERTIFICATE;
     const cvLogo =  ConfigImage.LOGO_CV;
+
+    const setAccordionId = (id: number) => {
+        accordionId.current = id;
+        //console.log("accordionId vaut " + accordionId.current);
+        const accordions = document.getElementsByClassName("accordion-title");
+        Array.from(accordions).forEach((accordion: any) => {
+            if (accordion.id === `accordion-title-${id}`) {
+                accordion.classList.add("text-orange");
+            } else {
+                accordion.classList.remove("text-orange");
+            }
+        })
+    }
+
+    useEffect(() => {
+        setAccordionId(3);
+    }, [])
 
     return (
         <div id="app-home">
@@ -27,6 +47,8 @@ function Home() {
             linkedInLogo={linkedInLogo}
             opquastCertificateLogo={opquastCertificateLogo}
             cvLogo={cvLogo}
+            accordionId={accordionId}
+            setAccordionId={setAccordionId}
             />
         </div>
     );

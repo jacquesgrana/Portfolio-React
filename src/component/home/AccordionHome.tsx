@@ -5,12 +5,21 @@ import AccordionItemHome3 from "./AccordionItemHome3";
 import AccordionItemHome4 from "./AccordionItemHome4";
 
 
-function AccordionHome(props: any) {
+const AccordionHome = (props: any) => {
     return (
-        <Accordion flush>
-            <AccordionItemHome1 />
-            <AccordionItemHome2 />
-            <AccordionItemHome3 />
+        <Accordion defaultActiveKey="3" onSelect={(eventKey) => props.setAccordionId(eventKey)} flush>
+            <AccordionItemHome1 
+                accordionId={props.accordionId}
+                setAccordionId={props.setAccordionId}
+            />
+            <AccordionItemHome2 
+                accordionId={props.accordionId}
+                setAccordionId={props.setAccordionId}
+            />
+            <AccordionItemHome3 
+                accordionId={props.accordionId}
+                setAccordionId={props.setAccordionId}
+            />
             <AccordionItemHome4 
             githubRPersoUrl={props.githubRPersoUrl} 
             linkedinPersoUrl={props.linkedinPersoUrl}
