@@ -8,8 +8,14 @@
 @import "./general/mixin";
 @import "./general/font";
 @import "./general/link";
+@import "./general/title";
+@import "./general/text";
+@import "./general/accordion";
 
 
 //Components => Bout de code comme header, footer, modal, form...
 @import "./component/header";
 @import "./component/footer";
+@import "./component/home";
+@import "./component/gallery";
+@import "./component/contact";

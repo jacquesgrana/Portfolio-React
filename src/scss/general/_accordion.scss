@@ -1,0 +1,30 @@
+.accordion {
+    max-width: 1200px;
+    width: 80vw;
+    margin: 0 60px;
+}
+
+.accordion-header {
+}
+  
+.accordion-button {
+    background-color: $color-blue-3 !important;
+}
+
+
+.accordion-body {
+
+}
+
+.accordion-item {
+    background-color: $color-blue-0;
+    border: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: $color-blue-2 !important;
+}
+
+.collapsed {
+    
+}

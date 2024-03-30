@@ -9,8 +9,9 @@ import {
 } from "react-router-dom";
 import App from './component/App';
 import Home from "./component/home/Home";
+import Gallery from "./component/gallery/Gallery";
+import Contact from "./component/contact/Contact";
 //import reportWebVitals from './reportWebVitals';
-
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -21,6 +22,8 @@ const router = createBrowserRouter(
     <>
     <Route path="" element={<App />} >
       <Route path="*" element={<Home />} />
+      <Route path="gallery/" element={<Gallery />} />
+      <Route path="contact/" element={<Contact />} />
     </Route>
     </>
   )

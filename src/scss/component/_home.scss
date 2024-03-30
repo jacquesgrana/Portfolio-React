@@ -1,0 +1,13 @@
+#app-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .text-1-home {
+        color: $color-blue-5 !important;
+        font-family: "EBGaramondRegular" !important;
+        font-weight: normal;
+        font-size: large;
+    }
+}
