@@ -5,13 +5,10 @@ import { Link } from "react-router-dom";
 
 function AccordionItemHome3(props: any) {
 
-    const githubLogo =  require("../../image/github_logo.png");
-    const linkedInLogo =  require("../../image/linkedin_logo.png");
-
     return (
-        <Accordion.Item eventKey="2" className="mb-3">
+        <Accordion.Item eventKey="2" className="mb-2">
             <Accordion.Header>
-                <h3 className="title-2 text-blue-5 text-center mt-3">Expériences</h3>
+                <h3 className="title-2-bold text-white text-center mt-3"><span className="text-orange me-1">•</span> Expériences</h3>
             </Accordion.Header>
             <Accordion.Body>
                 <p className="text-1-home text-blue-5">

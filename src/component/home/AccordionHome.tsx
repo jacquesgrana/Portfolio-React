@@ -15,6 +15,10 @@ function AccordionHome(props: any) {
             githubRPersoUrl={props.githubRPersoUrl} 
             linkedinPersoUrl={props.linkedinPersoUrl}
             opquastCertificateUrl={props.opquastCertificateUrl}
+            githubLogo={props.githubLogo}
+            linkedInLogo={props.linkedInLogo}
+            opquastCertificateLogo={props.opquastCertificateLogo}
+            cvLogo={props.cvLogo}
             />
         </Accordion>
     );

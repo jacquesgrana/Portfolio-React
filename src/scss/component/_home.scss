@@ -11,21 +11,27 @@
         font-size: large;
     }
 
-    .logo-accordion-home {
-        width: 50px;
+    .logo-accordion-github-home {
+        width: 55px;
     }
 
     .logo-accordion-linkedin-home {
         width: 60px;
     }
 
-    .logo-accordion-home:hover,
+    .logo-accordion-cv-home {
+        height: 60px;
+    }
+
+    .logo-accordion-cv-home:hover,
+    .logo-accordion-github-home:hover,
     .logo-accordion-linkedin-home:hover {
         transform: scale(1.2);
         transition: 0.3s;
     }
 
     .logo-container-accordion-home {
+        padding-top: 20px;
         display: inline-flex;
         flex-direction: column;
         align-items: center;
@@ -33,7 +39,7 @@
     }
 
     .text-logo-accordion-home {
-        font-family: "EBGaramondRegular" !important;
+        font-family: "NotoSansRegular" !important;
         color: $color-blue-5 !important;
         font-weight: normal;
         font-size:large;

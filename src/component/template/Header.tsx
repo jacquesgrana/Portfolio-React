@@ -4,7 +4,7 @@ function Header() {
     
     return (
         <footer id="app-header">
-            <h1 className="text-center title-1 mt-3 text-white">PortFolio <span className="text-orange">Jacques Granarolo</span></h1>
+            <h1 className="text-center title-1 mt-4 text-white">PortFolio <span className="text-orange">Jacques Granarolo</span></h1>
             <nav>
                 <ul className="link-header header-nav text-center">
                     <li className="list-nav"><Link to="/home"  className="link-1">Accueil</Link></li>

@@ -4,9 +4,9 @@ import Accordion from 'react-bootstrap/Accordion';
 function AccordionItemHome1() {
 
     return (
-        <Accordion.Item eventKey="0" className="mb-3">
+        <Accordion.Item eventKey="0" className="mb-2">
             <Accordion.Header>
-                <h3 className="title-2 text-blue-5 text-center mt-3">A propos de moi</h3>
+                <h3 className="title-2-bold text-white text-center mt-3"><span className="text-orange me-1">•</span> A propos de moi</h3>
             </Accordion.Header>
             <Accordion.Body>
                 <p className="text-1-home text-blue-5">

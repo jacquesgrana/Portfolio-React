@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import Config from "../../config/config";
+import ConfigUrl from "../../config/configUrl";
 
 function Footer() {
 
-    const githubRepoUrl = Config.GITHUB_REPO_URL;
+    const githubRepoUrl = ConfigUrl.GITHUB_REPO_URL;
     
     return (
         <footer id="app-footer">
