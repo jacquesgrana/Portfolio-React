@@ -1,14 +1,21 @@
 import Accordion from 'react-bootstrap/Accordion';
-import AccordionItemHome_1 from "./AccordionItemHome_1";
-import AccordionItemHome_2 from "./AccordionItemHome_2";
-import AccordionItemHome_3 from "./AccordionItemHome_3";
+import AccordionItemHome1 from "./AccordionItemHome1";
+import AccordionItemHome2 from "./AccordionItemHome2";
+import AccordionItemHome3 from "./AccordionItemHome3";
+import AccordionItemHome4 from "./AccordionItemHome4";
 
-function AccordionHome() {
+
+function AccordionHome(props: any) {
     return (
         <Accordion flush>
-            <AccordionItemHome_1 />
-            <AccordionItemHome_2 />
-            <AccordionItemHome_3 />
+            <AccordionItemHome1 />
+            <AccordionItemHome2 />
+            <AccordionItemHome3 />
+            <AccordionItemHome4 
+            githubRPersoUrl={props.githubRPersoUrl} 
+            linkedinPersoUrl={props.linkedinPersoUrl}
+            opquastCertificateUrl={props.opquastCertificateUrl}
+            />
         </Accordion>
     );
 }

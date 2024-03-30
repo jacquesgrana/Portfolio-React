@@ -1,11 +1,11 @@
 import Accordion from 'react-bootstrap/Accordion';
 
 
-function AccordionItemHome_2() {
+function AccordionItemHome2() {
     return (
         <Accordion.Item eventKey="1" className="mb-3">
             <Accordion.Header>
-                <h3 className="title-2 text-blue-5 text-center mt-3">Ma formation et mes diplômes</h3>
+                <h3 className="title-2 text-blue-5 text-center mt-3">Formation et diplômes</h3>
             </Accordion.Header>
             <Accordion.Body>
                 <p className="text-1-home text-blue-5">
@@ -24,4 +24,4 @@ function AccordionItemHome_2() {
 
 }
 
-export default AccordionItemHome_2;
+export default AccordionItemHome2;

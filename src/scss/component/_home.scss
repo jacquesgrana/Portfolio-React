@@ -10,4 +10,37 @@
         font-weight: normal;
         font-size: large;
     }
+
+    .logo-accordion-home {
+        width: 50px;
+    }
+
+    .logo-accordion-linkedin-home {
+        width: 60px;
+    }
+
+    .logo-accordion-home:hover,
+    .logo-accordion-linkedin-home:hover {
+        transform: scale(1.2);
+        transition: 0.3s;
+    }
+
+    .logo-container-accordion-home {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        width:fit-content;
+    }
+
+    .text-logo-accordion-home {
+        font-family: "EBGaramondRegular" !important;
+        color: $color-blue-5 !important;
+        font-weight: normal;
+        font-size:large;
+    }
+
+    .text-logo-accordion-home:hover {
+        color: $color-light-orange !important;
+        transition: 0.3s;
+    }
 }

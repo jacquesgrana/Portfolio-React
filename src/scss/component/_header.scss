@@ -1,12 +1,18 @@
 #app-header {
     background-color: $color-blue-3;
-
+    
     .list-nav {
         color: $color-white;
         list-style-type: none;
     }
 
-    .link-header,
+    .link-header {
+        color: $color-white;
+        font-family: 'NotoSansRegular';
+        font-weight: bolder;
+        font-size: x-large;
+    }
+
     .text-header {
         color: $color-white;
         font-family: 'EBGaramondRegular';

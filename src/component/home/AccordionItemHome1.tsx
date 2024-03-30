@@ -1,11 +1,12 @@
 import Accordion from 'react-bootstrap/Accordion';
 
 
-function AccordionItemHome_3() {
+function AccordionItemHome1() {
+
     return (
-        <Accordion.Item eventKey="2" className="mb-3">
+        <Accordion.Item eventKey="0" className="mb-3">
             <Accordion.Header>
-                <h3 className="title-2 text-blue-5 text-center mt-3">Mes liens</h3>
+                <h3 className="title-2 text-blue-5 text-center mt-3">A propos de moi</h3>
             </Accordion.Header>
             <Accordion.Body>
                 <p className="text-1-home text-blue-5">
@@ -24,4 +25,4 @@ function AccordionItemHome_3() {
 
 }
 
-export default AccordionItemHome_3;
+export default AccordionItemHome1;

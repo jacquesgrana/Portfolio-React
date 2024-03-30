@@ -24,7 +24,8 @@
     "src/component",
     "src/component/template",
     "src/component/home",
-
+    "src/component/contact",
+    "src/component/gallery",
     "src/scss",
   ]
 }
