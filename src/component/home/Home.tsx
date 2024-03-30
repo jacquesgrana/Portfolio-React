@@ -44,8 +44,8 @@ const Home = () => {
     return (
         <div id="app-home">
             <h2 className="title-1-bold text-white text-center mt-5 text-space-3">Accueil</h2>
-            <h2 className="title-1-bold text-blue-5 text-center mt-3 text-space-3">Concepteur-Développeur Fullstack</h2>
-            <h3 className="title-2-normal text-blue-5 text-center mb-5 text-space-2">Symfony <span className="text-orange">•</span> Spring <span className="text-orange">•</span> React <span className="text-orange">•</span> Angular</h3>
+            <h2 className="title-1-bold text-blue-5 text-center mt-3 text-space-3">Concepteur - Développeur Fullstack</h2>
+            <h3 className="title-2-normal text-blue-5 text-center mb-5 text-space-2">Symfony <span className="text-blue-4">•</span> Spring <span className="text-blue-4">•</span> React <span className="text-blue-4">•</span> Angular</h3>
             <AccordionHome 
             opquastCertificateUrl={opquastCertificateUrl} 
             githubRPersoUrl={githubRPersoUrl}

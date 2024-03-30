@@ -20,12 +20,13 @@
     //border: solid 1px $color-blue-0 !important;
 }
 
+/*
 .accordion-button:hover,
 .accordion-button:active {
-    // marche pas
     //border: solid 1px $color-light-orange !important;
     //box-sizing: border-box !important;
 }
+*/
 
 .accordion-button:not(.collapsed) {
     background-color: $color-blue-4 !important;
@@ -36,22 +37,22 @@
 .accordion-button::after {
     position: absolute;
     top: 25px;
-    right: 20px;
+    right: 30px;
     background-image: none;
-    content: "\2B07";
-    font-size: 2rem;
+    content: "\25BC";
+    font-size: 1.8rem;
     transform: rotate(0deg);
     transition: 0.5s;
-    color: $color-blue-1 !important;
+    color: $color-white !important;
 }
 
 .accordion-button:not(.collapsed)::after {
     position: absolute;
-    right: 12px;
+    right: 25px;
     top: 40px;
     background-image: none;
-    content: "\2B07";
-    font-size: 2rem;
+    content: "\25BC";
+    font-size: 1.8rem;
     transform: rotate(180deg);
     transition: 0.5s;
     color: $color-orange !important;

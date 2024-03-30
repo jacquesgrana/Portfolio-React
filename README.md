@@ -1,3 +1,3 @@
 ## Portfolio
 
-Portfolio perso codé en React
+Portfolio personnel codé en React/Typescript avec Bootstrap.
