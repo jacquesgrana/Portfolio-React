@@ -10,7 +10,7 @@ const AccordionItemHome4 = (props: any) => {
     return (
         <Accordion.Item eventKey="3" className="mb-2">
             <Accordion.Header>
-                <h3 className="title-2-bold text-white text-center mt-3 ms-0"><span className="text-orange me-1">•</span> <span id="accordion-title-3" className="accordion-title transition-03s">Liens & CV</span></h3>
+                <h3 className="title-2-bold text-white text-center mt-3 ms-0"><span id="accordion-bullet-3" className="accordion-bullet text-orange me-1 transition-03s">•</span> <span id="accordion-title-3" className="accordion-title transition-03s text-space-2">Liens & CV</span></h3>
             </Accordion.Header>
             <Accordion.Body >
                 <div className="body-accordion-container">

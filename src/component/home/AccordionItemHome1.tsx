@@ -6,7 +6,7 @@ const AccordionItemHome1 = (props: any) => {
     return (
         <Accordion.Item eventKey="0" className="mb-2">
             <Accordion.Header>
-                <h3 className="title-2-bold text-white text-center mt-3 ms-0"><span className="text-orange me-1">•</span> <span id="accordion-title-0" className="accordion-title transition-03s">A propos de moi</span></h3>
+                <h3 className="title-2-bold text-white text-center mt-3 ms-0"><span id="accordion-bullet-0" className="accordion-bullet text-orange me-1 transition-03s">•</span> <span id="accordion-title-0" className="accordion-title transition-03s text-space-2">A propos de moi</span></h3>
             </Accordion.Header>
             <Accordion.Body >
                 <p className="text-1-home text-blue-5">
