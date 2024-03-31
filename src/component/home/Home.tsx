@@ -54,7 +54,6 @@ const Home = () => {
             linkedInLogo={linkedInLogo}
             opquastCertificateLogo={opquastCertificateLogo}
             cvLogo={cvLogo}
-            accordionId={accordionId}
             setAccordionId={setAccordionId}
             />
         </div>

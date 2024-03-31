@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 //import githubLogo from './../../image/github_logo.png';
 
-const AccordionItemHome4 = (props: any) => {
+const AccordionItemHomeLinks = (props: any) => {
 
     const cvPdf = require("../../asset/pdf/cv_jacques_granarolo_links_v1.0.pdf");
 
     return (
         <Accordion.Item eventKey="3" className="mb-2">
             <Accordion.Header>
-                <h3 className="title-2-bold text-white text-center mt-3 ms-0"><span id="accordion-bullet-3" className="accordion-bullet text-orange me-1 transition-03s">•</span> <span id="accordion-title-3" className="accordion-title transition-03s text-space-2">Liens & CV</span></h3>
+                <h3 className="title-2-bold text-white text-center mt-2 ms-0"><span id="accordion-bullet-3" className="accordion-bullet text-orange me-1 transition-03s">•</span> <span id="accordion-title-3" className="accordion-title transition-03s text-space-2">Liens & CV</span></h3>
             </Accordion.Header>
             <Accordion.Body >
                 <div className="body-accordion-container">
@@ -45,4 +45,4 @@ const AccordionItemHome4 = (props: any) => {
 
 }
 
-export default AccordionItemHome4;
+export default AccordionItemHomeLinks;

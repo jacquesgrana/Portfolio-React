@@ -1,26 +1,21 @@
 import Accordion from 'react-bootstrap/Accordion';
-import AccordionItemHome1 from "./AccordionItemHome1";
-import AccordionItemHome2 from "./AccordionItemHome2";
-import AccordionItemHome3 from "./AccordionItemHome3";
-import AccordionItemHome4 from "./AccordionItemHome4";
+import AccordionItemHomeAboutMe from "./AccordionItemHomeAboutMe";
+import AccordionItemHomeDiplomas from "./AccordionItemHomeDiplomas";
+import AccordionItemHomeExperiences from "./AccordionItemHomeExperiences";
+import AccordionItemHomeLinks from "./AccordionItemHomeLinks";
 
 
 const AccordionHome = (props: any) => {
     return (
         <Accordion defaultActiveKey="3" onSelect={(eventKey) => props.setAccordionId(eventKey)} flush>
-            <AccordionItemHome1 
-                accordionId={props.accordionId}
-                setAccordionId={props.setAccordionId}
+            <AccordionItemHomeAboutMe 
             />
-            <AccordionItemHome2 
-                accordionId={props.accordionId}
-                setAccordionId={props.setAccordionId}
+            <AccordionItemHomeDiplomas 
+            opquastCertificateUrl={props.opquastCertificateUrl}
             />
-            <AccordionItemHome3 
-                accordionId={props.accordionId}
-                setAccordionId={props.setAccordionId}
+            <AccordionItemHomeExperiences 
             />
-            <AccordionItemHome4 
+            <AccordionItemHomeLinks 
             githubRPersoUrl={props.githubRPersoUrl} 
             linkedinPersoUrl={props.linkedinPersoUrl}
             opquastCertificateUrl={props.opquastCertificateUrl}
