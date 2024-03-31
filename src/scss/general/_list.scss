@@ -1,0 +1,16 @@
+
+.ul-list-1{
+    list-style-type:disc ;
+}
+
+.ul-list-2 {
+    list-style-type:square ;
+}
+
+ul.ul-list-1 li::marker {
+    color: $color-blue-2;
+}
+
+ul.ul-list-2 li::marker {
+    color: $color-dark-orange-alpha;
+}

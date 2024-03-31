@@ -12,6 +12,12 @@ const AccordionHome = (props: any) => {
             />
             <AccordionItemHomeDiplomas 
             opquastCertificateUrl={props.opquastCertificateUrl}
+            opquastCertificationUrl={props.opquastCertificationUrl}
+            diginamicUrl={props.diginamicUrl}
+            cnamUrl={props.cnamUrl}
+            opquastLogo={props.opquastLogo}
+            cnamLogo={props.cnamLogo}
+            diginamicLogo={props.diginamicLogo}
             />
             <AccordionItemHomeExperiences 
             />

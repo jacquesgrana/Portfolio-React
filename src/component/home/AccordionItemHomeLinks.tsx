@@ -17,25 +17,25 @@ const AccordionItemHomeLinks = (props: any) => {
                     <Link className="" to={props.githubRPersoUrl} title="Lien vers mon Github" target="_blank" rel="noopener noreferrer">
                     <span className="logo-container-accordion-home">
                         <img src={props.githubLogo} alt="logo github" className="logo-accordion-github-home" />
-                        <p className="text-logo-accordion-home">Github</p>
+                        <p className="link-2">GITHUB</p>
                         </span>
                     </Link>
                     <Link className="" to={props.linkedinPersoUrl} title="Lien vers mon LinkedIn" target="_blank" rel="noopener noreferrer">
                         <span className="logo-container-accordion-home">
                         <img src={props.linkedInLogo} alt="logo LinkedIn" className="logo-accordion-linkedin-home" />
-                        <p className="text-logo-accordion-home">LinkedIn</p>
+                        <p className="link-2">LINKEDIN</p>
                         </span>
                     </Link>
                     <Link className="" to={props.opquastCertificateUrl} title="Lien vers mon Certificat Opquast" target="_blank" rel="noopener noreferrer">
                         <span className="logo-container-accordion-home">
                         <img src={props.opquastCertificateLogo} alt="logo certificat Opquast" className="logo-accordion-cv-home" />
-                        <p className="text-logo-accordion-home">Opquast</p>
+                        <p className="link-2">OPQUAST</p>
                         </span>
                     </Link>
                     <Link className="" to={cvPdf} title="Lien vers mon CV" target="_blank" rel="noopener noreferrer">
                         <span className="logo-container-accordion-home">
                         <img src={props.cvLogo} alt="logo certificat Opquast" className="logo-accordion-cv-home" />
-                        <p className="text-logo-accordion-home">CV en PDF</p>
+                        <p className="link-2">CV en PDF</p>
                         </span>
                     </Link>
                 </div>
