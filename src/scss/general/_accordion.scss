@@ -17,20 +17,18 @@
 
 .accordion-button:focus {
     box-shadow: none;
-    //border: solid 1px $color-blue-0 !important;
 }
 
-/*
+
 .accordion-button:hover,
-.accordion-button:active {
-    //border: solid 1px $color-light-orange !important;
-    //box-sizing: border-box !important;
+.accordion-button:not(.collapsed):hover {
+    background-color: $color-blue-5 !important;
+    transition: 0.3s;
 }
-*/
+
 
 .accordion-button:not(.collapsed) {
     background-color: $color-blue-4 !important;
-    //color: $color-light-orange !important;
 }
 
 

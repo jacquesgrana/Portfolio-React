@@ -18,14 +18,16 @@ ul.ul-list-2 li::marker {
 
 ul.ul-list-1 li {
     @include set-alpha(background-color, $color-blue-1, 0.33);
-    padding: 10px;
+    padding: 15px;
     margin-top: 20px;
     margin-bottom: 20px;
+    border-radius: $radius-1;
 }
 
 ul.ul-list-2 li {
-    @include set-alpha(background-color, $color-blue-2, 0.33);
+    @include set-alpha(background-color, $color-blue-1, 0.33);
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+    border-radius: $radius-1;
 }
