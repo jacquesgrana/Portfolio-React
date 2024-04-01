@@ -1,10 +1,10 @@
 
 .ul-list-1{
-    list-style-type:disc ;
+    list-style-type:disc;
 }
 
 .ul-list-2 {
-    list-style-type:square ;
+    list-style-type:square;
 }
 
 ul.ul-list-1 li::marker {
@@ -12,5 +12,20 @@ ul.ul-list-1 li::marker {
 }
 
 ul.ul-list-2 li::marker {
-    color: $color-dark-orange-alpha;
+    //color: $color-dark-orange-alpha-50;
+    @include set-alpha(color, $color-dark-orange, 0.5);
+}
+
+ul.ul-list-1 li {
+    @include set-alpha(background-color, $color-blue-1, 0.33);
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+ul.ul-list-2 li {
+    @include set-alpha(background-color, $color-blue-2, 0.33);
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

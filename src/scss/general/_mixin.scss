@@ -1,0 +1,4 @@
+// renvoyer une couleur au format hsla
+@mixin set-alpha($property, $color, $alpha) {
+    #{$property}: rgba($color, $alpha);
+}

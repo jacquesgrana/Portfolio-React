@@ -1,20 +1,18 @@
-$color-blue-0: #9ba6e5;
-$color-blue-1: #717cb7;
-$color-blue-2: #5c7dd8;
-$color-blue-3: #405db4;
-$color-blue-4: #304687;
-$color-blue-5: #1d2a5b;
-$color-white: #fff;
-$color-black: #000;
+$color-blue-0: hsl(231, 59%, 75%);
+$color-blue-1: hsl(231, 33%, 58%);
+$color-blue-2: hsl(224, 61%, 60%);
+$color-blue-3: hsl(225, 48%, 48%);
+$color-blue-4: hsl(225, 48%, 36%);
+$color-blue-5: hsl(227, 52%, 24%);
+$color-white: hsl(0, 0%, 100%);
+$color-black: hsl(0, 0%, 0%);
 
-$color-light-blue: #c7cdec;
-$color-orange: #f09921;
-$color-light-orange: #f2bb32;
+$color-light-blue: hsl(230, 49%, 85%);
+$color-orange: hsl(35, 87%, 54%);
+$color-light-orange: hsl(43, 88%, 57%);
 $color-dark-orange: hsl(35, 100%, 27%);
 
-$color-dark-orange-alpha: hsla(35, 100%, 27%, 0.5);
-
 $primary: $color-blue-4;
-$succes: #8e05b1;
+$succes: hsl(288, 95%, 36%);
 $danger: $color-orange;
-$warning: #c93305;
+$warning: hsl(14, 95%, 40%);
