@@ -12,4 +12,8 @@ export default class ConfigUrl {
     public static readonly CNAM_URL: string = "https://www.cnam.fr/portail/conservatoire-national-des-arts-et-metiers-accueil-821166.kjsp";
 
     public static readonly DIGINAMIC_URL: string = "https://www.diginamic.fr/";
+
+    public static readonly AVOSCLICS_URL: string = "https://fr.linkedin.com/company/a-vos-clics";
+
+    public static readonly TWOSAGENCY_URL: string = "https://2s-agency.fr/";
 }

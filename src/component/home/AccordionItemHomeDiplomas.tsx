@@ -11,7 +11,7 @@ const AccordionItemHomeDiplomas = (props: any) => {
             <Accordion.Body >
                 <ul className ="ul-list-1 mt-2">
                     <li className="text-1-home text-blue-5">
-                        <div><strong><span className="text-dark-orange">Juin 2023 &rarr; Mars 2024 :</span> Formation Concepteur - Développeur d'Applications PHP -</strong> RNCP 6 - <Link className="link-2" to={props.diginamicUrl} title="Lien vers le site de Diginamic" target="_blank" rel="noopener noreferrer">DIGINAMIC</Link> <strong>
+                        <div><strong><span className="text-dark-orange">Juin 2023 &rarr; Mars 2024 :</span> Formation Concepteur - Développeur d'Applications PHP -</strong> RNCP 6 - <Link className="link-2" to={props.diginamicUrl} title="Lien vers le site de Diginamic." target="_blank" rel="noopener noreferrer">DIGINAMIC</Link> <strong>
                             <br /><span className="text-dark-orange">Titre Obtenu</span></strong>
                         <ul className ="ul-list-2">
                             <li className="text-1-home text-blue-5"><strong>Conception :</strong> Méthode Merise - UML - Design patterns.</li>
@@ -22,16 +22,16 @@ const AccordionItemHomeDiplomas = (props: any) => {
                     </li>
                     <li className="text-1-home text-blue-5">
                         <p>
-                            <strong><span className="text-dark-orange">Octobre 2022 :</span> <Link className="link-2" to={props.opquastCertificationUrl} title="Lien vers la Certification Opquast" target="_blank" rel="noopener noreferrer">Certification Opquast</Link></strong> (bonnes pratiques du web), <strong>note :</strong> 910/1000 - <strong>grade Expert.</strong>
+                            <strong><span className="text-dark-orange">Octobre 2022 :</span> <Link className="link-2" to={props.opquastCertificationUrl} title="Lien vers la Certification Opquast." target="_blank" rel="noopener noreferrer">Certification Opquast</Link></strong> (bonnes pratiques du web), <strong>note :</strong> 910/1000 - <strong>grade Expert.</strong>
                             <br />
-                            <strong>Réf. certificat :</strong> MQW-V4-2020 - <strong>Lien :</strong> <Link className="link-2" to={props.opquastCertificateUrl} title="Lien vers mon Certificat Opquast" target="_blank" rel="noopener noreferrer">https://oqs.li/T5D2LW</Link>
+                            <strong>Réf. certificat :</strong> MQW-V4-2020 - <strong>Lien :</strong> <Link className="link-2" to={props.opquastCertificateUrl} title="Lien vers mon Certificat Opquast." target="_blank" rel="noopener noreferrer">https://oqs.li/T5D2LW</Link>
 
                         </p>
                     </li>
                     <li className="text-1-home text-blue-5">
                         <div>
                             <strong><span className="text-dark-orange">Mai &rarr; Octobre 2022 : </span>
-                            Formation Développeur Java FullStack -</strong> <Link className="link-2" to={props.diginamicUrl} title="Lien vers le site de Diginamic" target="_blank" rel="noopener noreferrer">DIGINAMIC</Link>
+                            Formation Développeur Java FullStack -</strong> <Link className="link-2" to={props.diginamicUrl} title="Lien vers le site de Diginamic." target="_blank" rel="noopener noreferrer">DIGINAMIC</Link>
                             <ul className ="ul-list-2">
                                 <li className="text-1-home text-blue-5"><strong>Back-End :</strong> Spring-boot Java avec Maven, JPA/Hibernate, Lombok, etc.</li>
                                 <li className="text-1-home text-blue-5"><strong>Front-End :</strong> Angular avec utilisation de Bootstrap, Compodoc, Jasmine, Karma, etc.</li>
@@ -40,7 +40,7 @@ const AccordionItemHomeDiplomas = (props: any) => {
                     </li>
                     <li className="text-1-home text-blue-5">
                         <div>
-                            <strong><span className="text-dark-orange">2019 &rarr; 2021 :</span></strong> Obtention des Unités d'Enseignements du <Link className="link-2" to={props.cnamUrl} title="Lien vers le site du CNAM" target="_blank" rel="noopener noreferrer">CNAM</Link> suivantes :
+                            <strong><span className="text-dark-orange">2019 &rarr; 2021 :</span></strong> Obtention des Unités d'Enseignements du <Link className="link-2" to={props.cnamUrl} title="Lien vers le site du CNAM." target="_blank" rel="noopener noreferrer">CNAM</Link> suivantes :
                             <ul className ="ul-list-2">
                                 <li className="text-1-home text-blue-5">
                                     <strong>NFA003 :</strong> Principes et fonctionnement des systèmes d'exploitation,
@@ -81,19 +81,19 @@ const AccordionItemHomeDiplomas = (props: any) => {
                 </ul>
                 <div id="div-logo-diplomas" className="mt-2">
 
-                    <Link className="" to={props.diginamicUrl} title="Lien vers le site de Diginamic" target="_blank" rel="noopener noreferrer">
+                    <Link className="" to={props.diginamicUrl} title="Lien vers le site de Diginamic." target="_blank" rel="noopener noreferrer">
                         <span className="logo-container-accordion-home">
                             <img src={props.diginamicLogo} alt="logo de Diginamic" className="logo-accordion-diginamic-home" />
                             <span className="link-2">DIGINAMIC</span>
                         </span>
                     </Link>
-                    <Link className="" to={props.cnamUrl} title="Lien vers le site du CNAM" target="_blank" rel="noopener noreferrer">
+                    <Link className="" to={props.cnamUrl} title="Lien vers le site du CNAM." target="_blank" rel="noopener noreferrer">
                         <span className="logo-container-accordion-home">
                             <img src={props.cnamLogo} alt="logo du CNAM" className="logo-accordion-cnam-home" />
                             <span className="link-2">CNAM</span>
                         </span>
                     </Link>
-                    <Link className="" to={props.opquastCertificationUrl} title="Lien vers le site d'OPQUAST" target="_blank" rel="noopener noreferrer">
+                    <Link className="" to={props.opquastCertificationUrl} title="Lien vers le site d'OPQUAST." target="_blank" rel="noopener noreferrer">
                         <span className="logo-container-accordion-home">
                             <img src={props.opquastLogo} alt="logo d'OPQUAST'" className="logo-accordion-opquast-home" />
                             <span className="link-2">OPQUAST</span>

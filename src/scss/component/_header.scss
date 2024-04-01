@@ -35,6 +35,24 @@
         transition: 0.3s;
         text-decoration: underline;
     }
+
+    .hamburger-button {
+        color: $color-white;
+        font-family: 'NotoSansRegular';
+        font-weight: bolder;
+        cursor: pointer;
+        font-size: 4rem;
+        position: absolute;
+        right: 20px;
+        top: -15px;
+        transition: 0.3s;
+    }
+
+    .hamburger-button:hover {
+        color: $color-light-orange;
+        transform: scale(1.1);
+        transition: 0.3s;
+    }
 }
 
 .border-bottom-header-1 {

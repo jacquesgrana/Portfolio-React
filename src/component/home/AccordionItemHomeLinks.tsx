@@ -16,25 +16,25 @@ const AccordionItemHomeLinks = (props: any) => {
             </Accordion.Header>
             <Accordion.Body >
                 <div className="body-accordion-container">
-                    <Link className="" to={props.githubRPersoUrl} title="Lien vers mon Github" target="_blank" rel="noopener noreferrer">
+                    <Link className="" to={props.githubRPersoUrl} title="Lien vers mon Github." target="_blank" rel="noopener noreferrer">
                         <span className="logo-container-accordion-home">
                             <img src={props.githubLogo} alt="logo github" className="logo-accordion-github-home" />
                             <span className="link-2">GITHUB</span>
                         </span>
                     </Link>
-                    <Link className="" to={props.linkedinPersoUrl} title="Lien vers mon LinkedIn" target="_blank" rel="noopener noreferrer">
+                    <Link className="" to={props.linkedinPersoUrl} title="Lien vers mon LinkedIn." target="_blank" rel="noopener noreferrer">
                         <span className="logo-container-accordion-home">
                             <img src={props.linkedInLogo} alt="logo LinkedIn" className="logo-accordion-linkedin-home" />
                             <span className="link-2">LINKEDIN</span>
                         </span>
                     </Link>
-                    <Link className="" to={props.opquastCertificateUrl} title="Lien vers mon Certificat Opquast" target="_blank" rel="noopener noreferrer">
+                    <Link className="" to={props.opquastCertificateUrl} title="Lien vers mon Certificat Opquast." target="_blank" rel="noopener noreferrer">
                         <span className="logo-container-accordion-home">
                             <img src={props.opquastCertificateLogo} alt="logo certificat Opquast" className="logo-accordion-cv-home" />
                             <span className="link-2">OPQUAST</span>
                         </span>
                     </Link>
-                    <Link className="" to={cvPdf} title="Lien vers mon CV" target="_blank" rel="noopener noreferrer">
+                    <Link className="" to={cvPdf} title="Lien vers mon CV." target="_blank" rel="noopener noreferrer">
                         <span className="logo-container-accordion-home">
                             <img src={props.cvLogo} alt="logo certificat Opquast" className="logo-accordion-cv-home" />
                             <span className="link-2">CV en PDF</span>

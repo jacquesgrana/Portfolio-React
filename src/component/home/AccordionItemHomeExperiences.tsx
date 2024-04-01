@@ -11,23 +11,25 @@ const AccordionItemHomeExperiences = (props: any) => {
                 <h3 className="title-2-bold text-white text-center mt-2 ms-0"><span id="accordion-bullet-2" className="accordion-bullet text-orange me-1 transition-03s">•</span> <span id="accordion-title-2" className="accordion-title transition-03s text-space-2">Expériences</span></h3>
             </Accordion.Header>
             <Accordion.Body >
-                <p className="text-1-home text-blue-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.<br />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-
+            <ul className="ul-list-1 mt-2">
+                <li className="text-1-home text-blue-5 text-justify">
+                <strong><span className="text-dark-orange">Décembre 2023 &rarr; Mars 2024 :</span> Stage en entreprise,</strong> 
+                <br />Sté 2SAgency - Castelnau.
+                <br />
+                <em>
+                Maintenance/Evolution d’un back-end Symfony avec son interface d’administration en Twig + React et qui communique en json avec des applications Android/IOs.
+                </em>
+                </li>
+                <li className="text-1-home text-blue-5 text-justify">
+                <strong><span className="text-dark-orange">Octobre 2022 :</span> Stage en entreprise,</strong>
+                <br />
+                Sté A vos Clics, durée d'un mois - Distanciel.
+                <br />
+                <em>
+                Réalisation d'une boutique Web en Angular avec Material et Bootstrap.
+                </em>
+                </li>
+            </ul>
             </Accordion.Body>
         </Accordion.Item>
     );

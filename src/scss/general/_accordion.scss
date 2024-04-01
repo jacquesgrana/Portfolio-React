@@ -23,7 +23,7 @@
 .accordion-button:hover,
 .accordion-button:not(.collapsed):hover {
     background-color: $color-blue-5 !important;
-    transition: 0.3s;
+    transition: 0.3s ease-out;
 }
 
 
@@ -34,28 +34,30 @@
 
 .accordion-button::after {
     position: absolute;
-    top: 20px;
+    top: 45%;
+    right: 25px;
+    background-image: none;
+    content: "\25BC";
+    font-size: 1.2rem;
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    transform-origin: center;
+    transition: 0.5s ease-out;
+    color: $color-white !important;
+  }
+  
+  .accordion-button:not(.collapsed)::after {
+    position: absolute;
+    top: 50%;
     right: 30px;
     background-image: none;
     content: "\25BC";
-    font-size: 1.8rem;
-    transform: rotate(0deg);
-    transition: 0.5s;
-    color: $color-white !important;
-}
-
-.accordion-button:not(.collapsed)::after {
-    position: absolute;
-    right: 25px;
-    top: 35px;
-    background-image: none;
-    content: "\25BC";
-    font-size: 1.8rem;
-    transform: rotate(180deg);
-    transition: 0.5s;
+    font-size: 1.2rem;
+    transform: translateX(-50%) translateY(-50%) rotate(180deg);
+    transform-origin: center;
+    transition: 0.5s ease-out;
     color: $color-orange !important;
-}
-
+  }
+  
 /*
 .accordion-body {
 }
