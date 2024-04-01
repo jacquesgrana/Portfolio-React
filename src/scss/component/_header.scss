@@ -27,6 +27,12 @@
         gap: 20px;
         padding: 0;
     }
+
+    .active {
+        color: $color-light-orange;
+        transition: 0.3s;
+        text-decoration: underline;
+    }
 }
 
 .border-bottom-header-1 {

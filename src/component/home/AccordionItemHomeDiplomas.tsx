@@ -83,20 +83,20 @@ const AccordionItemHomeDiplomas = (props: any) => {
 
                     <Link className="" to={props.diginamicUrl} title="Lien vers le site de Diginamic" target="_blank" rel="noopener noreferrer">
                         <span className="logo-container-accordion-home">
-                        <img src={props.diginamicLogo} alt="logo de Diginamic" className="logo-accordion-diginamic-home" />
-                        <span className="link-2">DIGINAMIC</span>
+                            <img src={props.diginamicLogo} alt="logo de Diginamic" className="logo-accordion-diginamic-home" />
+                            <span className="link-2">DIGINAMIC</span>
                         </span>
                     </Link>
                     <Link className="" to={props.cnamUrl} title="Lien vers le site du CNAM" target="_blank" rel="noopener noreferrer">
                         <span className="logo-container-accordion-home">
-                        <img src={props.cnamLogo} alt="logo du CNAM" className="logo-accordion-cnam-home" />
-                        <span className="link-2">CNAM</span>
+                            <img src={props.cnamLogo} alt="logo du CNAM" className="logo-accordion-cnam-home" />
+                            <span className="link-2">CNAM</span>
                         </span>
                     </Link>
                     <Link className="" to={props.opquastCertificationUrl} title="Lien vers le site d'OPQUAST" target="_blank" rel="noopener noreferrer">
                         <span className="logo-container-accordion-home">
-                        <img src={props.opquastLogo} alt="logo d'OPQUAST'" className="logo-accordion-opquast-home" />
-                        <span className="link-2">OPQUAST</span>
+                            <img src={props.opquastLogo} alt="logo d'OPQUAST'" className="logo-accordion-opquast-home" />
+                            <span className="link-2">OPQUAST</span>
                         </span>
                     </Link>
                 </div>
