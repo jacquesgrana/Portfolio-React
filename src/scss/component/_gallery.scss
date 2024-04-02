@@ -9,11 +9,13 @@
         gap: 20px;
         margin-top: 20px;
         margin-bottom: 40px;
-
+        
 
         .project-card {
             width: 300px;
             height: 600px;
+            @include set-alpha(background-color, $success, 0.15);
+            color: $color-blue-5;
         }
     }
 

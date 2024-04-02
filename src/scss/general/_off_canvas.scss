@@ -19,7 +19,7 @@
     .offcanvas-link-1:hover {
         transition: 0.3s !important;
         color: $color-orange !important;
-        text-decoration: underline;
+        //text-decoration: underline;
         @include set-alpha(background-color, $color-blue-5, 0.66);
     }
 
