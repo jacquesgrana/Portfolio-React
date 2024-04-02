@@ -1,63 +1,63 @@
 { 
 "tags":[
     {
-        "id": 1,
+        "id": 0,
         "name": "Java",
         "color":"$color-tag-1"
     },
     {
-        "id": 2,
+        "id": 1,
         "name": "PHP",
         "color":"$color-tag-2"
     },
 
     {
-        "id": 3,
+        "id": 2,
         "name": "Javascript",
         "color":"$color-tag-3"
     },
     {
-        "id": 4,
+        "id": 3,
         "name": "TypeScript",
         "color":"$color-tag-4"
     },
     {
-        "id": 5,
+        "id": 4,
         "name": "ReactJS",
         "color":"$color-tag-5"
     },
     {
-        "id": 6,
+        "id": 5,
         "name": "Angular",
         "color":"$color-tag-6"
     },
     {
-        "id": 7,
+        "id": 6,
         "name": "Spring Boot",
         "color":"$color-tag-7"
     },
     {
-        "id": 8,
+        "id": 7,
         "name": "Symfony",
         "color":"$color-tag-8"
     },
     {
-        "id": 9,
+        "id": 8,
         "name": "SCSS",
         "color":"$color-tag-9"
     },
     {
-        "id": 10,
+        "id": 9,
         "name": "HTML",
         "color":"$color-tag-10"
     },
     {
-        "id": 11,
+        "id": 10,
         "name": "CSS",
         "color":"$color-tag-11"
     },
     {
-        "id": 12,
+        "id": 11,
         "name": "Git",
         "color":"$color-tag-12"
     }

@@ -13,6 +13,7 @@ const Header = () => {
 
     setHeaderHeight(getHeaderHeight());
     setPaddingTop(getHeaderHeight());
+    setActiveLink(getActiveLink());
     const handleScroll = () => {
       if (window.scrollY > 0) {
         setIsScrolled(true);
@@ -66,6 +67,19 @@ const Header = () => {
   const toggleOffcanvas = () => {
     setShowOffcanvas(!showOffcanvas);
   };
+
+  const getActiveLink = () => {
+    if (window.location.pathname === "/home") {
+      return 0;
+    }
+    if (window.location.pathname === "/gallery") {
+      return 1;
+    }
+    if (window.location.pathname === "/contact") {
+      return 2;
+    }
+    return 0;
+  }
 
   return (
     <>

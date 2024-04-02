@@ -45,7 +45,7 @@ const AccordionItemHomeLinks = (props: AccordionItemHomeLinksProps) => {
                     </Link>
                     <Link className="" to={props.cvPdf} title="Lien vers mon CV." target="_blank" rel="noopener noreferrer">
                         <span className="logo-container-accordion-home">
-                            <img src={props.cvLogo} alt="logo certificat Opquast" className="logo-accordion-cv-home" />
+                            <img src={props.cvLogo} alt="logo CV" className="logo-accordion-cv-home" />
                             <span className="link-2">CV en PDF</span>
                         </span>
                     </Link>
