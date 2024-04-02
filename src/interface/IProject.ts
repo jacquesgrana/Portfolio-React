@@ -5,7 +5,8 @@ export default interface IProject {
     title: string;
     description: string;
     imageUrl: string;
-    url: string;
+    githubUrl: string;
+    projectUrl: string;
     tags: ITag[];
     date: Date;
 }

@@ -3,7 +3,8 @@ export default interface IProjectDto {
     title: string;
     description: string;
     imageUrl: string;
-    url: string;
+    githubUrl: string;
+    projectUrl: string;
     tagIds: number[];
-    date: Date;
+    date: string;
 }

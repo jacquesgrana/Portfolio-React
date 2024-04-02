@@ -18,7 +18,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "typeRoots" : ["node_modules/@types", "src/type"]
   },
   "include": [
     "src/component",
@@ -27,5 +28,6 @@
     "src/component/contact",
     "src/component/gallery",
     "src/scss",
+    "src/type"
   ]
 }

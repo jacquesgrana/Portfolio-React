@@ -47,7 +47,7 @@ const Header = () => {
 
   // méthode qui change le paddind-top de l'element d'id main en fonction de height
   const setPaddingTop = (height: number) => {
-    const gap = 35;
+    const gap = 50;
     const main = document.getElementById("main");
     if (main) {
       main.style.transition = `0.3s`;

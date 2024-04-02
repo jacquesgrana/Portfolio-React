@@ -1,3 +1,20 @@
 #app-gallery {
 
+    #project-cards-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+
+
+        .project-card {
+            width: 300px;
+            height: 600px;
+        }
+    }
+
 }

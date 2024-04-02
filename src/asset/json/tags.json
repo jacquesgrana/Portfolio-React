@@ -13,7 +13,7 @@
 
     {
         "id": 2,
-        "name": "Javascript",
+        "name": "JavaScript",
         "color":"$color-tag-3"
     },
     {
@@ -58,8 +58,18 @@
     },
     {
         "id": 11,
-        "name": "Git",
+        "name": "Responsive",
         "color":"$color-tag-12"
+    },
+    {
+        "id": 12,
+        "name": "Bootstrap",
+        "color":"$color-tag-13"
+    },
+    {
+        "id": 13,
+        "name": "Material",
+        "color":"$color-tag-14"
     }
 ]
     
