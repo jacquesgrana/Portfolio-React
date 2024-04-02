@@ -1,0 +1,50 @@
+.offcanvas-container-1 {
+    background-color: $color-blue-4;
+    width: 240px !important;
+    transition: 0.3s;
+
+    .offcanvas-title-1 {
+        font-size: large;
+    }
+
+    .offcanvas-link-1 {
+        transition: 0.3s;
+        font-size: larger;
+        background-color: $color-blue-5;
+        padding: 10px;
+        border-radius: $radius-1;
+    }  
+    
+
+    .offcanvas-link-1:hover {
+        transition: 0.3s !important;
+        color: $color-orange !important;
+        text-decoration: underline;
+        @include set-alpha(background-color, $color-blue-5, 0.66);
+    }
+
+    /*
+    .offcanvas-item-1 {
+    }
+    */
+    
+
+    .offcanvas-header-1 {
+        @include set-alpha(background-color, $color-blue-5, 0.66);
+    }
+
+    button.btn-close {
+        transition: 0.3s;
+        color: $color-white !important;
+        background-color: $color-light-orange;
+        padding: 5px;
+    }
+
+    .offcanvas-active {
+        background-color: $color-blue-3 !important;
+        color: $color-light-orange !important;
+        text-decoration: underline;
+    }
+}
+
+

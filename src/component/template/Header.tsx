@@ -49,6 +49,7 @@ const Header = () => {
     const gap = 35;
     const main = document.getElementById("main");
     if (main) {
+      main.style.transition = `0.3s`;
       main.style.paddingTop = `${height + gap}px`;
     }
   }
@@ -126,40 +127,41 @@ const Header = () => {
         show={showOffcanvas}
         onHide={toggleOffcanvas}
         placement="start"
+        className="offcanvas-container-1"
       >
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Navigation</Offcanvas.Title>
+        <Offcanvas.Header className="offcanvas-header-1 mb-4" closeButton>
+          <Offcanvas.Title className="offcanvas-title-1 text-space-3 text-orange">Navigation</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <Nav className="flex-column">
-            <Nav.Item onClick={() => handleLinkClick(0)}>
+          <Nav className="flex-column gap-4">
+            <Nav.Item className="offcanvas-item-1" onClick={() => handleLinkClick(0)}>
               <Link
                 id="link-home"
                 to="/home"
-                className={`link-1 text-space-3 ${
-                  activeLink === 0 ? "active" : ""
+                className={`offcanvas-link-1 text-white link-1 text-space-3 ${
+                  activeLink === 0 ? "offcanvas-active" : ""
                 }`}
               >
                 Accueil
               </Link>
             </Nav.Item>
-            <Nav.Item onClick={() => handleLinkClick(1)}>
+            <Nav.Item className="offcanvas-item-1" onClick={() => handleLinkClick(1)}>
               <Link
                 id="link-gallery"
                 to="/gallery"
-                className={`link-1 text-space-3 ${
-                  activeLink === 1 ? "active" : ""
+                className={`offcanvas-link-1 text-white link-1 text-space-3 ${
+                  activeLink === 1 ? "offcanvas-active" : ""
                 }`}
               >
                 Galerie
               </Link>
             </Nav.Item>
-            <Nav.Item onClick={() => handleLinkClick(2)}>
+            <Nav.Item className="offcanvas-item-1" onClick={() => handleLinkClick(2)}>
               <Link
                 id="link-contact"
                 to="/contact"
-                className={`link-1 text-space-3 ${
-                  activeLink === 2 ? "active" : ""
+                className={`offcanvas-link-1 text-white link-1 text-space-3 ${
+                  activeLink === 2 ? "offcanvas-active" : ""
                 }`}
               >
                 Contact
