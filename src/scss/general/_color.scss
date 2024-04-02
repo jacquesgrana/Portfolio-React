@@ -16,3 +16,18 @@ $primary: $color-blue-4;
 $succes: hsl(288, 95%, 36%);
 $danger: $color-orange;
 $warning: hsl(14, 95%, 40%);
+
+// 12 couleurs pastels différentes visuellement nommées dans tous les tons (vert, rouge, bleu, violet, etc.) : '$color-tag-xxx' ou 'xxx' est le numéro de la couleur de 1 à 12
+
+$color-tag-1: #f0e6f2; // Violet pastel 1
+$color-tag-2: #e6f0f2; // Bleu pastel 1
+$color-tag-3: #f2f0e6; // Jaune pastel 1
+$color-tag-4: #e6f2f0; // Turquoise pastel 1
+$color-tag-5: #f2e6f0; // Rose pastel 1
+$color-tag-6: #f0f2e6; // Vert pastel 1
+$color-tag-7: #f2e6e6; // Rouge pastel 1
+$color-tag-8: #e6f2e6; // Vert pastel 2
+$color-tag-9: #e6e6f2; // Bleu pastel 2
+$color-tag-10: #f2f0f0; // Gris pastel 1
+$color-tag-11: #f0f2f0; // Vert pastel 3
+$color-tag-12: #f0e6e6; // Rouge pastel 2

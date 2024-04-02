@@ -7,8 +7,12 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState(0);
   const [showOffcanvas, setShowOffcanvas] = useState(false);
+  const [headerHeight, setHeaderHeight] = useState(0);
 
   useEffect(() => {
+
+    setHeaderHeight(getHeaderHeight());
+    setPaddingTop(getHeaderHeight());
     const handleScroll = () => {
       if (window.scrollY > 0) {
         setIsScrolled(true);
@@ -24,10 +28,39 @@ const Header = () => {
     };
   }, []);
 
+  // détecte le changement de hauteur du Header
+  useEffect(() => {
+    const handleResize = () => {
+      setHeaderHeight(getHeaderHeight());
+      setPaddingTop(getHeaderHeight());
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const handleLinkClick = (index: number) => {
     setActiveLink(index);
     setShowOffcanvas(false);
   };
+
+  // méthode qui change le paddind-top de l'element d'id main en fonction de height
+  const setPaddingTop = (height: number) => {
+    const gap = 35;
+    const main = document.getElementById("main");
+    if (main) {
+      main.style.paddingTop = `${height + gap}px`;
+    }
+  }
+
+  // méthode qui renvoie la hauteur en pixel du composant Header.
+  const getHeaderHeight = () => {
+    const header = document.getElementById("app-header");
+    if (header) {
+      return header.offsetHeight;
+    }
+    return 0;
+  }
 
   const toggleOffcanvas = () => {
     setShowOffcanvas(!showOffcanvas);

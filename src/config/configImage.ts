@@ -6,5 +6,5 @@ export default class ConfigImage {
     public static readonly LOGO_CV = require("../asset/image/cv_logo.png");
     public static readonly LOGO_DIGINAMIC = require("../asset/image/diginamic_logo.png");
     public static readonly LOGO_CNAM = require("../asset/image/cnam_logo.png");
-    public static readonly LOGO_OPQUAST = require("../asset/image/opquast_logo_official.png");
+    public static readonly LOGO_OPQUAST = require("../asset/image/opquast_logo.png");
 }
