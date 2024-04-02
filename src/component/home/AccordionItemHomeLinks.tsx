@@ -1,11 +1,20 @@
 import Accordion from 'react-bootstrap/Accordion';
 import { Link } from "react-router-dom";
 
-//import githubLogo from './../../image/github_logo.png';
+interface AccordionItemHomeLinksProps {
+    githubPersoUrl: string
+    linkedinPersoUrl: string
+    opquastCertificateUrl: string
+    cvPdf: string
+    githubLogo: string
+    linkedInLogo: string
+    opquastCertificateLogo: string
+    cvLogo: string
+}
 
-const AccordionItemHomeLinks = (props: any) => {
+const AccordionItemHomeLinks = (props: AccordionItemHomeLinksProps) => {
 
-    const cvPdf = require("../../asset/pdf/cv_jacques_granarolo_links_v1.0.pdf");
+    //const cvPdf = require("../../asset/pdf/cv_jacques_granarolo_links_v1.0.pdf");
 
     return (
         <Accordion.Item eventKey="3" className="mb-2">
@@ -16,7 +25,7 @@ const AccordionItemHomeLinks = (props: any) => {
             </Accordion.Header>
             <Accordion.Body >
                 <div className="body-accordion-container">
-                    <Link className="" to={props.githubRPersoUrl} title="Lien vers mon Github." target="_blank" rel="noopener noreferrer">
+                    <Link className="" to={props.githubPersoUrl} title="Lien vers mon Github." target="_blank" rel="noopener noreferrer">
                         <span className="logo-container-accordion-home">
                             <img src={props.githubLogo} alt="logo github" className="logo-accordion-github-home" />
                             <span className="link-2">GITHUB</span>
@@ -34,7 +43,7 @@ const AccordionItemHomeLinks = (props: any) => {
                             <span className="link-2">OPQUAST</span>
                         </span>
                     </Link>
-                    <Link className="" to={cvPdf} title="Lien vers mon CV." target="_blank" rel="noopener noreferrer">
+                    <Link className="" to={props.cvPdf} title="Lien vers mon CV." target="_blank" rel="noopener noreferrer">
                         <span className="logo-container-accordion-home">
                             <img src={props.cvLogo} alt="logo certificat Opquast" className="logo-accordion-cv-home" />
                             <span className="link-2">CV en PDF</span>

@@ -1,8 +1,17 @@
 import Accordion from 'react-bootstrap/Accordion';
 import { Link } from "react-router-dom";
 
+interface AccordionItemHomeDiplomasProps {
+    opquastCertificationUrl: string;
+    opquastCertificateUrl: string;
+    diginamicUrl: string;
+    cnamUrl: string;
+    opquastLogo: string;
+    cnamLogo: string;
+    diginamicLogo: string;
+}
 
-const AccordionItemHomeDiplomas = (props: any) => {
+const AccordionItemHomeDiplomas = (props: AccordionItemHomeDiplomasProps) => {
     return (
         <Accordion.Item eventKey="1" className="mb-2">
             <Accordion.Header>

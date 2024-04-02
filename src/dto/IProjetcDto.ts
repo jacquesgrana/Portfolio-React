@@ -1,11 +1,9 @@
-import ITag from "./ITag";
-
-export default interface IProject {
+export default interface IProjectDto {
     id: number;
     title: string;
     description: string;
     imageUrl: string;
     url: string;
-    tags: ITag[];
+    tagIds: number[];
     date: Date;
 }

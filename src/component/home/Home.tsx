@@ -1,19 +1,20 @@
-import { Link } from "react-router-dom";
-import Accordion from 'react-bootstrap/Accordion';
 import AccordionHome from "./AccordionHome";
 import ConfigUrl from "../../config/configUrl";
 import ConfigImage from "../../config/configImage";
+import ConfigPdf from "../../config/configPdf";
 import { useEffect, useRef, useState } from "react";
 
 const Home = () => {
     const accordionId = useRef(3);
 
-    const githubRPersoUrl = ConfigUrl.GITHUB_PERSO_URL;
+    const githubPersoUrl = ConfigUrl.GITHUB_PERSO_URL;
     const linkedinPersoUrl = ConfigUrl.LINKEDIN_PERSO_URL;
     const opquastCertificateUrl = ConfigUrl.OPQUAST_CERTIFICATE_URL;
     const opquastCertificationUrl = ConfigUrl.OPQUAST_CERTIFICATION_URL;
     const diginamicUrl = ConfigUrl.DIGINAMIC_URL;
     const cnamUrl = ConfigUrl.CNAM_URL;
+    const avosclicsUrl = ConfigUrl.AVOSCLICS_URL;
+    const twosagencyUrl = ConfigUrl.TWOSAGENCY_URL;
 
     const githubLogo =  ConfigImage.LOGO_GITHUB;
     const linkedInLogo =  ConfigImage.LOGO_LINKEDIN;
@@ -23,7 +24,9 @@ const Home = () => {
     const cnamLogo =  ConfigImage.LOGO_CNAM;
     const opquastLogo =  ConfigImage.LOGO_OPQUAST;
 
-    const setAccordionId = (id: number) => {
+    const cvPdf = ConfigPdf.CV_PDF;
+
+    const setAccordionId = (id: number): void => {
         accordionId.current = id;
         const accordions = document.getElementsByClassName("accordion-title");
         Array.from(accordions).forEach((accordion: any) => {
@@ -55,10 +58,13 @@ const Home = () => {
             <AccordionHome 
             opquastCertificateUrl={opquastCertificateUrl} 
             opquastCertificationUrl={opquastCertificationUrl}
-            githubRPersoUrl={githubRPersoUrl}
+            githubPersoUrl={githubPersoUrl}
             linkedinPersoUrl={linkedinPersoUrl}
             diginamicUrl={diginamicUrl}
             cnamUrl={cnamUrl}
+            avosclicsUrl={avosclicsUrl}
+            twosagencyUrl={twosagencyUrl}
+            cvPdf={cvPdf}
             githubLogo={githubLogo}
             linkedInLogo={linkedInLogo}
             opquastCertificateLogo={opquastCertificateLogo}
