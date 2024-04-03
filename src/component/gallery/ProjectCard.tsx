@@ -8,16 +8,17 @@ import { fr } from 'date-fns/locale';
 //
 interface ProjectCardProps {
     project: IProject,
-    image: string
+    image: string,
+    handleShowModalShowProject: any
 }
 
 const ProjectCard = (props: ProjectCardProps) => {
     //const image = require(`../../asset/image/gestion_projets.png`);
     return (
-        <Card className="project-card">
+        <Card className="project-card" onClick={() => props.handleShowModalShowProject(props.project, props.image)}>
             <Card.Img variant="top" src={props.image} />
             <Card.Body className="d-flex flex-column">
-                <Card.Title className="">
+                <Card.Title className="text-dark-orange-2">
                     <strong>{props.project.title}</strong>
                 </Card.Title>
                 <Card.Text className="mb-2">

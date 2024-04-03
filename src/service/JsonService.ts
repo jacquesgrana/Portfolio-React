@@ -23,6 +23,8 @@ export default class JsonService {
     private async init(): Promise<void> {
         this._tags = await this.getTags();
         this._projects = await this.getProjects();
+        // classer les projets par difficulty
+        this._projects = this._projects.sort((p1, p2) => p2.difficulty - p1.difficulty);
     }
 
     private async getTags(): Promise<ITag[]> {
