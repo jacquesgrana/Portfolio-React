@@ -1,3 +1,4 @@
+.btn-2,
 .btn-1 {
     width: 100px;
     border: 0px;
@@ -6,5 +7,11 @@
 .btn-1:hover {
     transition: 0.3s;
     @include set-alpha(background-color, $color-blue-5, 0.5);
+    color: $color-orange;
+}
+
+.btn-2:hover {
+    transition: 0.3s;
+    @include set-alpha(background-color, $color-blue-4, 0.66);
     color: $color-orange;
 }

@@ -79,22 +79,22 @@ const Gallery = () => {
         {/* Modale */}
         <Modal id="modal-view-project" className="" show={showModalShowProject} onHide={handleCloseModalShowProject}>
         <Modal.Header>
-          <Modal.Title className="text-light-orange">{selectedProject?.title}</Modal.Title>
+          <Modal.Title className="text-orange">{selectedProject?.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
             <div>
                 <img className="mb-3 image-1" src={selectedImage} alt={selectedProject?.title} />
-                <p className="text-light-orange mb-1"><strong>{selectedProject?.subTitle}</strong></p>
+                <p className="text-orange mb-1"><strong>{selectedProject?.subTitle}</strong></p>
                 <p className="">{selectedProject?.description}</p>
                 <div className="w-100 d-flex justify-content-between align-items-end">
-                    <span className="text-light-orange">
+                    <span className="text-orange">
                         <strong>
                         {selectedProject !== undefined && format(selectedProject.date, 'MMMM yyyy', { locale: fr })}
                         </strong>  
                     </span>
                     <span className="text-size-0-75">
                     Difficulté :&nbsp;
-                    <strong className="text-light-orange">{`${selectedProject?.difficulty}/10`}
+                    <strong className="text-orange">{`${selectedProject?.difficulty}/10`}
                     </strong>  
                     </span>
                 </div>
@@ -107,7 +107,7 @@ const Gallery = () => {
         </Modal.Body>
         <Modal.Footer>
           <Button 
-          className="btn-1 bg-blue-3 me-1" 
+          className="btn-2 bg-dark-orange me-1" 
           onClick={handleCloseModalShowProject}
           href={selectedProject?.githubUrl} 
           target="_blank" 
@@ -116,7 +116,7 @@ const Gallery = () => {
             Github
           </Button>
           <Button 
-          className="btn-1 me-1 bg-blue-3" 
+          className="btn-2 me-1 bg-blue-3" 
           onClick={handleCloseModalShowProject}
           href={selectedProject?.projectUrl} 
           target="_blank" 
@@ -125,7 +125,7 @@ const Gallery = () => {
             Projet
           </Button>
           <Button 
-          className="btn-1 bg-orange text-blue-5" 
+          className="btn-2 bg-orange text-blue-5" 
           onClick={handleCloseModalShowProject}
           title="Fermer la fenêtre."
           >

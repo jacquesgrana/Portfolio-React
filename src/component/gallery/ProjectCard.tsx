@@ -21,11 +21,10 @@ const ProjectCard = (props: ProjectCardProps) => {
                 <Card.Title className="text-dark-orange-2">
                     <strong>{props.project.title}</strong>
                 </Card.Title>
-                <Card.Text className="mb-2">
+                <Card.Text className="mb-2 project-card-text-container">
                     <span className="">
-                        <strong>{props.project.subTitle} : </strong>
+                        {props.project.subTitle}
                     </span>
-                    <span className="">{props.project.description}</span>
                 </Card.Text>
                 <Card.Text className="mb-2 d-flex justify-content-between align-items-end">
                     <span className="text-dark-orange-2">
@@ -45,13 +44,17 @@ const ProjectCard = (props: ProjectCardProps) => {
                     ))}
                 </Stack>
                 <div className="flex-grow-1"></div>
-                <div className="mt-2 d-flex justify-content-center gap-2 flex-wrap">
-                    <Button className="btn-1 bg-dark-orange" href={props.project.githubUrl} target="_blank" title="Lien vers le repository Github du projet.">Github</Button>
-                    <Button className="btn-1 bg-blue-4" href={props.project.projectUrl} target="_blank" title="Lien vers le site du projet.">Projet</Button>
-                </div>
+
              </Card.Body>
         </Card>
     );
 }
 
 export default ProjectCard;
+
+/*
+                <div className="mt-2 d-flex justify-content-center gap-2 flex-wrap">
+                    <Button className="btn-1 bg-dark-orange" href={props.project.githubUrl} target="_blank" title="Lien vers le repository Github du projet.">Github</Button>
+                    <Button className="btn-1 bg-blue-4" href={props.project.projectUrl} target="_blank" title="Lien vers le site du projet.">Projet</Button>
+                </div>
+*/
