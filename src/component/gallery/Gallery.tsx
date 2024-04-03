@@ -43,12 +43,14 @@ const Gallery = () => {
             const project: IProject = {
                 id: projectDto.id,
                 title: projectDto.title,
+                subTitle: projectDto.subTitle,
                 description: projectDto.description,
                 imageUrl: projectDto.imageUrl,
                 githubUrl: projectDto.githubUrl,
                 projectUrl: projectDto.projectUrl,
                 tags: tags.filter((tag: ITag) => projectDto.tagIds.includes(tag.id)),
-                date: new Date(projectDto.date)
+                date: new Date(projectDto.date),
+                difficulty: projectDto.difficulty
             }
             projects.push(project);
         });
@@ -59,7 +61,7 @@ const Gallery = () => {
     return (
         <div id="app-gallery">
             <h2 className="title-1-bold text-white text-center text-space-3">Galerie</h2>
-            <h3 className="title-2-normal text-blue-5 text-center mb-5 text-space-2">Quelques projets</h3>
+            <h3 className="title-2-normal text-blue-5 text-center mb-3 text-space-2">Quelques projets</h3>
             <ProjectCards projects={projects} projectsImage={projectsImage}/>
         </div>
     );

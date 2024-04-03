@@ -20,15 +20,25 @@ const ProjectCard = (props: ProjectCardProps) => {
                 <Card.Title className="">
                     <strong>{props.project.title}</strong>
                 </Card.Title>
-                <Card.Text className="mb-1">
-                    <p className="mt-0 mb-1">{props.project.description}</p>
-                    <p className="mt-0 mb-1 text-dark-orange-2">
+                <Card.Text className="mb-2">
+                    <span className="">
+                        <strong>{props.project.subTitle} : </strong>
+                    </span>
+                    <span className="">{props.project.description}</span>
+                </Card.Text>
+                <Card.Text className="mb-2 d-flex justify-content-between align-items-end">
+                    <span className="text-dark-orange-2">
                         <strong>
                         {format(props.project.date, 'MMMM yyyy', { locale: fr })}
-                        </strong>
-                        </p>
+                        </strong>  
+                    </span>
+                    <span className="text-blue-5 text-size-0-75">
+                    Difficulté :&nbsp;
+                    <strong className="text-dark-orange-2">{`${props.project.difficulty}/10`}
+                    </strong>  
+                    </span>
                 </Card.Text>
-                <Stack className="mt-0 d-flex flex-wrap" direction="horizontal" gap={2}>
+                <Stack className="mt-0 d-flex flex-wrap flex-start" direction="horizontal" gap={2}>
                     {props.project.tags.map((tag: ITag) => (
                         <Tag key={tag.id} tag={tag} />
                     ))}

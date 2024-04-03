@@ -1,29 +1,41 @@
 export default class ConfigImage {
     //public static readonly LOGO_GITHUB_PATH: string = "asset/image/github_logo.png";
-    public static readonly LOGO_GITHUB = require("../asset/image/github_logo.png");
-    public static readonly LOGO_LINKEDIN = require("../asset/image/linkedin_logo.png");
-    public static readonly LOGO_OPQUAST_CERTIFICATE = require("../asset/image/opquast_certificate_logo.png");
-    public static readonly LOGO_CV = require("../asset/image/cv_logo.png");
-    public static readonly LOGO_DIGINAMIC = require("../asset/image/diginamic_logo.png");
-    public static readonly LOGO_CNAM = require("../asset/image/cnam_logo.png");
-    public static readonly LOGO_OPQUAST = require("../asset/image/opquast_logo.png");
+    public static readonly LOGO_GITHUB = require("../asset/image/logo/github_logo.png");
+    public static readonly LOGO_LINKEDIN = require("../asset/image/logo/linkedin_logo.png");
+    public static readonly LOGO_OPQUAST_CERTIFICATE = require("../asset/image/logo/opquast_certificate_logo.png");
+    public static readonly LOGO_CV = require("../asset/image/logo/cv_logo.png");
+    public static readonly LOGO_DIGINAMIC = require("../asset/image/logo/diginamic_logo.png");
+    public static readonly LOGO_CNAM = require("../asset/image/logo/cnam_logo.png");
+    public static readonly LOGO_OPQUAST = require("../asset/image/logo/opquast_logo.png");
 
     public static readonly PROJECTS_IMAGE = [
         {
             id: 0,
-            url: require("../asset/image/gestion_projets.png")
+            url: require("../asset/image/project/gestion_projets.png")
         },
         {
             id: 1,
-            url: require("../asset/image/affichage_communes.png")
+            url: require("../asset/image/project/affichage_communes.png")
         },
         {
             id: 2,
-            url: require("../asset/image/dessin_fractales.png")
+            url: require("../asset/image/project/dessin_fractales.png")
         },
         {
             id: 3,
-            url: require("../asset/image/mastermind_angular.png")
+            url: require("../asset/image/project/mastermind_angular.png")
+        },
+        {
+            id: 4,
+            url: require("../asset/image/project/filtrage_cards.png")
+        },
+        {
+            id: 5,
+            url: require("../asset/image/project/bouncing_balls.png")
+        },
+        {
+            id: 6,
+            url: require("../asset/image/project/brownian_move.png")
         }
     ];
 }

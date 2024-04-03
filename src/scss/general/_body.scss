@@ -1,27 +1,42 @@
   body {
     min-height: 100vh;
+    min-width: 100vw;
   }
   
   main {
     padding-top: 120px;
     padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     background-color: $color-blue-1;
+    min-width: 100vw;
   }
   
   #container_all {
-    min-width: 100%;
+    min-width: auto;
     flex-wrap: wrap;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     min-height: 100vh;
+    background-color: $color-blue-1;
+    padding: 0px;
   }
 
   header {
     position: fixed;
     width: 100vw;
+    z-index: 100;
+  }
+
+  #app-footer {
+    min-width: 100vw;
     z-index: 100;
   }
 

@@ -2,43 +2,87 @@
     "projects": [
         {
             "id": 0,
-            "title": "Gestion de Projet",
-            "description": "TP en PHP/HTML/CSS/JS vanilla : Gestion des projets contenant des tâches associées à des utilisateurs.", 
+            "title": "Gestion de Projets",
+            "subTitle": "TP en PHP/HTML/CSS/JS vanilla",
+            "description": "Gestion des projets contenant des tâches associées à des utilisateurs.", 
             "imageUrl": "../../asset/image/gestion_projets.png",
             "githubUrl": "https://github.com/jacquesgrana/CDAPHP-ProjetFullstack-Gestion-Projets",
             "projectUrl": "https://gestion-projets.000webhostapp.com/",
             "tagIds": [ 1, 2, 9, 10 ],
-            "date": "2023-09-12T12:00:00.000Z"
+            "date": "2023-09-12T12:00:00.000Z",
+            "difficulty": 8
         },
         {
             "id": 1,
             "title": "Communes de France",
-            "description": "TP en PHP/HTML/CSS/JS vanilla : Affiche des informations sur les communes de France en utilisant des API.",
+            "subTitle": "TP en PHP/HTML/CSS/JS vanilla",
+            "description": "Affiche des informations sur les communes de France en utilisant des API.",
             "imageUrl": "../../asset/image/gestion_projets.png",
             "githubUrl": "https://github.com/jacquesgrana/CDAPHP-TP2JS-AffichageCommunes",
             "projectUrl": "https://jacquesgrana.github.io/CDAPHP-TP2JS-AffichageCommunes/",
             "tagIds": [ 2, 9, 10, 12 ],
-            "date": "2023-07-01T12:00:00.000Z"
+            "date": "2023-07-01T12:00:00.000Z",
+            "difficulty": 4
         },
         {
             "id": 2,
             "title": "Dessin de fractales",
-            "description": "Application en Angular : Dessine des fractales dans lesquelles on peut zoomer, se déplacer et changer des paramètres.",
+            "subTitle": "Application en Angular",
+            "description": "Dessine des fractales dans lesquelles on peut zoomer, se déplacer et changer des paramètres.",
             "imageUrl": "../../asset/image/gestion_projets.png",
             "githubUrl": "https://github.com/jacquesgrana/fractales-angular",
             "projectUrl": "http://jac.granarolo.free.fr/fractales-angular/#/start",
             "tagIds": [ 3, 5, 8, 12, 13],
-            "date": "2022-12-20T12:00:00.000Z"
+            "date": "2022-12-20T12:00:00.000Z",
+            "difficulty": 9
         },
         {
             "id": 3,
             "title": "Jeu du mastermind++",
-            "description": "Application en Angular : Permet de jouer au mastermind avec affichage des probabilités en mode facile.",
+            "subTitle": "Application en Angular",
+            "description": "Permet de jouer au mastermind avec affichage des probabilités en mode facile.",
             "imageUrl": "../../asset/image/gestion_projets.png",
             "githubUrl": "https://github.com/jacquesgrana/mastermind-angular",
             "projectUrl": "http://jac.granarolo.free.fr/mastermind-plus/#/start",
             "tagIds": [ 3, 5, 8, 12, 13],
-            "date": "2022-11-10T12:00:00.000Z"
+            "date": "2022-11-10T12:00:00.000Z",
+            "difficulty": 7
+        },
+        {
+            "id": 4,
+            "title": "Filtrage cards",
+            "subTitle": "TP en PHP/HTML/CSS/JS vanilla",
+            "description": "Permet de filtrer des cards avec des filtres.",
+            "imageUrl": "../../asset/image/filtrage_cards.png",
+            "githubUrl": "https://github.com/jacquesgrana/CDAPHP-TP1JS-FiltrageCards",
+            "projectUrl": "https://jacquesgrana.github.io/CDAPHP-TP1JS-FiltrageCards/",
+            "tagIds": [ 2, 9, 10, 12],
+            "date": "2023-06-25T12:00:00.000Z",
+            "difficulty": 3
+        },
+        {
+            "id": 5,
+            "title": "Bouncing balls",
+            "subTitle": "Application Processing-P5Js en JavaScript",
+            "description": "Affiche des balles rebondissantes avec des paramètres.",
+            "imageUrl": "../../asset/image/bouncing_balls.png",
+            "githubUrl": "https://github.com/jacquesgrana/BouncingBalls-P5JS",
+            "projectUrl": "https://jacquesgrana.github.io/BouncingBalls-P5JS/",
+            "tagIds": [ 2 ],
+            "date": "2023-08-25T12:00:00.000Z",
+            "difficulty": 6
+        },
+        {
+            "id": 6,
+            "title": "Brownian movement",
+            "subTitle": "Application Processing-P5Js en JavaScript",
+            "description": "Simule le mouvement brownien de particules colorées.",
+            "imageUrl": "../../asset/image/brownian_move.png",
+            "githubUrl": "https://github.com/jacquesgrana/BrownianMovementP5JS",
+            "projectUrl": "https://jacquesgrana.github.io/BrownianMovementP5JS/",
+            "tagIds": [ 2 ],
+            "date": "2023-05-15T12:00:00.000Z",
+            "difficulty": 5
         }
     ]
 }

@@ -1,5 +1,11 @@
 #app-gallery {
 
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+
     #project-cards-container {
         display: flex;
         flex-direction: row;
@@ -16,6 +22,15 @@
             height: 600px;
             @include set-alpha(background-color, $success, 0.15);
             color: $color-blue-5;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transition: 0.3s;
+            @include set-alpha(background-color, $success, 0.30);
+            transform: scale(1.025);
+            box-shadow: 0px 0px 10px 0px $color-blue-5 !important;
+            border: 1px solid $color-blue-4;
         }
     }
 
