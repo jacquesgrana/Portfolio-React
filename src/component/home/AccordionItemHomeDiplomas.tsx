@@ -13,9 +13,9 @@ interface AccordionItemHomeDiplomasProps {
 
 const AccordionItemHomeDiplomas = (props: AccordionItemHomeDiplomasProps) => {
     return (
-        <Accordion.Item eventKey="1" className="mb-2">
+        <Accordion.Item eventKey="2" className="mb-2">
             <Accordion.Header>
-                <h3 className="title-2-bold text-white text-center mt-2 ms-0"><span id="accordion-bullet-1" className="accordion-bullet text-orange me-1 transition-03s">•</span>  <span id="accordion-title-1" className="accordion-title transition-03s text-space-2">Formation & diplômes</span></h3>
+                <h3 className="title-2-bold text-white text-center mt-2 ms-0"><span id="accordion-bullet-2" className="accordion-bullet text-orange me-1 transition-03s">•</span>  <span id="accordion-title-2" className="accordion-title transition-03s text-space-2">Formation & diplômes</span></h3>
             </Accordion.Header>
             <Accordion.Body >
                 <ul className ="ul-list-1 mt-2">

@@ -83,19 +83,20 @@ const Gallery = () => {
         </Modal.Header>
         <Modal.Body>
             <div>
-                <img className="mb-3 image-1" src={selectedImage} alt={selectedProject?.title} />
+                <img className="mb-3 image-1" src={selectedImage} alt={selectedProject?.title} title={`image de ${selectedProject?.title}`}/>
                 <p className="text-orange mb-1"><strong>{selectedProject?.subTitle}</strong></p>
                 <p className="">{selectedProject?.description}</p>
                 <div className="w-100 d-flex justify-content-between align-items-end">
                     <span className="text-orange">
                         <strong>
-                        {selectedProject !== undefined && format(selectedProject.date, 'MMMM yyyy', { locale: fr })}
+                          {selectedProject !== undefined && format(selectedProject.date, 'MMMM yyyy', { locale: fr })}
                         </strong>  
                     </span>
                     <span className="text-size-0-75">
-                    Difficulté :&nbsp;
-                    <strong className="text-orange">{`${selectedProject?.difficulty}/10`}
-                    </strong>  
+                      Difficulté :&nbsp;
+                      <strong className="text-orange">
+                        {`${selectedProject?.difficulty}/10`}
+                      </strong>  
                     </span>
                 </div>
                 <Stack className="mt-2 d-flex flex-wrap flex-start" direction="horizontal" gap={2}>

@@ -17,10 +17,10 @@ const AccordionItemHomeLinks = (props: AccordionItemHomeLinksProps) => {
     //const cvPdf = require("../../asset/pdf/cv_jacques_granarolo_links_v1.0.pdf");
 
     return (
-        <Accordion.Item eventKey="3" className="mb-2">
+        <Accordion.Item eventKey="4" className="mb-2">
             <Accordion.Header>
                 <h3 className="title-2-bold text-white text-center mt-2 ms-0">
-                    <span id="accordion-bullet-3" className="accordion-bullet text-orange me-1 transition-03s">•</span> <span id="accordion-title-3" className="accordion-title transition-03s text-space-2">Liens & CV</span>
+                    <span id="accordion-bullet-4" className="accordion-bullet text-orange me-1 transition-03s">•</span> <span id="accordion-title-4" className="accordion-title transition-03s text-space-2">Liens & CV</span>
                 </h3>
             </Accordion.Header>
             <Accordion.Body >

@@ -8,6 +8,9 @@ export default class ConfigImage {
     public static readonly LOGO_CNAM = require("../asset/image/logo/cnam_logo.png");
     public static readonly LOGO_OPQUAST = require("../asset/image/logo/opquast_logo.png");
 
+    public static readonly QRCODE_EMAIL = require("../asset/image/qrcode/qrcode_email_blue_5.png");
+    public static readonly QRCODE_MOBILE = require("../asset/image/qrcode/qrcode_mobile_blue_5.png");
+
     public static readonly PROJECTS_IMAGE = [
         {
             id: 0,

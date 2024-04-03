@@ -42,5 +42,4 @@ export default class JsonService {
     public async findAllProjects(): Promise<IProjectDto[]> {
         return await this._projects;
     }
-
 }

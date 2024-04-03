@@ -27,7 +27,11 @@ interface AccordionHomeProps {
 
 const AccordionHome = (props: AccordionHomeProps) => {
     return (
-        <Accordion defaultActiveKey="3" onSelect={(eventKey) => props.setAccordionId(Number(eventKey))} flush>
+        <Accordion 
+        defaultActiveKey="4" 
+        onSelect={(eventKey) => props.setAccordionId(Number(eventKey))} 
+        flush
+        >
             <AccordionItemHomeAboutMe 
             />
             <AccordionItemHomeDiplomas 

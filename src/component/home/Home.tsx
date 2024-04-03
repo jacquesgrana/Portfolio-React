@@ -27,27 +27,31 @@ const Home = () => {
     const cvPdf = ConfigPdf.CV_PDF;
 
     const setAccordionId = (id: number): void => {
-        accordionId.current = id;
-        const accordions = document.getElementsByClassName("accordion-title");
-        Array.from(accordions).forEach((accordion: any) => {
-            if (accordion.id === `accordion-title-${id}`) {
-                accordion.classList.add("text-orange");
-            } else {
-                accordion.classList.remove("text-orange");
-            }
-        });
-        const bullets = document.getElementsByClassName("accordion-bullet");
-        Array.from(bullets).forEach((bullet: any) => {
-            if (bullet.id === `accordion-bullet-${id}`) {
-                bullet.classList.add("text-white");
-            } else {
-                bullet.classList.remove("text-white");
-            }
-        });
+            accordionId.current = id;
+            const accordions = document.getElementsByClassName("accordion-title");
+            Array.from(accordions).forEach((accordion: any) => {
+                if (accordion.id === `accordion-title-${id}`) {
+                    accordion.classList.add("text-orange");
+                    accordion.classList.remove("text-white");
+                } else {
+                    accordion.classList.add("text-white");
+                    accordion.classList.remove("text-orange");
+                }
+            });
+            const bullets = document.getElementsByClassName("accordion-bullet");
+            Array.from(bullets).forEach((bullet: any) => {
+                if (bullet.id === `accordion-bullet-${id}`) {
+                    bullet.classList.add("text-white");
+                    bullet.classList.remove("text-orange");
+                } else {
+                    bullet.classList.add("text-orange");
+                    bullet.classList.remove("text-white");
+                }
+            });  
     }
 
     useEffect(() => {
-        setAccordionId(3);
+        setAccordionId(4);
     }, [])
 
     return (
