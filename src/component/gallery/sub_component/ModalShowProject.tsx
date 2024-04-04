@@ -16,8 +16,10 @@ const ModalShowProject = (props: ModalShowProjectProps) => {
     
     return (
         <Modal id="modal-view-project" className="" show={props.showModalShowProject} onHide={props.handleCloseModalShowProject}>
-            <Modal.Header>
-            <Modal.Title className="text-orange">{props.selectedProject?.title}</Modal.Title>
+            <Modal.Header className="d-flex justify-content-center">
+                <Modal.Title className="text-orange">
+                    {props.selectedProject?.title}
+                </Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <div>
@@ -46,26 +48,26 @@ const ModalShowProject = (props: ModalShowProjectProps) => {
                     </Stack>
                 </div>
             </Modal.Body>
-            <Modal.Footer>
-            <Button 
-            className="btn-2 bg-dark-orange me-1" 
-            onClick={props.handleCloseModalShowProject}
-            href={props.selectedProject?.githubUrl} 
-            target="_blank" 
-            title="Lien vers le repository Github du projet."
-            >
-                Github
-            </Button>
-            <Button 
-            className="btn-2 me-1 bg-blue-3" 
-            onClick={props.handleCloseModalShowProject}
-            href={props.selectedProject?.projectUrl} 
-            target="_blank" 
-            title="Lien vers le site du projet."
-            >
-                Projet
-            </Button>
-            <Button 
+            <Modal.Footer className="d-flex justify-content-center">
+                <Button 
+                className="btn-2 bg-dark-orange me-1" 
+                onClick={props.handleCloseModalShowProject}
+                href={props.selectedProject?.githubUrl} 
+                target="_blank" 
+                title="Lien vers le repository Github du projet."
+                >
+                    Github
+                </Button>
+                <Button 
+                className="btn-2 me-1 bg-blue-3" 
+                onClick={props.handleCloseModalShowProject}
+                href={props.selectedProject?.projectUrl} 
+                target="_blank" 
+                title="Lien vers le site du projet."
+                >
+                    Projet
+                </Button>
+                <Button 
             className="btn-2 bg-orange text-blue-5" 
             onClick={props.handleCloseModalShowProject}
             title="Fermer la fenêtre."
