@@ -1,6 +1,5 @@
 import Accordion from 'react-bootstrap/Accordion';
 
-
 const AccordionItemHomeAboutMe = (props: any) => {
 
     return (

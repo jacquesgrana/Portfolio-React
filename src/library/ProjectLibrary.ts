@@ -18,4 +18,13 @@ export default class ProjectLibrary {
         }
         return project;
     }
+
+    public static generateProjectsFromDto(projectsDto: IProjectDto[], tags: ITag[]): IProject[] {
+        let projects: IProject[] = [];
+        projectsDto.forEach((projectDto: IProjectDto) => {
+            const project: IProject = this.getProjectFromDto(projectDto, tags);
+            projects.push(project);
+        });
+        return projects;
+      }
 }

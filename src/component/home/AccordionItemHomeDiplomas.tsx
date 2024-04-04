@@ -33,7 +33,7 @@ const AccordionItemHomeDiplomas = (props: AccordionItemHomeDiplomasProps) => {
                         <p>
                             <strong><span className="text-dark-orange">Octobre 2022 :</span> <Link className="link-2" to={props.opquastCertificationUrl} title="Lien vers la Certification Opquast." target="_blank" rel="noopener noreferrer">Certification Opquast</Link></strong> (bonnes pratiques du web), <strong>note :</strong> 910/1000 - <strong>grade Expert.</strong>
                             <br />
-                            <strong>Réf. certificat :</strong> MQW-V4-2020 - <strong>Lien :</strong> <Link className="link-2" to={props.opquastCertificateUrl} title="Lien vers mon Certificat Opquast." target="_blank" rel="noopener noreferrer">https://oqs.li/T5D2LW</Link>
+                            <strong>Réf. certificat :</strong> MQW-V4-2020 - <strong>Lien :&nbsp;</strong><Link className="link-2" to={props.opquastCertificateUrl} title="Lien vers mon Certificat Opquast." target="_blank" rel="noopener noreferrer">cliquez ici</Link>
 
                         </p>
                     </li>

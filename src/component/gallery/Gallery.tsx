@@ -20,8 +20,8 @@ import ModalShowProject from "./ModalShowProject";
 
 const Gallery = () => {
 
-    const [tags, setTags] = useState<ITag[]>([]);
-    const [projectsDto, setProjectsDto] = useState<IProjectDto[]>([]);
+    //const [tags, setTags] = useState<ITag[]>([]);
+    //const [projectsDto, setProjectsDto] = useState<IProjectDto[]>([]);
     const [projects, setProjects] = useState<IProject[]>([]);
     const [showModalShowProject, setShowModalShowProject] = useState(false);
     const [selectedProject, setSelectedProject] = useState<IProject>();
@@ -43,13 +43,14 @@ const Gallery = () => {
             jsonService = await JsonService.getInstance();
             const tagsFromJson = jsonService.findAllTags ();
             const projectsFromJson = jsonService.findAllProjects();
-            setTags(tagsFromJson);
-            setProjectsDto(projectsFromJson);
-            setProjects(generateProjectsFromDto(projectsFromJson, tagsFromJson));
+            //setTags(tagsFromJson);
+            //setProjectsDto(projectsFromJson);
+            setProjects(ProjectLibrary.generateProjectsFromDto(projectsFromJson, tagsFromJson));
         };
         initData();
       }, []);
 
+      /*
       const generateProjectsFromDto = (projectsDto: IProjectDto[], tags: ITag[]): IProject[] => {
         let projects: IProject[] = [];
         projectsDto.forEach((projectDto: IProjectDto) => {
@@ -58,6 +59,7 @@ const Gallery = () => {
         });
         return projects;
       }
+      */
     
     return (
         <>

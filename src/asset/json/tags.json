@@ -70,6 +70,26 @@
         "id": 13,
         "name": "Material",
         "color":"$color-tag-14"
+    },
+    {
+        "id": 14,
+        "name": "MySQL",
+        "color":"$color-tag-15"
+    },
+    {
+        "id": 15,
+        "name": "MariaDB",
+        "color":"$color-tag-16"
+    },
+    {
+        "id": 16,
+        "name": "SQL",
+        "color":"$color-tag-17"
+    },
+    {
+        "id": 17,
+        "name": "DQL",
+        "color":"$color-tag-18"
     }
 ]
     

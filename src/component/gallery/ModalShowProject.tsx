@@ -14,7 +14,6 @@ interface ModalShowProjectProps {
 
 const ModalShowProject = (props: ModalShowProjectProps) => {
     
-
     return (
         <Modal id="modal-view-project" className="" show={props.showModalShowProject} onHide={props.handleCloseModalShowProject}>
             <Modal.Header>

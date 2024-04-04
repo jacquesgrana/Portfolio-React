@@ -14,11 +14,11 @@
     justify-content: flex-start;
     align-items: center;
     background-color: $color-blue-1;
-    min-width: 100vw;
+    width: 100vw;
   }
   
   #container_all {
-    min-width: auto;
+    width: auto;
     flex-wrap: wrap;
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@
   }
 
   #app-footer {
-    min-width: 100vw;
+    width: 100vw;
     z-index: 100;
   }
 

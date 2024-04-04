@@ -7,11 +7,11 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState(0);
   const [showOffcanvas, setShowOffcanvas] = useState(false);
-  const [headerHeight, setHeaderHeight] = useState(0);
+  //const [headerHeight, setHeaderHeight] = useState(0);
 
   useEffect(() => {
 
-    setHeaderHeight(getHeaderHeight());
+    //setHeaderHeight(getHeaderHeight());
     setPaddingTop(getHeaderHeight());
     setActiveLink(getActiveLink());
     const handleScroll = () => {
@@ -32,7 +32,7 @@ const Header = () => {
   // détecte le changement de hauteur du Header
   useEffect(() => {
     const handleResize = () => {
-      setHeaderHeight(getHeaderHeight());
+      //setHeaderHeight(getHeaderHeight());
       setPaddingTop(getHeaderHeight());
     };
     window.addEventListener("resize", handleResize);
@@ -80,7 +80,7 @@ const Header = () => {
     }
     return 0;
   }
-
+  
   return (
     <>
       <header
@@ -91,8 +91,8 @@ const Header = () => {
             : "transition-03s pb-2"
         }
       >
-        <h1 className="text-center title-1-bold mt-4 text-white text-space-3">
-          PortFolio <span className="text-orange">Jacques Granarolo</span>
+        <h1 className="text-center title-1-bold mt-4 text-white text-space-3 header-title">
+          PortFolio <span className="text-orange">Jacques&#160;Granarolo</span>
         </h1>
         <Nav className="link-header header-nav">
           <Nav.Item onClick={toggleOffcanvas}>

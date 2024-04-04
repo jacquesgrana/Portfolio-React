@@ -5,7 +5,6 @@ import Tag from "../common/Tag";
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
 
-//
 interface ProjectCardProps {
     project: IProject,
     image: string,
@@ -13,7 +12,6 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = (props: ProjectCardProps) => {
-    //const image = require(`../../asset/image/gestion_projets.png`);
     return (
         <Card className="project-card" onClick={() => props.handleShowModalShowProject(props.project, props.image)}>
             <Card.Img variant="top" src={props.image} />

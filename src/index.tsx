@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import "./scss/index.scss";
 import {
+  Navigate,
   Route,
   RouterProvider,
   createBrowserRouter,
@@ -19,13 +20,12 @@ const root = ReactDOM.createRoot(
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <>
     <Route path="" element={<App />} >
       <Route path="*" element={<Home />} />
       <Route path="gallery/" element={<Gallery />} />
       <Route path="contact/" element={<Contact />} />
+      <Route path="/" element={<Navigate to="/home" replace />} />
     </Route>
-    </>
   )
 );
 

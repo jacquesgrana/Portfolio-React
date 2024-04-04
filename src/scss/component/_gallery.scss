@@ -15,6 +15,8 @@
         gap: 20px;
         margin-top: 20px;
         margin-bottom: 40px;
+        border-radius: $radius-2 $radius-2 0px 0px;
+
         
 
         .project-card {
@@ -23,6 +25,8 @@
             @include set-alpha(background-color, $color-violet-blue, 0.2);
             color: $color-blue-5;
             transition: 0.3s;
+            border-radius: $radius-2 $radius-2 0px 0px;
+            border: 1px solid rgba($color-violet-blue, 0.15);
         }
 
         .project-card:hover {

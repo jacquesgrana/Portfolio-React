@@ -14,8 +14,6 @@ interface AccordionItemHomeLinksProps {
 
 const AccordionItemHomeLinks = (props: AccordionItemHomeLinksProps) => {
 
-    //const cvPdf = require("../../asset/pdf/cv_jacques_granarolo_links_v1.0.pdf");
-
     return (
         <Accordion.Item eventKey="4" className="mb-2">
             <Accordion.Header>
