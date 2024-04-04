@@ -1,7 +1,7 @@
 import AccordionHome from "./AccordionHome";
-import ConfigUrl from "../../config/configUrl";
-import ConfigImage from "../../config/configImage";
-import ConfigPdf from "../../config/configPdf";
+import ConfigUrl from "../../config/ConfigUrl";
+import ConfigImage from "../../config/ConfigImage";
+import ConfigPdf from "../../config/ConfigPdf";
 import { useEffect, useRef, useState } from "react";
 
 const Home = () => {

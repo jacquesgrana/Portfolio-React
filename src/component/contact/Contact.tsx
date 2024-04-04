@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import AccordionContact from "./AccordionContact";
-import ConfigContact from "../../config/configContact";
-import ConfigImage from "../../config/configImage";
+import ConfigContact from "../../config/ConfigContact";
+import ConfigImage from "../../config/ConfigImage";
 
 const Contact = () => {
     const email = ConfigContact.EMAIL_PERSO;

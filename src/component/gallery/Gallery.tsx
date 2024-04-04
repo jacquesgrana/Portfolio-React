@@ -9,13 +9,14 @@ import JsonService from '../../service/JsonService';
 import IProjectDto from "../../dto/IProjectDto";
 import IProject from "../../interface/IProject";
 import ProjectCards from "./ProjectCards";
-import ConfigImage from "../../config/configImage";
+import ConfigImage from "../../config/ConfigImage";
 import ProjectLibrary from "../../library/ProjectLibrary";
 
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
+import ModalShowProject from "./ModalShowProject";
 
 const Gallery = () => {
 
@@ -25,7 +26,9 @@ const Gallery = () => {
     const [showModalShowProject, setShowModalShowProject] = useState(false);
     const [selectedProject, setSelectedProject] = useState<IProject>();
     const [selectedImage, setSelectedImage] = useState<string>("");
-    const projectsImage = ConfigImage.PROJECTS_IMAGE;
+    const projectsImage: {}[] = ConfigImage.PROJECTS_IMAGE;
+
+    let jsonService: any = null;
 
     const handleCloseModalShowProject = () => setShowModalShowProject(false);
 
@@ -35,32 +38,24 @@ const Gallery = () => {
         setShowModalShowProject(true);
     };
     
-    let jsonService: any = null;
-    
     useEffect(() => {
-        //jsonService.init();
-        const fct = async () => {
+        const initData = async () => {
             jsonService = await JsonService.getInstance();
-            const tagsFromJson = await jsonService.findAllTags ();
-            const projectsFromJson = await jsonService.findAllProjects();
+            const tagsFromJson = jsonService.findAllTags ();
+            const projectsFromJson = jsonService.findAllProjects();
             setTags(tagsFromJson);
             setProjectsDto(projectsFromJson);
             setProjects(generateProjectsFromDto(projectsFromJson, tagsFromJson));
-            //console.log('data :', tagsFromJson);
-            //console.log('tags[0] :', tagsFromJson[0]);
-            //console.log('projects dto from json :', projectsFromJson);
-        }
-        fct();
+        };
+        initData();
       }, []);
 
       const generateProjectsFromDto = (projectsDto: IProjectDto[], tags: ITag[]): IProject[] => {
         let projects: IProject[] = [];
-        //console.log("tags : ", tags);
         projectsDto.forEach((projectDto: IProjectDto) => {
             const project: IProject = ProjectLibrary.getProjectFromDto(projectDto, tags);
             projects.push(project);
         });
-        //console.log('projects :', projects);
         return projects;
       }
     
@@ -77,7 +72,42 @@ const Gallery = () => {
         </div>
 
         {/* Modale */}
-        <Modal id="modal-view-project" className="" show={showModalShowProject} onHide={handleCloseModalShowProject}>
+        <ModalShowProject
+        showModalShowProject={showModalShowProject}
+        handleCloseModalShowProject={handleCloseModalShowProject}
+        selectedProject={selectedProject}
+        selectedImage={selectedImage}
+        />
+        </>
+    );
+}
+export default Gallery;
+
+/*
+<span className="text-dark-orange-2">
+                        <strong>
+                        {format(props.project.date, 'MMMM yyyy', { locale: fr })}
+                        </strong>  
+                    </span>
+                    <span className="text-blue-5 text-size-0-75">
+                    Difficulté :&nbsp;
+                    <strong className="text-dark-orange-2">{`${props.project.difficulty}/10`}
+                    </strong>  
+                    </span>
+*/
+
+/*
+
+                <Stack className="d-flex flex-wrap" direction="horizontal" gap={2}>
+                    {tags.map((tag: ITag) => (
+                        <Tag key={tag.id} tag={tag} />
+                    ))}
+                </Stack>
+
+*/
+
+/*
+<Modal id="modal-view-project" className="" show={showModalShowProject} onHide={handleCloseModalShowProject}>
         <Modal.Header>
           <Modal.Title className="text-orange">{selectedProject?.title}</Modal.Title>
         </Modal.Header>
@@ -134,30 +164,4 @@ const Gallery = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-        </>
-    );
-}
-export default Gallery;
-
-/*
-<span className="text-dark-orange-2">
-                        <strong>
-                        {format(props.project.date, 'MMMM yyyy', { locale: fr })}
-                        </strong>  
-                    </span>
-                    <span className="text-blue-5 text-size-0-75">
-                    Difficulté :&nbsp;
-                    <strong className="text-dark-orange-2">{`${props.project.difficulty}/10`}
-                    </strong>  
-                    </span>
-*/
-
-/*
-
-                <Stack className="d-flex flex-wrap" direction="horizontal" gap={2}>
-                    {tags.map((tag: ITag) => (
-                        <Tag key={tag.id} tag={tag} />
-                    ))}
-                </Stack>
-
 */
