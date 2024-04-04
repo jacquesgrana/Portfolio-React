@@ -98,9 +98,8 @@ const Header = () => {
         <Nav className="link-header header-nav">
           <Nav.Item onClick={toggleOffcanvas}>
             <span className="text-orange hamburger-button">☰</span> 
-            
           </Nav.Item>
-          <Nav.Item onClick={() => handleLinkClick(0)}>
+          <Nav.Item className="mt-1" onClick={() => handleLinkClick(0)}>
             <Link
               id="link-home"
               to="/home"
@@ -111,8 +110,8 @@ const Header = () => {
               Accueil
             </Link>
           </Nav.Item>
-          <span className="text-orange"> • </span>
-          <Nav.Item onClick={() => handleLinkClick(1)}>
+          <span className="text-orange mt-1"> • </span>
+          <Nav.Item className="mt-1" onClick={() => handleLinkClick(1)}>
             <Link
               id="link-gallery"
               to="/gallery"
@@ -123,8 +122,8 @@ const Header = () => {
               Galerie
             </Link>
           </Nav.Item>
-          <span className="text-orange"> • </span>
-          <Nav.Item onClick={() => handleLinkClick(2)}>
+          <span className="text-orange mt-1"> • </span>
+          <Nav.Item className="mt-1" onClick={() => handleLinkClick(2)}>
             <Link
               id="link-contact"
               to="/contact"
