@@ -80,7 +80,7 @@ const Header = () => {
     }
     return 0;
   }
-  
+  // &#160; espace blanc insécable
   return (
     <>
       <header
@@ -92,7 +92,7 @@ const Header = () => {
         }
       >
         <h1 className="text-center title-1-bold mt-4 text-white text-space-3 header-title">
-          PortFolio <span className="text-orange">Jacques&#160;Granarolo</span>
+          PortFolio <span className="text-orange">Jacques Granarolo</span>
         </h1>
         <Nav className="link-header header-nav">
           <Nav.Item onClick={toggleOffcanvas}>
