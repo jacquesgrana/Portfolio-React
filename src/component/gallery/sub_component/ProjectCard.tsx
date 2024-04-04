@@ -14,7 +14,7 @@ interface ProjectCardProps {
 const ProjectCard = (props: ProjectCardProps) => {
     return (
         <Card className="project-card" onClick={() => props.handleShowModalShowProject(props.project, props.image)}>
-            <Card.Img variant="top" src={props.image} />
+            <Card.Img className="project-card-image-top" variant="top" src={props.image} />
             <Card.Body className="d-flex flex-column">
                 <Card.Title className="text-dark-orange-2">
                     <strong>{props.project.title}</strong>
