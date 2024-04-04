@@ -1,9 +1,9 @@
 import { format } from "date-fns";
 import { Button, Modal, Stack } from "react-bootstrap";
-import Tag from "../common/Tag";
-import ITag from "../../interface/ITag";
+import Tag from "../../common/Tag";
+import ITag from "../../../interface/ITag";
 import { fr } from "date-fns/locale";
-import IProject from "../../interface/IProject";
+import IProject from "../../../interface/IProject";
 
 interface ModalShowProjectProps {
     selectedProject: IProject | undefined

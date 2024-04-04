@@ -1,5 +1,5 @@
 
-import IProject from "../../interface/IProject";
+import IProject from "../../../interface/IProject";
 import ProjectCard from "./ProjectCard";
 
 interface ProjectCardsProps {

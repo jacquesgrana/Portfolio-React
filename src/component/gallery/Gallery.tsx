@@ -8,7 +8,7 @@ import Tag from "../common/Tag";
 import JsonService from '../../service/JsonService';
 import IProjectDto from "../../dto/IProjectDto";
 import IProject from "../../interface/IProject";
-import ProjectCards from "./ProjectCards";
+import ProjectCards from "./sub_component/ProjectCards";
 import ConfigImage from "../../config/ConfigImage";
 import ProjectLibrary from "../../library/ProjectLibrary";
 
@@ -16,7 +16,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
-import ModalShowProject from "./ModalShowProject";
+import ModalShowProject from "./sub_component/ModalShowProject";
 
 const Gallery = () => {
 

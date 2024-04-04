@@ -1,4 +1,4 @@
-import AccordionHome from "./AccordionHome";
+import AccordionHome from "./sub_component/AccordionHome";
 import ConfigUrl from "../../config/ConfigUrl";
 import ConfigImage from "../../config/ConfigImage";
 import ConfigPdf from "../../config/ConfigPdf";

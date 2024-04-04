@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import { Offcanvas } from "react-bootstrap";
+import CustomOffcanvasHeader from "./sub_component/CustomOffcanvasHeader";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -137,6 +138,21 @@ const Header = () => {
         </Nav>
       </header>
 
+      {/* Offcanvas */}
+      <CustomOffcanvasHeader
+        showOffcanvas={showOffcanvas}
+        toggleOffcanvas={toggleOffcanvas}
+        handleLinkClick={handleLinkClick}
+        activeLink={activeLink}
+      />
+      
+    </>
+  );
+};
+
+export default Header;
+
+/*
       <Offcanvas
         show={showOffcanvas}
         onHide={toggleOffcanvas}
@@ -184,8 +200,4 @@ const Header = () => {
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>
-    </>
-  );
-};
-
-export default Header;
+*/

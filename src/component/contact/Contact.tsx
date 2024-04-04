@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import AccordionContact from "./AccordionContact";
+import AccordionContact from "./sub_component/AccordionContact";
 import ConfigContact from "../../config/ConfigContact";
 import ConfigImage from "../../config/ConfigImage";
 
