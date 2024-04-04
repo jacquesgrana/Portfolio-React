@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
-import { Offcanvas } from "react-bootstrap";
 import CustomOffcanvasHeader from "./sub_component/CustomOffcanvasHeader";
 
 const Header = () => {

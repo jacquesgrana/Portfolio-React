@@ -1,21 +1,9 @@
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-//import data from "../../asset/json/tags.json";
-import ITag from "../../interface/ITag";
-
-import Stack from 'react-bootstrap/Stack';
-import Tag from "../common/Tag";
 import JsonService from '../../service/JsonService';
-import IProjectDto from "../../dto/IProjectDto";
 import IProject from "../../interface/IProject";
 import ProjectCards from "./sub_component/ProjectCards";
 import ConfigImage from "../../config/ConfigImage";
 import ProjectLibrary from "../../library/ProjectLibrary";
-
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import { format } from 'date-fns';
-import { fr } from 'date-fns/locale';
 import ModalShowProject from "./sub_component/ModalShowProject";
 
 const Gallery = () => {

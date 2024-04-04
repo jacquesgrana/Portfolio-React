@@ -1,9 +1,7 @@
-import { Button, Card, Stack } from "react-bootstrap";
+import { Card, Stack } from "react-bootstrap";
 import IProject from "../../../interface/IProject";
 import ITag from "../../../interface/ITag";
 import Tag from "../../common/Tag";
-import { format } from 'date-fns';
-import { fr } from 'date-fns/locale';
 
 interface ProjectCardProps {
     project: IProject,
