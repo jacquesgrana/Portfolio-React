@@ -21,7 +21,7 @@
 
         .project-card {
             width: 300px;
-            height: 510px;
+            height: 470px;
             @include set-alpha(background-color, $color-violet-blue, 0.2);
             color: $color-blue-5;
             transition: 0.3s;
