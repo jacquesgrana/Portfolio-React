@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import JsonService from '../../service/JsonService';
 import IProject from "../../interface/IProject";
 import ProjectCards from "./sub_component/ProjectCards";
@@ -10,13 +10,16 @@ const Gallery = () => {
 
     //const [tags, setTags] = useState<ITag[]>([]);
     //const [projectsDto, setProjectsDto] = useState<IProjectDto[]>([]);
+
     const [projects, setProjects] = useState<IProject[]>([]);
+    //let projects: IProject[] =[];
+
     const [showModalShowProject, setShowModalShowProject] = useState(false);
     const [selectedProject, setSelectedProject] = useState<IProject>();
     const [selectedImage, setSelectedImage] = useState<string>("");
     const projectsImage: {}[] = ConfigImage.PROJECTS_IMAGE;
 
-    let jsonService: any = null;
+    const jsonServiceRef = useRef<any>(null);
 
     const handleCloseModalShowProject = () => setShowModalShowProject(false);
 
@@ -28,12 +31,16 @@ const Gallery = () => {
     
     useEffect(() => {
         const initData = async () => {
-            jsonService = await JsonService.getInstance();
-            const tagsFromJson = jsonService.findAllTags ();
-            const projectsFromJson = jsonService.findAllProjects();
+            jsonServiceRef.current = await JsonService.getInstance();
+            const tagsFromJson = jsonServiceRef.current.findAllTags ();
+            const projectsFromJson = jsonServiceRef.current.findAllProjects();
             //setTags(tagsFromJson);
             //setProjectsDto(projectsFromJson);
+
             setProjects(ProjectLibrary.generateProjectsFromDto(projectsFromJson, tagsFromJson));
+            //projects = ProjectLibrary.generateProjectsFromDto(projectsFromJson, tagsFromJson);
+            console.log(projects);
+
         };
         initData();
       }, []);
