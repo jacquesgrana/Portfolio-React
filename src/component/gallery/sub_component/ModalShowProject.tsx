@@ -21,7 +21,9 @@ const ModalShowProject = (props: ModalShowProjectProps) => {
             </Modal.Header>
             <Modal.Body>
                 <div>
-                    <img className="mb-3 image-1" src={props.selectedImage} alt={props.selectedProject?.title} title={`image de ${props.selectedProject?.title}`}/>
+                    <div className="d-flex justify-content-center">
+                        <img className="mb-3 image-1" src={props.selectedImage} alt={props.selectedProject?.title} title={`image de ${props.selectedProject?.title}`}/>
+                    </div>
                     <p className="text-orange mb-1"><strong>{props.selectedProject?.subTitle}</strong></p>
                     <p className="">{props.selectedProject?.description}</p>
                     <div className="w-100 d-flex justify-content-between align-items-end">
