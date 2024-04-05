@@ -20,7 +20,7 @@ const Gallery = () => {
     const projectsImage: {}[] = ConfigImage.PROJECTS_IMAGE;
 
     const jsonServiceRef = useRef<any>(null);
-    const projectsRef = useRef<IProject[]>([]);
+    //const projectsRef = useRef<IProject[]>([]);
 
     const handleCloseModalShowProject = () => setShowModalShowProject(false);
 
@@ -48,7 +48,20 @@ const Gallery = () => {
             const projectsFromJson = jsonServiceRef.current.findAllProjects();
             const generatedProjects = ProjectLibrary.generateProjectsFromDto(projectsFromJson, tagsFromJson);
             setProjects(generatedProjects);
-            projectsRef.current = generatedProjects;
+            //projectsRef.current = generatedProjects;
+            /*
+            const tagsTest = [    {
+              "id": 12,
+              "name": "Bootstrap",
+              "color":"$color-tag-13"
+            },
+            {
+              "id": 13,
+              "name": "Material",
+              "color":"$color-tag-14"
+          }];
+            console.log('test projets par tags :', jsonServiceRef.current.findProjectsByTags(tagsTest));
+            */
         };
         initData();
       }, []);
