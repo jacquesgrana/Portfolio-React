@@ -5,22 +5,20 @@ import ProjectCards from "./sub_component/ProjectCards";
 import ConfigImage from "../../config/ConfigImage";
 import ProjectLibrary from "../../library/ProjectLibrary";
 import ModalShowProject from "./sub_component/ModalShowProject";
+import ITag from "../../interface/ITag";
+import AccordionGallery from "./sub_component/AccordionGalleryt";
 
 const Gallery = () => {
 
-    //const [tags, setTags] = useState<ITag[]>([]);
-    //const [projectsDto, setProjectsDto] = useState<IProjectDto[]>([]);
-
     const [projects, setProjects] = useState<IProject[]>([]);
-    //let projects: IProject[] =[];
-
     const [showModalShowProject, setShowModalShowProject] = useState(false);
     const [selectedProject, setSelectedProject] = useState<IProject>();
     const [selectedImage, setSelectedImage] = useState<string>("");
     const projectsImage: {}[] = ConfigImage.PROJECTS_IMAGE;
 
     const jsonServiceRef = useRef<any>(null);
-    //const projectsRef = useRef<IProject[]>([]);
+    const allTagsRef = useRef<ITag[]>([]);
+    const collectedTagsRef = useRef<ITag[]>([]);
 
     const handleCloseModalShowProject = () => setShowModalShowProject(false);
 
@@ -32,58 +30,44 @@ const Gallery = () => {
     
     useEffect(() => {
         const initData = async () => {
-          /*
-            jsonServiceRef.current = await JsonService.getInstance();
-            const tagsFromJson = jsonServiceRef.current.findAllTags ();
-            const projectsFromJson = jsonServiceRef.current.findAllProjects();
-            //setTags(tagsFromJson);
-            //setProjectsDto(projectsFromJson);
-
-            setProjects(ProjectLibrary.generateProjectsFromDto(projectsFromJson, tagsFromJson));
-            //projects = ProjectLibrary.generateProjectsFromDto(projectsFromJson, tagsFromJson);
-            console.log(projects);
-          */
-            jsonServiceRef.current = await JsonService.getInstance();
-            const tagsFromJson = jsonServiceRef.current.findAllTags();
-            const projectsFromJson = jsonServiceRef.current.findAllProjects();
-            const generatedProjects = ProjectLibrary.generateProjectsFromDto(projectsFromJson, tagsFromJson);
-            setProjects(generatedProjects);
-            //projectsRef.current = generatedProjects;
-            /*
-            const tagsTest = [    {
-              "id": 12,
-              "name": "Bootstrap",
-              "color":"$color-tag-13"
-            },
-            {
-              "id": 13,
-              "name": "Material",
-              "color":"$color-tag-14"
-          }];
-            console.log('test projets par tags :', jsonServiceRef.current.findProjectsByTags(tagsTest));
-            */
+          jsonServiceRef.current = await JsonService.getInstance();
+          const tagsFromJson = jsonServiceRef.current.findAllTags();
+          const projectsFromJson = jsonServiceRef.current.findAllProjects();
+          const generatedProjects = ProjectLibrary.generateProjectsFromDto(projectsFromJson, tagsFromJson);
+          allTagsRef.current = tagsFromJson;
+          collectedTagsRef.current = jsonServiceRef.current.findTagsByProjects(tagsFromJson);
+          setProjects(generatedProjects);
         };
+
         initData();
       }, []);
+
+      const setTagsForFiltering = (tags: ITag[]): void => {
+        setProjects(ProjectLibrary.generateProjectsFromDto(jsonServiceRef.current.findProjectsByTags(tags), allTagsRef.current));
+      }
     
     return (
         <>
         <div id="app-gallery">
             <h2 className="title-1-bold text-white text-center text-space-3">Galerie</h2>
             <h3 className="title-2-normal text-blue-5 text-center mb-3 text-space-2">Quelques projets</h3>
+            <AccordionGallery 
+              allTags={collectedTagsRef.current} 
+              setTagsForFiltering={setTagsForFiltering}
+            />
             <ProjectCards 
-            projects={projects} 
-            projectsImage={projectsImage}
-            handleShowModalShowProject={handleShowModalShowProject}
+              projects={projects} 
+              projectsImage={projectsImage}
+              handleShowModalShowProject={handleShowModalShowProject}
             />
         </div>
 
         {/* Modale */}
         <ModalShowProject
-        showModalShowProject={showModalShowProject}
-        handleCloseModalShowProject={handleCloseModalShowProject}
-        selectedProject={selectedProject}
-        selectedImage={selectedImage}
+          showModalShowProject={showModalShowProject}
+          handleCloseModalShowProject={handleCloseModalShowProject}
+          selectedProject={selectedProject}
+          selectedImage={selectedImage}
         />
         </>
     );
