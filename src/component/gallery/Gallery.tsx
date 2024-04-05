@@ -6,7 +6,7 @@ import ConfigImage from "../../config/ConfigImage";
 import ProjectLibrary from "../../library/ProjectLibrary";
 import ModalShowProject from "./sub_component/ModalShowProject";
 import ITag from "../../interface/ITag";
-import AccordionGallery from "./sub_component/AccordionGalleryt";
+import AccordionGallery from "./sub_component/AccordionGallery";
 
 const Gallery = () => {
 

@@ -63,13 +63,19 @@
             padding: 20px;
             padding-bottom: 10px;
             border-radius: $radius-2;
-            background-color: $color-blue-2;
+            @include set-alpha(background-color, $color-blue-1, 0.66);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: space-between;
             gap: 10px 10px;
             flex-wrap: wrap;
+        }
+
+        .filter-tag-accordion-action-text:hover {
+            cursor: pointer;
+            color: $color-light-orange;
+            transition: 0.3s;
         }
 
         .selected {
