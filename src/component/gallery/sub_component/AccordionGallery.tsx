@@ -69,13 +69,14 @@ const AccordionGallery = (props: AccordionGalleryProps) => {
                                         <Tag 
                                             key={tag.id} 
                                             tag={tag} 
+                                            className="pointer-hover"
                                         />
                                     </span>
                                 ))}
                             </Stack>
                             <div className="d-flex justify-content-center gap-4 mt-2 mb-0">
-                                <span onClick={() => setReceptionFull()} className="text-dark-orange text-size-0-75 filter-tag-accordion-action-text">Tout ajouter</span>
-                                <span onClick={() => setDepartureFull()} className="text-dark-orange text-size-0-75 filter-tag-accordion-action-text">Tout enlever</span>
+                                <span onClick={() => setReceptionFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text">Tout ajouter</span>
+                                <span onClick={() => setDepartureFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text">Tout enlever</span>
                             </div>
                         </div>
                         <div className="mt-2 mb-2 filter-tag-div-title">
@@ -88,13 +89,14 @@ const AccordionGallery = (props: AccordionGalleryProps) => {
                                         <Tag 
                                             key={tag.id} 
                                             tag={tag} 
+                                            className="pointer-hover"
                                         />
                                     </span>
                                 ))}
                             </Stack>
                             <div className="d-flex justify-content-center gap-4 mt-2 mb-0">
-                                <span onClick={() => setDepartureFull()} className="text-dark-orange text-size-0-75 filter-tag-accordion-action-text">Tout ajouter</span>
-                                <span onClick={() => setReceptionFull()} className="text-dark-orange text-size-0-75 filter-tag-accordion-action-text">Tout enlever</span>
+                                <span onClick={() => setDepartureFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text">Tout ajouter</span>
+                                <span onClick={() => setReceptionFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text">Tout enlever</span>
                             </div>
                         </div>
 
