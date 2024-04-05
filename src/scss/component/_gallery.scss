@@ -54,17 +54,19 @@
     }
 
     #filter-tag-accordion-body {
+
         .filter-tag-drop-zone {
             width: 100%;
-            min-height: 50px;
-            padding: 20px 10px;
+            min-height: 90px;
+            padding: 20px;
+            padding-bottom: 10px;
             border-radius: $radius-2;
             background-color: $color-white;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: center;
-            align-items: center;
-            gap: 10px;
+            align-items: space-between;
+            gap: 10px 10px;
             flex-wrap: wrap;
         }
 
@@ -76,6 +78,11 @@
 
         .pointer-hover:hover {
             cursor: pointer;
+        }
+
+        .filter-tag-div-title {
+            font-size: small !important;
+            color: $color-blue-5 !important;
         }
     }
 

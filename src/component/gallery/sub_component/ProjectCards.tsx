@@ -11,7 +11,7 @@ const ProjectCards = (props: ProjectCardsProps) => {
 
     return (
         <div id="project-cards-container">
-            {props.projects.map((project: IProject) => 
+            {props.projects && props.projects.map((project: IProject) => 
                 (<ProjectCard 
                 handleShowModalShowProject={props.handleShowModalShowProject} 
                 key={project.id} project={project} 
