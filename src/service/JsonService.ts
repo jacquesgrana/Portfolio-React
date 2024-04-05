@@ -55,10 +55,10 @@ export default class JsonService {
         return projectsToReturn;
     }
 
-    // méthode qui renvoie la liste des tags qui sont dans les projets passés en paramètre, et qui ne sont pas déjà dans la liste des tags passés en paramètre, la liste de tous les tags est passée en paramètre pour pouvoir créer des objets ITag à partir de leur id. 
-    public findTagsByProjects(projects: IProjectDto[], allTags: ITag[]): ITag[] {
+    // méthode qui renvoie la liste des tags qui sont dans les tous les projets, et qui ne sont pas déjà dans la liste des tags passés en paramètre, la liste de tous les tags est passée en paramètre pour pouvoir créer des objets ITag à partir de leur id. 
+    public findTagsByProjects(allTags: ITag[]): ITag[] {
         const tagsToReturn: ITag[] = [];
-        projects.forEach((project: IProjectDto) => {
+        this._projects.forEach((project: IProjectDto) => {
             project.tagIds.forEach((tagId: number) => {
                 if(!tagsToReturn.some((tag: ITag) => tagId === tag.id)) {
                     tagsToReturn.push(allTags.find((tag: ITag) => tagId === tag.id) as ITag);
