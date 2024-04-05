@@ -14,11 +14,23 @@ const Gallery = () => {
     const [showModalShowProject, setShowModalShowProject] = useState(false);
     const [selectedProject, setSelectedProject] = useState<IProject>();
     const [selectedImage, setSelectedImage] = useState<string>("");
-    const projectsImage: {}[] = ConfigImage.PROJECTS_IMAGE;
 
     const jsonServiceRef = useRef<any>(null);
     const allTagsRef = useRef<ITag[]>([]);
     const collectedTagsRef = useRef<ITag[]>([]);
+    const isAccordionOpen = useRef<boolean>(false);
+
+    const handleToggleAccordion = () => {
+        isAccordionOpen.current = !isAccordionOpen.current;
+        const title = document.getElementById("accordion-title-gallery");
+        const bullet = document.getElementById("accordion-bullet-gallery");
+        title?.classList.toggle("text-white");
+        title?.classList.toggle("text-orange");
+        bullet?.classList.toggle("text-white");
+        bullet?.classList.toggle("text-orange");
+    }
+
+    const projectsImage: {}[] = ConfigImage.PROJECTS_IMAGE;
 
     const handleCloseModalShowProject = () => setShowModalShowProject(false);
 
@@ -50,8 +62,9 @@ const Gallery = () => {
         <>
         <div id="app-gallery">
             <h2 className="title-1-bold text-white text-center text-space-3">Galerie</h2>
-            <h3 className="title-2-normal text-blue-5 text-center mb-3 text-space-2">Quelques projets</h3>
+            <h3 className="title-2-normal text-blue-5 text-center mt-2 mb-4 text-space-2">Quelques projets</h3>
             <AccordionGallery 
+              handleToggleAccordion={handleToggleAccordion}
               allTags={collectedTagsRef.current} 
               setTagsForFiltering={setTagsForFiltering}
             />
