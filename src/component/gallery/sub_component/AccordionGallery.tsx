@@ -74,8 +74,8 @@ const AccordionGallery = (props: AccordionGalleryProps) => {
                                 ))}
                             </Stack>
                             <div className="d-flex justify-content-center gap-4 mt-2 mb-0">
-                                <span onClick={() => setReceptionFull()} className="text-dark-orange text-size-0-75 pointer-hover">Tout ajouter</span>
-                                <span onClick={() => setDepartureFull()} className="text-dark-orange text-size-0-75 pointer-hover">Tout enlever</span>
+                                <span onClick={() => setReceptionFull()} className="text-dark-orange text-size-0-75 filter-tag-accordion-action-text">Tout ajouter</span>
+                                <span onClick={() => setDepartureFull()} className="text-dark-orange text-size-0-75 filter-tag-accordion-action-text">Tout enlever</span>
                             </div>
                         </div>
                         <div className="mt-2 mb-2 filter-tag-div-title">
@@ -84,7 +84,7 @@ const AccordionGallery = (props: AccordionGalleryProps) => {
                         <div id="filter-tag-departure" className="filter-tag-drop-zone mb-3">
                             <Stack className="mt-0 d-flex flex-wrap justify-content-center flex-grow-1" direction="horizontal" gap={2}>
                                 {tagsDeparture.map((tag: ITag) => (
-                                    <span key={tag.id} onClick={() => clickOnDepartureTag(tag)}>
+                                    <span key={tag.id} onClick={() => clickOnDepartureTag(tag)} className="pointer-hover">
                                         <Tag 
                                             key={tag.id} 
                                             tag={tag} 
@@ -93,8 +93,8 @@ const AccordionGallery = (props: AccordionGalleryProps) => {
                                 ))}
                             </Stack>
                             <div className="d-flex justify-content-center gap-4 mt-2 mb-0">
-                                <span onClick={() => setDepartureFull()} className="text-dark-orange text-size-0-75 pointer-hover">Tout ajouter</span>
-                                <span onClick={() => setReceptionFull()} className="text-dark-orange text-size-0-75 pointer-hover">Tout enlever</span>
+                                <span onClick={() => setDepartureFull()} className="text-dark-orange text-size-0-75 filter-tag-accordion-action-text">Tout ajouter</span>
+                                <span onClick={() => setReceptionFull()} className="text-dark-orange text-size-0-75 filter-tag-accordion-action-text">Tout enlever</span>
                             </div>
                         </div>
 
