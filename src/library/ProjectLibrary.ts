@@ -56,4 +56,23 @@ export default class ProjectLibrary {
         }
         return projectToReturn;
     }
+
+    public static getFrenchSortType(type: string): string {
+        switch (type) {
+            case "difficulty_desc":
+                return "par difficulté (décroissant)";
+            case "difficulty_asc":
+                return "par difficulté (croissant)";
+            case "date_desc":
+                return "par date (décroissant)";
+            case "date_asc":
+                return "par date (croissant)";
+            case "title_desc":
+                return "par nom (décroissant)";
+            case "title_asc":
+                return "par nom (croissant)";
+            default:
+                return type;
+        }
+    }
 }

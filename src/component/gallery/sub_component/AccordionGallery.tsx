@@ -1,15 +1,15 @@
 import Accordion from 'react-bootstrap/Accordion';
 import ITag from '../../../interface/ITag';
 import { useEffect, useState } from 'react';
-import { Stack } from 'react-bootstrap';
-import Tag from '../../common/Tag';
 import SortComponent from './SortComponent';
+import FilterTagComponent from './FilterTagComponent';
 
 interface AccordionGalleryProps {
     allTags: ITag[],
     setTagsForFiltering: (tags: ITag[]) => void,
     handleToggleAccordion: () => void,
     updateSortType: (type: string) => void
+    sortTypeComment: string
 }
 const AccordionGallery = (props: AccordionGalleryProps) => {
 
@@ -61,53 +61,31 @@ const AccordionGallery = (props: AccordionGalleryProps) => {
                     </h3>
                     </Accordion.Header>
                     <Accordion.Body id="filter-tag-accordion-body" className="d-flex flex-column justify-content-start align-items-center">
-                        <h4 className="text-blue-5 mt-3 mb-2">Trier</h4>
+                        <h4 className="text-blue-5 mt-2 mb-1">
+                            Tri&nbsp;<span className="text-dark-orange text-size-0-75">{props.sortTypeComment}</span>
+                        </h4>
                         <SortComponent 
                             updateSortType={props.updateSortType}
                         />
-
-                        <h4 className="text-blue-5 mt-3 mb-2">Filtrer</h4>
-                        <div className="mt-2 filter-tag-div-title mb-2">
+                        <h4 className="text-blue-5 mt-2 mb-0">Filtres</h4>
+                        <div className="mt-1 filter-tag-div-title mb-1">
                             Tags actifs
                         </div>
-                        <div id="filter-tag-reception" className="filter-tag-drop-zone mb-3">
-                            <Stack className="mt-0 d-flex flex-wrap justify-content-center flex-grow-1" direction="horizontal" gap={2}>
-                                {tagsReception.map((tag: ITag) => (
-                                    <span key={tag.id} onClick={() => clickOnReceptionTag(tag)} className="pointer-hover"
-                                    title="cliquer pour enlever.">
-                                        <Tag 
-                                            key={tag.id} 
-                                            tag={tag} 
-                                        />
-                                    </span>
-                                ))}
-                            </Stack>
-                            <div className="d-flex justify-content-center gap-4 mt-2 mb-0">
-                                <span onClick={() => setReceptionFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text" title="Tout ajouter.">Tout ajouter</span>
-                                <span onClick={() => setDepartureFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text" title="Tout enlever.">Tout enlever</span>
-                            </div>
-                        </div>
-                        <div className="mt-2 mb-2 filter-tag-div-title">
+                        <FilterTagComponent 
+                            tagsToDisplay={tagsReception}
+                            clickOnTag={clickOnReceptionTag}
+                            setReceptionFull={setReceptionFull}
+                            setDepartureFull={setDepartureFull}
+                        />
+                        <div className="mt-1 mb-1 filter-tag-div-title">
                             Tags inactifs
                         </div>
-                        <div id="filter-tag-departure" className="filter-tag-drop-zone mb-3">
-                            <Stack className="mt-0 d-flex flex-wrap justify-content-center flex-grow-1" direction="horizontal" gap={2}>
-                                {tagsDeparture.map((tag: ITag) => (
-                                    <span key={tag.id} onClick={() => clickOnDepartureTag(tag)} className="pointer-hover"
-                                    title="cliquer pour enlever.">
-                                        <Tag 
-                                            key={tag.id} 
-                                            tag={tag} 
-                                        />
-                                    </span>
-                                ))}
-                            </Stack>
-                            <div className="d-flex justify-content-center gap-4 mt-2 mb-0">
-                                <span onClick={() => setDepartureFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text" title="Tout ajouter.">Tout ajouter</span>
-                                <span onClick={() => setReceptionFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text" title="Tout enlever.">Tout enlever</span>
-                            </div>
-                        </div>
-
+                        <FilterTagComponent 
+                            tagsToDisplay={tagsDeparture}
+                            clickOnTag={clickOnDepartureTag}
+                            setReceptionFull={setReceptionFull}
+                            setDepartureFull={setDepartureFull}
+                        />
                         <p className="text-blue-5 text-center">
                             Cliquez sur les tags pour les ajouter/enlever.
                         </p>
@@ -135,4 +113,41 @@ export default AccordionGallery;
                             </Stack>
                         </div>
 
+
+
+                        <div id="filter-tag-reception" className="filter-tag-drop-zone mb-1">
+                            <Stack className="mt-0 d-flex flex-wrap justify-content-center flex-grow-1" direction="horizontal" gap={2}>
+                                {tagsReception.map((tag: ITag) => (
+                                    <span key={tag.id} onClick={() => clickOnReceptionTag(tag)} className="pointer-hover"
+                                    title="cliquer pour enlever.">
+                                        <Tag 
+                                            key={tag.id} 
+                                            tag={tag} 
+                                        />
+                                    </span>
+                                ))}
+                            </Stack>
+                            <div className="d-flex justify-content-center gap-4 mt-2 mb-0">
+                                <span onClick={() => setReceptionFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text" title="Tout ajouter.">Tout ajouter</span>
+                                <span onClick={() => setDepartureFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text" title="Tout enlever.">Tout enlever</span>
+                            </div>
+                        </div>
+
+                                                <div id="filter-tag-departure" className="filter-tag-drop-zone mb-3">
+                            <Stack className="mt-0 d-flex flex-wrap justify-content-center flex-grow-1" direction="horizontal" gap={2}>
+                                {tagsDeparture.map((tag: ITag) => (
+                                    <span key={tag.id} onClick={() => clickOnDepartureTag(tag)} className="pointer-hover"
+                                    title="cliquer pour enlever.">
+                                        <Tag 
+                                            key={tag.id} 
+                                            tag={tag} 
+                                        />
+                                    </span>
+                                ))}
+                            </Stack>
+                            <div className="d-flex justify-content-center gap-4 mt-2 mb-0">
+                                <span onClick={() => setDepartureFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text" title="Tout ajouter.">Tout ajouter</span>
+                                <span onClick={() => setReceptionFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text" title="Tout enlever.">Tout enlever</span>
+                            </div>
+                        </div>
                         */
