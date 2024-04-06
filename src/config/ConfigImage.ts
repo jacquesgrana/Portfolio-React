@@ -38,6 +38,10 @@ export default class ConfigImage {
         {
             id: 6,
             url: require("../asset/image/project/brownian_move.png")
+        },
+        {
+            id: 7,
+            url: require("../asset/image/project/portfolio_perso.png")
         }
     ];
 }
