@@ -57,14 +57,14 @@ const Gallery = () => {
           const generatedProjects = ProjectLibrary.generateProjectsFromDto(projectsFromJson, tagsFromJson);
           allTagsRef.current = tagsFromJson;
           collectedTagsRef.current = jsonServiceRef.current.findTagsByProjects(tagsFromJson);
-          setProjects(generatedProjects);
+          setProjects(ProjectLibrary.sortByType(sortType, generatedProjects));
         };
 
         initData();
       }, []);
 
       const setTagsForFiltering = (tags: ITag[]): void => {
-        setProjects(ProjectLibrary.generateProjectsFromDto(jsonServiceRef.current.findProjectsByTags(tags), allTagsRef.current));
+        setProjects(ProjectLibrary.sortByType(sortType, ProjectLibrary.generateProjectsFromDto(jsonServiceRef.current.findProjectsByTags(tags), allTagsRef.current)));
       }
     
     return (
