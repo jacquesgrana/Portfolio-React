@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Stack } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 interface SortComponentProps {
     updateSortType: (type: string) => void
@@ -49,73 +49,73 @@ const SortComponent = ({updateSortType}: SortComponentProps) => {
     }
     
     return (
-        <div className="sort-zone mb-3">
-            <Stack className="mt-0 d-flex flex-wrap justify-content-center" direction="horizontal" gap={3}>
-                <div className="d-flex flex-column align-items-center justify-content-start flex-wrap">
+        <div className="sort-zone mb-2">
+
+                <div className="d-flex flex-column align-items-center justify-content-start flex-wrap me-2 ms-2">
                     <p className="text-blue-5 text-size-1 text-center mb-1">Difficulté</p>
                     <div className="d-flex justify-content-center gap-2">
                         <Button 
                         id="btn-sort-difficulty-asc"
-                        className="btn-1 btn-sm bg-blue-3 text-blue-5 btn-sort" 
+                        className="bg-blue-4 text-white btn-sort" 
                         onClick={() => setSortType("difficulty_asc")}
                         title="Trier par difficulté ascendante."
                         >
-                            Ascendant
+                            &#x25B2;
                         </Button>
                         <Button 
                         id="btn-sort-difficulty-desc"
-                        className="btn-1 btn-sm bg-blue-3 text-blue-5 btn-sort" 
+                        className="bg-blue-4 text-white btn-sort" 
                         onClick={() => setSortType("difficulty_desc")}
                         title="Trier par difficulté descendante."
                         >
-                            Descendant
+                            &#x25BC;
                         </Button>
                     </div>
                 </div>
                 
-                <div className="d-flex flex-column align-items-center justify-content-start flex-wrap">
+                <div className="d-flex flex-column align-items-center justify-content-start flex-wrap me-2 ms-2">
                     <p className="text-blue-5 text-size-1 text-center mb-1">Nom</p>
                     <div className="d-flex justify-content-center gap-2">
                         <Button 
                         id="btn-sort-title-asc"
-                        className="btn-1 btn-sm bg-blue-3 text-blue-5 btn-sort" 
+                        className="bg-blue-4 text-white btn-sort" 
                         onClick={() => setSortType("title_asc")}
                         title="Trier par titre ascendant."
                         >
-                            Ascendant
+                            &#x25B2;
                         </Button>
                         <Button 
                         id="btn-sort-title-desc"
-                        className="btn-1 btn-sm bg-blue-3 text-blue-5 btn-sort" 
+                        className="bg-blue-4 text-white btn-sort" 
                         onClick={() => setSortType("title_desc")}
                         title="Trier par titre descendant."
                         >
-                            Descendant
+                            &#x25BC;
                         </Button>
                     </div>
                 </div>
-                <div className="d-flex flex-column align-items-center justify-content-start flex-wrap">
+                <div className="d-flex flex-column align-items-center justify-content-start flex-wrap me-2 ms-2">
                     <p className="text-blue-5 text-size-1 text-center mb-1">Date</p>
                     <div className="d-flex justify-content-center gap-2">
                         <Button 
                         id="btn-sort-date-asc"
-                        className="btn-1 btn-sm bg-blue-3 text-blue-5 btn-sort" 
+                        className="bg-blue-4 text-white btn-sort" 
                         onClick={() => setSortType("date_asc")}
                         title="Trier par date ascendante."
                         >
-                            Ascendant
+                            &#x25B2;
                         </Button>
                         <Button 
                         id="btn-sort-date-desc"
-                        className="btn-1 btn-sm bg-blue-3 text-blue-5 btn-sort" 
+                        className="btn-sm bg-blue-4 text-white btn-sort" 
                         onClick={() => setSortType("date_desc")}
                         title="Trier par date descendante."
                         >
-                            Descendant
+                            &#x25BC;
                         </Button>
                 </div>
                 </div>
-            </Stack>
+            
         </div>
     );
 }

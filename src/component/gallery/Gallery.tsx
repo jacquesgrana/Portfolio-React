@@ -73,6 +73,7 @@ const Gallery = () => {
             <h2 className="title-1-bold text-white text-center text-space-3">Galerie</h2>
             <h3 className="title-2-normal text-blue-5 text-center mt-2 mb-4 text-space-2">Quelques projets</h3>
             <AccordionGallery 
+              sortTypeComment={ProjectLibrary.getFrenchSortType(sortType)}
               handleToggleAccordion={handleToggleAccordion}
               allTags={collectedTagsRef.current} 
               setTagsForFiltering={setTagsForFiltering}
