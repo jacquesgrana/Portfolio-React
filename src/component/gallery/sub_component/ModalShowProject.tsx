@@ -68,12 +68,12 @@ const ModalShowProject = (props: ModalShowProjectProps) => {
                     Projet
                 </Button>
                 <Button 
-            className="btn-2 bg-orange text-blue-5" 
-            onClick={props.handleCloseModalShowProject}
-            title="Fermer la fenêtre."
-            >
-                Fermer
-            </Button>
+                className="btn-2 bg-orange text-blue-5" 
+                onClick={props.handleCloseModalShowProject}
+                title="Fermer la fenêtre."
+                >
+                    Fermer
+                </Button>
             </Modal.Footer>
         </Modal>
     );

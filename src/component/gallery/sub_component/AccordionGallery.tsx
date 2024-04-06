@@ -3,11 +3,13 @@ import ITag from '../../../interface/ITag';
 import { useEffect, useState } from 'react';
 import { Stack } from 'react-bootstrap';
 import Tag from '../../common/Tag';
+import SortComponent from './SortComponent';
 
 interface AccordionGalleryProps {
     allTags: ITag[],
     setTagsForFiltering: (tags: ITag[]) => void,
-    handleToggleAccordion: () => void
+    handleToggleAccordion: () => void,
+    updateSortType: (type: string) => void
 }
 const AccordionGallery = (props: AccordionGalleryProps) => {
 
@@ -55,28 +57,34 @@ const AccordionGallery = (props: AccordionGalleryProps) => {
                 <Accordion.Item eventKey="1" className="mb-2">
                     <Accordion.Header>
                     <h3 id="accordion-title-gallery" className="title-2-bold text-white text-center mt-2 ms-0">
-                        <span id="accordion-bullet-gallery" className="accordion-bullet text-orange me-1 transition-03s">•</span> <span id="accordion-title-contact-1" className="accordion-title transition-03s text-space-2">Filtrer</span>
+                        <span id="accordion-bullet-gallery" className="accordion-bullet text-orange me-1 transition-03s">•</span> <span id="accordion-title-contact-1" className="accordion-title transition-03s text-space-2">Trier & Filtrer</span>
                     </h3>
                     </Accordion.Header>
                     <Accordion.Body id="filter-tag-accordion-body" className="d-flex flex-column justify-content-start align-items-center">
+                        <h4 className="text-blue-5 mt-3 mb-2">Trier</h4>
+                        <SortComponent 
+                            updateSortType={props.updateSortType}
+                        />
+
+                        <h4 className="text-blue-5 mt-3 mb-2">Filtrer</h4>
                         <div className="mt-2 filter-tag-div-title mb-2">
                             Tags actifs
                         </div>
                         <div id="filter-tag-reception" className="filter-tag-drop-zone mb-3">
                             <Stack className="mt-0 d-flex flex-wrap justify-content-center flex-grow-1" direction="horizontal" gap={2}>
                                 {tagsReception.map((tag: ITag) => (
-                                    <span key={tag.id} onClick={() => clickOnReceptionTag(tag)} className="pointer-hover">
+                                    <span key={tag.id} onClick={() => clickOnReceptionTag(tag)} className="pointer-hover"
+                                    title="cliquer pour enlever.">
                                         <Tag 
                                             key={tag.id} 
                                             tag={tag} 
-                                            className="pointer-hover"
                                         />
                                     </span>
                                 ))}
                             </Stack>
                             <div className="d-flex justify-content-center gap-4 mt-2 mb-0">
-                                <span onClick={() => setReceptionFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text">Tout ajouter</span>
-                                <span onClick={() => setDepartureFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text">Tout enlever</span>
+                                <span onClick={() => setReceptionFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text" title="Tout ajouter.">Tout ajouter</span>
+                                <span onClick={() => setDepartureFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text" title="Tout enlever.">Tout enlever</span>
                             </div>
                         </div>
                         <div className="mt-2 mb-2 filter-tag-div-title">
@@ -85,18 +93,18 @@ const AccordionGallery = (props: AccordionGalleryProps) => {
                         <div id="filter-tag-departure" className="filter-tag-drop-zone mb-3">
                             <Stack className="mt-0 d-flex flex-wrap justify-content-center flex-grow-1" direction="horizontal" gap={2}>
                                 {tagsDeparture.map((tag: ITag) => (
-                                    <span key={tag.id} onClick={() => clickOnDepartureTag(tag)} className="pointer-hover">
+                                    <span key={tag.id} onClick={() => clickOnDepartureTag(tag)} className="pointer-hover"
+                                    title="cliquer pour enlever.">
                                         <Tag 
                                             key={tag.id} 
                                             tag={tag} 
-                                            className="pointer-hover"
                                         />
                                     </span>
                                 ))}
                             </Stack>
                             <div className="d-flex justify-content-center gap-4 mt-2 mb-0">
-                                <span onClick={() => setDepartureFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text">Tout ajouter</span>
-                                <span onClick={() => setReceptionFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text">Tout enlever</span>
+                                <span onClick={() => setDepartureFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text" title="Tout ajouter.">Tout ajouter</span>
+                                <span onClick={() => setReceptionFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text" title="Tout enlever.">Tout enlever</span>
                             </div>
                         </div>
 
@@ -112,3 +120,19 @@ const AccordionGallery = (props: AccordionGalleryProps) => {
 }
 
 export default AccordionGallery;
+
+/*
+
+                        <div className="filter-tag-sort-zone mb-3">
+                            <Stack className="mt-0 d-flex flex-wrap justify-content-center" direction="horizontal" gap={2}>
+                                <Button 
+                                className="btn-1 btn-sm bg-blue-3 text-blue-5" 
+                                //onClick={}
+                                title="Trier par date ascendant"
+                                >
+                                    Date Asc
+                                </Button>
+                            </Stack>
+                        </div>
+
+                        */

@@ -72,10 +72,33 @@
             flex-wrap: wrap;
         }
 
+        .sort-zone{
+            width: auto;
+            min-height: 50px;
+            min-width: 38vw;
+            padding: 20px;
+            border-radius: $radius-2;
+            @include set-alpha(background-color, $color-blue-4, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: space-between;
+            gap: 10px 10px;
+            flex-wrap: wrap;
+        }
+
         .filter-tag-accordion-action-text:hover {
             cursor: pointer;
             color: $color-light-orange;
             transition: 0.3s;
+        }
+
+        .btn-active {
+            box-sizing: border-box;
+            transition: 0.3s;
+            //border: 1px solid rgba($color-orange, 0.75);
+            color: $color-orange;
+            box-shadow: 0px 0px 10px 3px rgba($color-orange, 0.50) !important;
         }
 
         .selected {
