@@ -14,6 +14,7 @@ const Gallery = () => {
     const [showModalShowProject, setShowModalShowProject] = useState(false);
     const [selectedProject, setSelectedProject] = useState<IProject>();
     const [selectedImage, setSelectedImage] = useState<string>("");
+    const [sortType, setSortType] = useState<string>("difficulty_desc");
 
     const jsonServiceRef = useRef<any>(null);
     const allTagsRef = useRef<ITag[]>([]);
@@ -39,6 +40,14 @@ const Gallery = () => {
         setSelectedImage(image);
         setShowModalShowProject(true);
     };
+
+    const updateSortType = (type: string): void => {
+        setSortType(type);
+    }
+
+    useEffect(() => {
+      setProjects(ProjectLibrary.sortByType(sortType, projects));
+    }, [sortType]);
     
     useEffect(() => {
         const initData = async () => {
@@ -67,6 +76,7 @@ const Gallery = () => {
               handleToggleAccordion={handleToggleAccordion}
               allTags={collectedTagsRef.current} 
               setTagsForFiltering={setTagsForFiltering}
+              updateSortType={updateSortType}
             />
             <ProjectCards 
               projects={projects} 

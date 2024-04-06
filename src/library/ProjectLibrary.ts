@@ -26,5 +26,34 @@ export default class ProjectLibrary {
             projects.push(project);
         });
         return projects;
-      }
+    }
+
+    public static sortByType(type: string, projectsToSort: IProject[]): IProject[] {
+        const projects = [...projectsToSort];
+        let projectToReturn: IProject[] = [];
+        switch (type) {
+          case "difficulty_desc":
+            projectToReturn = projects.sort((a: IProject, b: IProject) => b.difficulty - a.difficulty);
+            break;
+          case "difficulty_asc":
+            projectToReturn = projects.sort((a: IProject, b: IProject) => a.difficulty - b.difficulty);
+            break;
+          case "date_desc":
+            projectToReturn = projects.sort((a: IProject, b: IProject) => b.date.getTime() - a.date.getTime());
+            break;
+          case "date_asc":
+            projectToReturn = projects.sort((a: IProject, b: IProject) => a.date.getTime() - b.date.getTime());
+            break;
+          case "title_desc":
+            projectToReturn = projects.sort((a: IProject, b: IProject) => b.title.localeCompare(a.title));
+            break;
+          case "title_asc":
+            projectToReturn = projects.sort((a: IProject, b: IProject) => a.title.localeCompare(b.title));
+            break;
+          default:
+            projectToReturn = projects;
+            break;
+        }
+        return projectToReturn;
+    }
 }
