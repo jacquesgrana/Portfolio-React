@@ -57,7 +57,7 @@ const Gallery = () => {
           const generatedProjects = ProjectLibrary.generateProjectsFromDto(projectsFromJson, tagsFromJson);
           allTagsRef.current = tagsFromJson;
           collectedTagsRef.current = jsonServiceRef.current.findTagsByProjects(tagsFromJson);
-          setProjects(ProjectLibrary.sortByType(sortType, generatedProjects));
+          setProjects(ProjectLibrary.sortByType("difficulty_desc", generatedProjects));
         };
 
         initData();
