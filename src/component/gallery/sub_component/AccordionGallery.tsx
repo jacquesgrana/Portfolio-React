@@ -74,7 +74,7 @@ const AccordionGallery = (props: AccordionGalleryProps) => {
                             <Stack className="mt-0 d-flex flex-wrap justify-content-center flex-grow-1" direction="horizontal" gap={2}>
                                 {tagsReception.map((tag: ITag) => (
                                     <span key={tag.id} onClick={() => clickOnReceptionTag(tag)} className="pointer-hover"
-                                    title="cliquer pour enlever">
+                                    title="cliquer pour enlever.">
                                         <Tag 
                                             key={tag.id} 
                                             tag={tag} 
@@ -83,8 +83,8 @@ const AccordionGallery = (props: AccordionGalleryProps) => {
                                 ))}
                             </Stack>
                             <div className="d-flex justify-content-center gap-4 mt-2 mb-0">
-                                <span onClick={() => setReceptionFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text" title="Tout ajouter">Tout ajouter</span>
-                                <span onClick={() => setDepartureFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text" title="Tout enlever">Tout enlever</span>
+                                <span onClick={() => setReceptionFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text" title="Tout ajouter.">Tout ajouter</span>
+                                <span onClick={() => setDepartureFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text" title="Tout enlever.">Tout enlever</span>
                             </div>
                         </div>
                         <div className="mt-2 mb-2 filter-tag-div-title">
@@ -94,7 +94,7 @@ const AccordionGallery = (props: AccordionGalleryProps) => {
                             <Stack className="mt-0 d-flex flex-wrap justify-content-center flex-grow-1" direction="horizontal" gap={2}>
                                 {tagsDeparture.map((tag: ITag) => (
                                     <span key={tag.id} onClick={() => clickOnDepartureTag(tag)} className="pointer-hover"
-                                    title="cliquer pour enlever">
+                                    title="cliquer pour enlever.">
                                         <Tag 
                                             key={tag.id} 
                                             tag={tag} 
@@ -103,8 +103,8 @@ const AccordionGallery = (props: AccordionGalleryProps) => {
                                 ))}
                             </Stack>
                             <div className="d-flex justify-content-center gap-4 mt-2 mb-0">
-                                <span onClick={() => setDepartureFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text" title="Tout ajouter">Tout ajouter</span>
-                                <span onClick={() => setReceptionFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text" title="Tout enlever">Tout enlever</span>
+                                <span onClick={() => setDepartureFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text" title="Tout ajouter.">Tout ajouter</span>
+                                <span onClick={() => setReceptionFull()} className="text-dark-orange-2 text-size-0-75 filter-tag-accordion-action-text" title="Tout enlever.">Tout enlever</span>
                             </div>
                         </div>
 

@@ -46,8 +46,8 @@ const Gallery = () => {
     }
 
     useEffect(() => {
-      setProjects(ProjectLibrary.sortByType(sortType, projects));
-    }, [sortType]);
+      setProjects((prevProjects) => ProjectLibrary.sortByType(sortType, prevProjects));
+  }, [sortType]);
     
     useEffect(() => {
         const initData = async () => {
