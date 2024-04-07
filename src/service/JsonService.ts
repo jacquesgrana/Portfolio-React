@@ -3,6 +3,7 @@
 import ITag from "../interface/ITag";
 import IProjectDto from "../dto/IProjectDto";
 import ConfigJson from '../config/ConfigJson';
+import ICaptcha from '../interface/ICaptcha';
 
 export default class JsonService {
   
@@ -10,6 +11,7 @@ export default class JsonService {
   
     private _tags: ITag[] = [];
     private _projects: IProjectDto[] = [];
+    private _captchas: ICaptcha[] = [];
 
     private constructor() {}
   
@@ -25,6 +27,7 @@ export default class JsonService {
         this._tags = await this.getTags();
         this._projects = await this.getProjects();
         this._projects = this._projects.sort((p1, p2) => p2.difficulty - p1.difficulty);
+        this._captchas = await this.getCaptchas();
     }
 
     private async getTags(): Promise<ITag[]> {
@@ -35,12 +38,20 @@ export default class JsonService {
         return await ConfigJson.PROJECTS_DATA.projects;
     }
 
+    private async getCaptchas(): Promise<ICaptcha[]> {
+        return await ConfigJson.CAPTCHAS_DATA.captchas;
+    }
+
     public findAllTags(): ITag[] {
         return this._tags;
     }
 
     public findAllProjects(): IProjectDto[] {
         return this._projects;
+    }
+
+    public findAllCaptchas(): ICaptcha[] {
+        return this._captchas;
     }
 
     // méthode qui renvoie la liste des projets qui contiennent au moins un des tags passés en paramètre
