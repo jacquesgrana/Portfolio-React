@@ -1,5 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Accordion, Form, Button } from 'react-bootstrap';
+import CustomCaptcha from './CustomCaptcha';
+import ICaptcha from '../../../interface/ICaptcha';
+//import ReCAPTCHA from "react-google-recaptcha";
+import CaptchaService from '../../../service/CaptchaService';
 
 interface AccordionItemContactMobileProps {
     submitForm: (event: any, setResult: (result: string) => void) => void;
@@ -7,26 +11,39 @@ interface AccordionItemContactMobileProps {
 const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
 
     const [result, setResult] = useState("Formulaire à compléter.");
-
+    //const [isCaptchaVerified, isCaptchaVerifiedVerified] = useState(false);
+    //const captchaRef = useRef<ICaptcha>({ id: -1, question: "", answer: -1 });
+    const [captcha, setCaptcha] = useState<ICaptcha>({ id: -1, question: "", answer: -1 });
+    const isCaptchaValidRef = useRef<boolean>(false);
     //const MAX_TEXT_LENGTH = 30;
     const MAX_TEXT_ADDRESS_LENGTH = 400;
+    const captchaServiceRef: any = useRef(null);
+
+    useEffect(() => {
+        const fct = async () => {
+            captchaServiceRef.current = await CaptchaService.getInstance();
+            //captchaRef.current = captchaServiceRef.current.getRandomCaptcha();
+            setCaptcha(captchaServiceRef.current.getRandomCaptcha());
+            //console.log("captchaRef.current", captcha);
+        };
+        fct();
+    }, []); 
 
     const submitForm = (event: any, setResult: (result: string) => void) => {
         event.preventDefault();
         if (validateForm()) {
-            event.target.reset();
             props.submitForm(event, setResult);
+            setCaptcha(captchaServiceRef.current.getRandomCaptcha());
         }
         else {
             setResult("Formulaire invalide.");
         }
-
-    }
+    };
 
     const validateForm = () => {
+        let toReturn: boolean = true;
         // TODO a finir -> mettre des listeners sur les inputs pour appeler cette méthode
         // TODO a finir -> mettre des validations sur les inputs
-        // TODO a finir -> mettre une validation sur le captcha
         /*
         const companyNameElt = document.getElementById("company_name") as HTMLInputElement;
         let toReturn: boolean = true;
@@ -36,9 +53,24 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
             toReturn &&= false;
         }
         */
-        return true;
-    }
 
+        // TODO vérifier le captcha
+        toReturn &&= isCaptchaValidRef.current;
+        //console.log('toReturn', toReturn);
+        return toReturn;
+    };
+
+      const setAnswerFromUser = (captchaId: number, answer: number) => {
+        //console.log("answer", answer);
+        const isCaptchaValid = captchaServiceRef.current.validateAnswer(captchaId, answer);
+        isCaptchaValidRef.current = isCaptchaValid;
+        if(isCaptchaValid) {
+            setResult("Captcha valide.");
+        }
+        else {
+            setResult("Captcha invalide.");
+        }
+      }
 
     return(
         <Accordion.Item 
@@ -62,7 +94,6 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                     submitForm(e, setResult);
                 }}
                 >
-
                     <Form.Group 
                     className="mb-3" 
                     >
@@ -77,24 +108,6 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                         name="company_name" 
                         type="text" 
                         placeholder="Saisir le nom de votre entreprise (facultatif)"
-                        />
-                    </Form.Group>
-
-                    <Form.Group 
-                    className="mb-3"
-                    >
-                        <Form.Label
-                        className="contact-form-label mb-1"
-                        >
-                            Nom
-                        </Form.Label>
-                        <Form.Control 
-                        id="last_name"
-                        className="contact-form-control"
-                        name="last_name" 
-                        type="text" 
-                        placeholder="Saisir votre nom (obligatoire)" 
-                        required
                         />
                     </Form.Group>
                     <Form.Group 
@@ -114,7 +127,23 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                         required
                         />
                     </Form.Group>
-
+                    <Form.Group 
+                    className="mb-3"
+                    >
+                        <Form.Label
+                        className="contact-form-label mb-1"
+                        >
+                            Nom
+                        </Form.Label>
+                        <Form.Control 
+                        id="last_name"
+                        className="contact-form-control"
+                        name="last_name" 
+                        type="text" 
+                        placeholder="Saisir votre nom (obligatoire)" 
+                        required
+                        />
+                    </Form.Group>
                     <Form.Group 
                     className="mb-3" 
                     >
@@ -180,6 +209,10 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                         required
                         />
                     </Form.Group>
+                    <CustomCaptcha
+                        captcha={captcha}
+                        setAnswerFromUser={setAnswerFromUser}
+                    />
                     <div 
                     className="d-flex justify-content-center mt-4"
                     >
@@ -189,6 +222,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                     </div>
 
                 </Form>
+
                 <div 
                 className="d-flex justify-content-center mt-3 mb-1"
                 >
@@ -200,3 +234,17 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
 }
 
 export default AccordionItemContactForm;
+
+/*
+
+                    <div
+                    className="d-flex justify-content-center mt-5"
+                    >
+                        <ReCAPTCHA
+                        data-theme="dark"
+                        sitekey="6LfIaLMpAAAAAJ6oRc1QIL4fRwGqeHlF27mOlYHU"
+                        onChange={handleReCAPTCHAChange}
+                        />
+                    </div>
+
+                    */

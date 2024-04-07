@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import {  useRef } from "react";
 import AccordionContact from "./sub_component/AccordionContact";
 import ConfigContact from "../../config/ConfigContact";
 import ConfigImage from "../../config/ConfigImage";
@@ -9,10 +9,20 @@ const Contact = () => {
     const mobile = ConfigContact.MOBILE_PERSO;
     const qrcodeEmail = ConfigImage.QRCODE_EMAIL;
     const qrcodeMobile = ConfigImage.QRCODE_MOBILE;
-    const accordionId = useRef(0);
-
+    const accordionId = useRef<number>(0);
+    //const captchasRef = useRef<ICaptcha[]>([]);
+    //const jsonService = JsonService.getInstance();
     const mailService = MailService.getInstance();
     //const submitForm = mailService.submitForm;
+
+    /*
+        const fct = async () => {
+            captchasRef.current = await (await jsonService).findAllCaptchas();
+            //console.log('captchasRef.current', captchasRef.current);
+        };
+        fct();
+      */  
+   
 
     const submitFormWrapper = (event: any, setResult: (result: string) => void) => {
         const fct = async () => {
@@ -20,6 +30,7 @@ const Contact = () => {
         };
         fct();
     }
+    //captchasRef.current = jsonServiceRef.current.findAllCaptchas();
 
     const setAccordionId = (id: number): void => {
         accordionId.current = id;

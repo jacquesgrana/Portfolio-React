@@ -64,6 +64,32 @@
  
     }
 
+    #custom-captcha-container {
+        @include set-alpha(background-color, $color-blue-3, 0.75);
+        padding: 20px;
+        border-radius: $radius-1;
+        
+        .custom-captcha-container {
+            @include set-alpha(background-color, $color-blue-4, 0.5);
+            padding: 20px;
+            border-radius: $radius-1;
+            min-width: 300px;
+        }
+
+        #custom-captcha-answer-input {
+            border: 0px solid $color-white;
+            text-align: center;
+        }
+
+        .custom-captcha-input {
+            @include set-alpha(background-color, $color-white, 0.66);
+            padding: 10px;
+            border-radius: $radius-1;
+            min-width: 260px;
+            height: 40px;
+        }
+    }
+
     .contact-form-result {
         color: $color-blue-4 !important;
     }
