@@ -87,7 +87,7 @@
         {
             "id": 7,
             "title": "Portfolio Personnel",
-            "subTitle": "Site vitrine en React",
+            "subTitle": "Site vitrine en React avec Typescript",
             "description": "Portfolio personnel développé dans le cadre professionnel. Présentation personnelle de mon parcours, de mes formations, de mes diplômes et de quelques projets.",
             "imageUrl": "../../asset/image/portfolio_perso.png",
             "githubUrl": "https://github.com/jacquesgrana/Portfolio-React",

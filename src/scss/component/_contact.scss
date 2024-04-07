@@ -21,4 +21,50 @@
         width: 160px !important;
         height: 160px !important;
     }
+
+    #contact-form {
+        @include set-alpha(background-color, $color-blue-4, 0.5);
+        padding: 40px;
+        border-radius: $radius-1;
+
+
+        .contact-form-control,
+        .contact-form-label {
+            color: $color-blue-5 !important;
+        }
+
+        .contact-form-text,
+        .contact-form-control::placeholder {
+            color: $color-dark-orange !important;
+            font-size: 0.7rem;
+            font-style: italic;
+        }
+
+        .contact-form-text {
+            color: $color-blue-5 !important;
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        .contact-form-label {
+            font-size: 1rem;
+            font-weight: bolder;
+        }
+
+        .contact-form-control {
+            @include set-alpha(background-color, $color-white, 0.66);
+            width: 60vw;
+            max-width: 800px;
+            border: 1px solid $color-white;
+        }
+
+        .contact-form-error {
+            border: 1px solid $danger !important;
+        }
+ 
+    }
+
+    .contact-form-result {
+        color: $color-blue-4 !important;
+    }
 }

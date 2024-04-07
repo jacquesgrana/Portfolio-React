@@ -2,6 +2,7 @@ import { useRef } from "react";
 import AccordionContact from "./sub_component/AccordionContact";
 import ConfigContact from "../../config/ConfigContact";
 import ConfigImage from "../../config/ConfigImage";
+import MailService from '../../service/MailService';
 
 const Contact = () => {
     const email = ConfigContact.EMAIL_PERSO;
@@ -9,6 +10,16 @@ const Contact = () => {
     const qrcodeEmail = ConfigImage.QRCODE_EMAIL;
     const qrcodeMobile = ConfigImage.QRCODE_MOBILE;
     const accordionId = useRef(0);
+
+    const mailService = MailService.getInstance();
+    //const submitForm = mailService.submitForm;
+
+    const submitFormWrapper = (event: any, setResult: (result: string) => void) => {
+        const fct = async () => {
+            await (await mailService).submitForm(event, setResult);
+        };
+        fct();
+    }
 
     const setAccordionId = (id: number): void => {
         accordionId.current = id;
@@ -45,6 +56,7 @@ const Contact = () => {
                 mobile={mobile}
                 qrcodeEmail={qrcodeEmail}
                 qrcodeMobile={qrcodeMobile}
+                submitForm={submitFormWrapper}
             />
         </div>
     );
