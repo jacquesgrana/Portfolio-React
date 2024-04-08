@@ -81,16 +81,26 @@
             text-align: center;
         }
 
+        input[type="number"],
         .custom-captcha-input {
             @include set-alpha(background-color, $color-white, 0.66);
             padding: 10px;
             border-radius: $radius-1;
             min-width: 260px;
             height: 40px;
+            //-moz-appearance: textfield;
         }
     }
 
     .contact-form-result {
         color: $color-blue-4 !important;
     }
+
+    /*
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+     -webkit-appearance: none;
+     margin: 0;
+    }
+    */
 }
