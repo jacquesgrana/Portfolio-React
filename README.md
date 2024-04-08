@@ -1,6 +1,7 @@
 ## Portfolio
 
 - Portfolio personnel codé en React/Typescript avec Saas et Bootstrap.
+- Utilisation de Web3Forms pour gérer la soumission du formulaire de contact.
 - Site vitrine sans serveur ni api.
 - Avril 2024.
 

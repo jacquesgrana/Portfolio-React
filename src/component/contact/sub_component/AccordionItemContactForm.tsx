@@ -14,7 +14,9 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
     //const [isCaptchaVerified, isCaptchaVerifiedVerified] = useState(false);
     //const captchaRef = useRef<ICaptcha>({ id: -1, question: "", answer: -1 });
     const [captcha, setCaptcha] = useState<ICaptcha>({ id: -1, question: "", answer: -1 });
+    const [captchaComment, setCaptchaComment] = useState<string>("Répondre au captcha.");
     const isCaptchaValidRef = useRef<boolean>(false);
+    //const captchaCommentRef = useRef<string>("Répondre au captcha.");
     //const MAX_TEXT_LENGTH = 30;
     const MAX_TEXT_ADDRESS_LENGTH = 400;
     const captchaServiceRef: any = useRef(null);
@@ -70,10 +72,14 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
         const isCaptchaValid = captchaServiceRef.current.validateAnswer(captchaId, answer);
         isCaptchaValidRef.current = isCaptchaValid;
         if(isCaptchaValid) {
-            setResult("Captcha valide.");
+            //setResult("Captcha valide.");
+            //captchaCommentRef.current = "Captcha valide.";
+            setCaptchaComment("Captcha valide.");
         }
         else {
-            setResult("Captcha invalide.");
+            //setResult("Captcha invalide.");
+            //captchaCommentRef.current = "Captcha invalide.";
+            setCaptchaComment("Captcha invalide.");
         }
       }
 
@@ -216,6 +222,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                     </Form.Group>
                     <CustomCaptcha
                         captcha={captcha}
+                        captchatComment={captchaComment}
                         setAnswerFromUser={setAnswerFromUser}
                     />
                     <div 

@@ -3,9 +3,10 @@ import ICaptcha from "../../../interface/ICaptcha";
 
 interface CustomCaptchaProps {
     captcha: ICaptcha;
+    captchatComment: string
     setAnswerFromUser: (answer: number, captchaId: number) => void;
 }
-const CustomCaptcha = ({captcha, setAnswerFromUser}: CustomCaptchaProps) => {
+const CustomCaptcha = ({captcha, captchatComment, setAnswerFromUser}: CustomCaptchaProps) => {
         
         const [captchaState, setCaptchaState] = useState<ICaptcha>({id: -1, question: "", answer: -1});
         //faire un useEffect a l'init qui met un listener si besoin sur l'input de la réponse
@@ -59,11 +60,14 @@ const CustomCaptcha = ({captcha, setAnswerFromUser}: CustomCaptchaProps) => {
                     <input 
                         id = "custom-captcha-answer-input"
                         type="number" 
-                        placeholder="0" 
+                        placeholder="-1" 
                         className="custom-captcha-input" 
                     />
                         
                 </div>
+                <p className="text-center text-blue-5 mt-1">
+                    {captchatComment}
+                </p>
             </div>
     );
 }
