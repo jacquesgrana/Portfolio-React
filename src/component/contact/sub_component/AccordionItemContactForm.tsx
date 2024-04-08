@@ -24,6 +24,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
             captchaServiceRef.current = await CaptchaService.getInstance();
             //captchaRef.current = captchaServiceRef.current.getRandomCaptcha();
             setCaptcha(captchaServiceRef.current.getRandomCaptcha());
+
             //console.log("captchaRef.current", captcha);
         };
         fct();
@@ -34,6 +35,10 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
         if (validateForm()) {
             props.submitForm(event, setResult);
             setCaptcha(captchaServiceRef.current.getRandomCaptcha());
+            const inputElt = document.getElementById
+            ("custom-captcha-answer-input") as HTMLInputElement;
+            const zero: number = 0;
+            inputElt.value = zero.toString();
         }
         else {
             setResult("Formulaire invalide.");
