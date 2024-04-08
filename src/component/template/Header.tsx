@@ -102,7 +102,7 @@ const Header = () => {
             <Link
               id="link-home"
               to="/home"
-              className={`link-1 text-space-3 ${
+              className={`link-1 text-white text-space-3 ${
                 activeLink === 0 ? "active" : ""
               }`}
             >
@@ -114,7 +114,7 @@ const Header = () => {
             <Link
               id="link-gallery"
               to="/gallery"
-              className={`link-1 text-space-3 ${
+              className={`link-1 text-white text-space-3 ${
                 activeLink === 1 ? "active" : ""
               }`}
             >
@@ -126,7 +126,7 @@ const Header = () => {
             <Link
               id="link-contact"
               to="/contact"
-              className={`link-1 text-space-3 ${
+              className={`link-1 text-white text-space-3 ${
                 activeLink === 2 ? "active" : ""
               }`}
             >

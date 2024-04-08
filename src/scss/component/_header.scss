@@ -37,7 +37,7 @@
     }
 
     .active {
-        color: $color-light-orange;
+        color: $color-light-orange !important;
         transition: 0.3s;
         text-decoration: underline;
     }
