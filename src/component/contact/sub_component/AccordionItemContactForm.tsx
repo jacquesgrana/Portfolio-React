@@ -39,7 +39,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
             setCaptcha(captchaServiceRef.current.getRandomCaptcha());
             const inputElt = document.getElementById
             ("custom-captcha-answer-input") as HTMLInputElement;
-            const zero: number = 0;
+            const zero: number = -1;
             inputElt.value = zero.toString();
         }
         else {
@@ -99,7 +99,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                 </h4>
 
                 <Form 
-                className="" 
+                className="mb-0" 
                 id="contact-form" 
                 onSubmit={(e) => {
                     submitForm(e, setResult);
@@ -222,7 +222,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                     </Form.Group>
                     <CustomCaptcha
                         captcha={captcha}
-                        captchatComment={captchaComment}
+                        captchaComment={captchaComment}
                         setAnswerFromUser={setAnswerFromUser}
                     />
                     <div 
@@ -236,9 +236,11 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                 </Form>
 
                 <div 
-                className="d-flex justify-content-center mt-3 mb-1"
+                className="d-flex justify-content-center mt-2 mb-1"
                 >
-                        <p className="contact-form-result">{result}</p>
+                        <p className={`text-center text-size-0-75 text-blue-5 mt-0 ${captchaComment === 'Formulaire envoyé.' ? 'text-success-dark-2' : 'text-danger-dark-1'}`}>
+                            <strong>{result}</strong>
+                        </p>
                 </div>
             </Accordion.Body>
         </Accordion.Item>

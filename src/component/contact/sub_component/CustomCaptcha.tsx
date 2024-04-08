@@ -3,10 +3,10 @@ import ICaptcha from "../../../interface/ICaptcha";
 
 interface CustomCaptchaProps {
     captcha: ICaptcha;
-    captchatComment: string
+    captchaComment: string
     setAnswerFromUser: (answer: number, captchaId: number) => void;
 }
-const CustomCaptcha = ({captcha, captchatComment, setAnswerFromUser}: CustomCaptchaProps) => {
+const CustomCaptcha = ({captcha, captchaComment, setAnswerFromUser}: CustomCaptchaProps) => {
         
         const [captchaState, setCaptchaState] = useState<ICaptcha>({id: -1, question: "", answer: -1});
         //faire un useEffect a l'init qui met un listener si besoin sur l'input de la réponse
@@ -61,12 +61,16 @@ const CustomCaptcha = ({captcha, captchatComment, setAnswerFromUser}: CustomCapt
                         id = "custom-captcha-answer-input"
                         type="number" 
                         placeholder="-1" 
-                        className="custom-captcha-input" 
+                        min="-1"
+                        max="50"
+                        step="1"
+                        onKeyDown={(e) => e.preventDefault()}
+                        className="custom-captcha-input text-blue-5"
                     />
                         
                 </div>
-                <p className="text-center text-blue-5 mt-1">
-                    {captchatComment}
+                <p className={`text-center text-blue-5 text-size-0-75  mt-2 ${captchaComment === 'Captcha valide.' ? 'text-success-dark-2' : 'text-danger-dark-1'}`}>
+                    <strong>{captchaComment}</strong>
                 </p>
             </div>
     );
