@@ -1,4 +1,5 @@
 
+import ConfigContact from '../config/ConfigContact';
 import ConfigW3Form from '../config/ConfigW3Form';
 
 export default class MailService {
@@ -23,7 +24,7 @@ export default class MailService {
         //event.preventDefault();
         //console.log('_w3FormUrl', MailService._w3FormUrl);
         //console.log('_w3FormAccesKey', MailService._w3FormAccesKey);
-        setResult("Envoi du formulaire...");
+        setResult(ConfigContact.RESULT_FORM_WAITING);
         const formData = new FormData(event.target);
         const email = formData.get("email")?.toString() ?? "";
         formData.append("access_key", MailService._w3FormAccesKey);
@@ -36,12 +37,12 @@ export default class MailService {
         });
         const data = await response.json();
         if (data.success) {
-            setResult("Formulaire envoyé.");
+            setResult(ConfigContact.RESULT_FORM_DONE);
             event.target.reset();
         } 
         else {
             console.log("Erreur", data);
-            setResult("Erreur : " + data.message);
+            setResult(ConfigContact.RESULT_FORM_ERROR + data.message);
         }
     }
 }

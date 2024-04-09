@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ICaptcha from "../../../interface/ICaptcha";
+import ConfigCaptcha from "../../../config/ConfigCaptcha";
 
 interface CustomCaptchaProps {
     captcha: ICaptcha;
@@ -35,7 +36,7 @@ const CustomCaptcha = ({captcha, captchaComment, setAnswerFromUser}: CustomCaptc
             if (inputElt) {
                 inputElt.addEventListener("change", (event: any) => {
                     setAnswerFromUser(captcha.id, Number(event.target.value));
-                    //console.log("rops.captcha.id", props.captcha.id);
+                    //console.log("props.captcha.id", props.captcha.id);
                 });
             }
             return captcha
@@ -69,7 +70,7 @@ const CustomCaptcha = ({captcha, captchaComment, setAnswerFromUser}: CustomCaptc
                     />
                         
                 </div>
-                <p className={`text-center text-blue-5 text-size-0-75  mt-2 ${captchaComment === 'Captcha valide.' ? 'text-success-dark-2' : 'text-danger-dark-1'}`}>
+                <p className={`text-center text-blue-5 text-size-0-75  mt-2 ${captchaComment === ConfigCaptcha.RESULT_CAPTCHA_VALID ? 'text-success-dark-2 transition-03s' : 'text-danger-dark-1 transition-03s'}`}>
                     <strong>{captchaComment}</strong>
                 </p>
             </div>
