@@ -95,7 +95,33 @@
             text-align: center;
         }
 
-        input[type="number"],
+        /*
+        input[type="number"] {
+            //-moz-appearance: textfield;
+        }
+        */
+
+        input[type="number"] {
+            -webkit-appearance: textfield; /* Pour Chrome et Safari */
+            -moz-appearance: textfield; /* Pour Firefox */
+            appearance: textfield; /* Pour les navigateurs modernes */
+            -webkit-user-select: none; /* Pour Chrome et Safari */
+            -moz-user-select: none; /* Pour Firefox */
+            -ms-user-select: none; /* Pour Internet Explorer */
+            user-select: none; /* Pour les navigateurs modernes */
+            pointer-events: none; /* Rend les boutons non cliquables */
+        }
+
+        .custom-captcha-input-container {
+           display: flex;
+           flex-direction: row;
+           justify-content: center;
+           align-items: center;
+           gap: 10px; 
+           max-width: 340px;
+        }
+
+
         .custom-captcha-input {
             @include set-alpha(background-color, $color-white, 0.66);
             padding: 10px;

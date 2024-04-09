@@ -121,6 +121,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                         name="company_name" 
                         type="text" 
                         placeholder="Saisir le nom de votre entreprise (facultatif)"
+                        title="Saisir le nom de votre entreprise (facultatif)"
                         />
                     </Form.Group>
                     <Form.Group 
@@ -137,6 +138,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                         name="first_name" 
                         type="text" 
                         placeholder="Saisir votre prénom (obligatoire)" 
+                        title="Saisir votre prénom (obligatoire)" 
                         required
                         />
                     </Form.Group>
@@ -154,6 +156,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                         name="last_name" 
                         type="text" 
                         placeholder="Saisir votre nom (obligatoire)" 
+                        title="Saisir votre nom (obligatoire)"
                         required
                         />
                     </Form.Group>
@@ -170,7 +173,8 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                         className="contact-form-control"
                         name="email" 
                         type="email" 
-                        placeholder="Saisir votre email (obligatoire)" 
+                        placeholder="Saisir votre email (obligatoire)"
+                        title="Saisir votre email (obligatoire)" 
                         required 
                         />
                         <Form.Text 
@@ -179,7 +183,6 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                             Votre adresse e-mail ne sera pas diffusée.
                         </Form.Text>
                     </Form.Group>
-
                     <Form.Group 
                     className="mb-3" 
                     >
@@ -193,7 +196,8 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                         className="contact-form-control"
                         name="phone_number" 
                         type="tel" 
-                        placeholder="Saisir votre numéro de téléphone (facultatif)" 
+                        placeholder="Saisir votre numéro de téléphone (facultatif)"
+                        title="Saisir votre numéro de numéro (facultatif)" 
                         />
                         <Form.Text 
                         className="text-muted contact-form-text"
@@ -219,6 +223,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                         name="message" 
                         type="textarea" 
                         placeholder={`Saisir un message (obligatoire - max. ${MAX_TEXT_ADDRESS_LENGTH} caractères)`}
+                        title={`Saisir un message (obligatoire - max. ${MAX_TEXT_ADDRESS_LENGTH} caractères)`}
                         required
                         />
                     </Form.Group>
@@ -231,6 +236,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                     className="d-flex justify-content-center mt-4"
                     >
                         <Button 
+                        title="Envoyer le formulaire."
                         type="submit"
                         className="btn-1 btn-sm bg-blue-4 text-white">Envoyer</Button>
                     </div>
