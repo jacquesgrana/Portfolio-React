@@ -78,6 +78,7 @@ const CustomCaptcha = ({captcha, captchaComment, setAnswerFromUser}: CustomCaptc
                     className="custom-captcha-input-container mb-0"
                     >   
                         <div 
+                        title = "Cliquer pour enlever 1 à la réponse du captcha."
                         className="text-blue-5 btn-3"
                         onClick={handleClickMinus}
                         >
@@ -93,7 +94,8 @@ const CustomCaptcha = ({captcha, captchaComment, setAnswerFromUser}: CustomCaptc
                             onKeyDown={(e) => e.preventDefault()}
                             className="custom-captcha-input text-blue-5"   
                         />
-                                                <div 
+                        <div 
+                        title = "Cliquer pour ajouter 1 à la réponse du captcha."
                         className="text-blue-5 btn-3"
                         onClick={handleClickPlus}
                         >
