@@ -2,83 +2,83 @@
     "captchas": [
         {
             "id": 0,
-            "question": "Combien font 6 fois 2",
+            "question": "Combien font 6 fois 2 ?",
             "answer": 12
         },
         {
             "id": 1,
-            "question": "Combien font 5 fois 2",
+            "question": "Combien font 5 fois 2 ?",
             "answer": 10
         },
         {
             "id": 2,
-            "question": "Combien font 4 fois 2",
+            "question": "Combien font 4 fois 2 ?",
             "answer": 8
         },
         {
             "id": 3,
-            "question": "Combien font 3 fois 3",
+            "question": "Combien font 3 fois 3 ?",
             "answer": 9
         },
         {
             "id": 4,
-            "question": "Combien font 10 plus 3",
+            "question": "Combien font 10 plus 3 ?",
             "answer": 13
         },
         {
             "id": 5,
-            "question": "Combien font 11 plus 3",
+            "question": "Combien font 11 plus 3 ?",
             "answer": 14
         },
         {
             "id": 6,
-            "question": "Combien font 12 plus 3",
+            "question": "Combien font 12 plus 3 ?",
             "answer": 15
         },
         {
             "id": 7,
-            "question": "Combien font 13 plus 3",
+            "question": "Combien font 13 plus 3 ?",
             "answer": 16
         },
         {
             "id": 8,
-            "question": "Combien font 10 moins 3",
+            "question": "Combien font 10 moins 3 ?",
             "answer": 7
         },
         {
             "id": 9,
-            "question": "Combien font 10 moins 4",
+            "question": "Combien font 10 moins 4 ?",
             "answer": 6
         },
         {
             "id": 10,
-            "question": "Combien font 10 moins 5",
+            "question": "Combien font 10 moins 5 ?",
             "answer": 5
         },
         {
             "id": 11,
-            "question": "Combien font 10 moins 6",
+            "question": "Combien font 10 moins 6 ?",
             "answer": 4
         },
         {
             "id": 12,
-            "question": "Combien font 10 moins 7",
+            "question": "Combien font 10 moins 7 ?",
             "answer": 3
         },
         {
             "id": 13,
-            "question": "Combien font 10 moins 8",
+            "question": "Combien font 10 moins 8 ?",
             "answer": 2
         },
         {
             "id": 14,
-            "question": "Combien font 10 moins 9",
+            "question": "Combien font 10 moins 9 ?",
             "answer": 1
         },
         {
             "id": 15,
-            "question": "Combien font 10 moins 10",
-            "answer": 0
+            "question": "Combien font 10 plus 1 ?",
+            "answer": 11
         }
 
     ]

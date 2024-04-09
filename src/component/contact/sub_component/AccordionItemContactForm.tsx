@@ -4,17 +4,19 @@ import CustomCaptcha from './CustomCaptcha';
 import ICaptcha from '../../../interface/ICaptcha';
 //import ReCAPTCHA from "react-google-recaptcha";
 import CaptchaService from '../../../service/CaptchaService';
+import ConfigContact from '../../../config/ConfigContact';
+import ConfigCaptcha from '../../../config/ConfigCaptcha';
 
 interface AccordionItemContactMobileProps {
     submitForm: (event: any, setResult: (result: string) => void) => void;
 }
 const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
 
-    const [result, setResult] = useState("Formulaire à compléter.");
+    const [result, setResult] = useState(ConfigContact.RESULT_FORM_INIT);
     //const [isCaptchaVerified, isCaptchaVerifiedVerified] = useState(false);
     //const captchaRef = useRef<ICaptcha>({ id: -1, question: "", answer: -1 });
     const [captcha, setCaptcha] = useState<ICaptcha>({ id: -1, question: "", answer: -1 });
-    const [captchaComment, setCaptchaComment] = useState<string>("Répondre au captcha.");
+    const [captchaComment, setCaptchaComment] = useState<string>(ConfigCaptcha.RESULT_CAPTCHA_INIT);
     const isCaptchaValidRef = useRef<boolean>(false);
     //const captchaCommentRef = useRef<string>("Répondre au captcha.");
     //const MAX_TEXT_LENGTH = 30;
@@ -43,7 +45,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
             inputElt.value = zero.toString();
         }
         else {
-            setResult("Formulaire invalide.");
+            setResult(ConfigContact.RESULT_FORM_NOT_VALID);
         }
     };
 
@@ -74,12 +76,12 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
         if(isCaptchaValid) {
             //setResult("Captcha valide.");
             //captchaCommentRef.current = "Captcha valide.";
-            setCaptchaComment("Captcha valide.");
+            setCaptchaComment(ConfigCaptcha.RESULT_CAPTCHA_VALID);
         }
         else {
             //setResult("Captcha invalide.");
             //captchaCommentRef.current = "Captcha invalide.";
-            setCaptchaComment("Captcha invalide.");
+            setCaptchaComment(ConfigCaptcha.RESULT_CAPTCHA_NOT_VALID);
         }
       }
 
@@ -216,7 +218,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                         className="contact-form-control"
                         name="message" 
                         type="textarea" 
-                        placeholder="Saisir un message (obligatoire - max. 400 caractères)" 
+                        placeholder={`Saisir un message (obligatoire - max. ${MAX_TEXT_ADDRESS_LENGTH} caractères)`}
                         required
                         />
                     </Form.Group>
@@ -238,7 +240,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                 <div 
                 className="d-flex justify-content-center mt-2 mb-1"
                 >
-                        <p className={`text-center text-size-0-75 text-blue-5 mt-0 ${captchaComment === 'Formulaire envoyé.' ? 'text-success-dark-2' : 'text-danger-dark-1'}`}>
+                        <p className={`text-center text-size-0-75 text-blue-5 mt-0 ${result === ConfigContact.RESULT_FORM_DONE ? 'text-success-dark-2 transition-03s' : 'text-blue-5 transition-03s'}`}>
                             <strong>{result}</strong>
                         </p>
                 </div>
