@@ -15,3 +15,27 @@
     @include set-alpha(background-color, $color-blue-4, 0.66);
     color: $color-orange;
 }
+
+.btn-3 {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    border: 0px;
+    padding: 3px;
+    @include set-alpha(background-color, $color-white, 0.66);
+    border-radius: $radius-1;
+    color: $color-blue-5;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.btn-3:hover {
+    transition: 0.3s;
+    @include set-alpha(background-color, $color-white, 0.33);
+    color: $color-dark-orange;
+    cursor: pointer;
+    border: 1px solid $color-orange;
+}
