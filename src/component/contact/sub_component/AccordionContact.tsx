@@ -3,13 +3,23 @@ import AccordionItemContactEmail from './AccordionItemContactEmail';
 import AccordionItemContactMobile from './AccordionItemContactMobile';
 import AccordionItemContactForm from './AccordionItemContactForm';
 
+// ajouter displayToast
 interface AccordionContactProps {
     setAccordionId: any;
     email: string;
     mobile: string;
     qrcodeEmail: string;
     qrcodeMobile: string;
-    submitForm: (event: any, setResult: (result: string) => void) => void;
+    submitForm: (
+        event: any, 
+        setResult: (result: string) => void,
+        displayToast: (
+            title: string,
+            subtitle: string,
+            message: string,
+            mode: string
+        ) => void
+    ) => void;
 }
 const AccordionContact = (props: AccordionContactProps) => {
     

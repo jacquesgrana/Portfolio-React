@@ -10,18 +10,25 @@ $color-black: hsl(0, 0%, 0%);
 $color-light-blue: hsl(230, 49%, 85%);
 $color-orange: hsl(35, 87%, 54%);
 $color-light-orange: hsl(43, 88%, 57%);
+$color-light-orange-2: hsl(43, 93%, 74%);
 $color-dark-orange: hsl(35, 100%, 27%);
 $color-dark-orange-2: hsl(35, 100%, 18%);
 
 
 $primary: $color-blue-4 !important;
-$success: hsl(138, 95%, 36%) !important;
-$success-dark-1: hsl(138, 95%, 22%);
-$success-dark-2: hsl(138, 95%, 15%);
+
+$success: rgb(5, 179, 57) !important;
+$success-dark-1: rgb(3, 109, 35);
+$success-dark-2: rgb(2, 75, 24);
+$success-light-1: rgb(6, 214, 69);
+$success-light-2: rgb(81, 243, 130);
+
 $warning: $color-orange !important;
 $danger: hsl(14, 95%, 40%) !important;
 $danger-dark-1: hsl(14, 97%, 26%);
 $danger-dark-2: hsl(14, 98%, 17%);
+$danger-light-1: hsl(14, 98%, 60%);
+$danger-light-2: hsl(14, 98%, 72%);
 $color-violet-blue: hsl(258, 94%, 44%);
 
 // 18 couleurs pastels différentes visuellement nommées dans tous les tons (vert, rouge, bleu, violet, etc.) : '$color-tag-xxx' ou 'xxx' est le numéro de la couleur de 1 à 12

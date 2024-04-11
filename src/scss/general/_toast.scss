@@ -1,0 +1,37 @@
+#custom-toast {
+    transition: 0.3s;
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    z-index: 1000;
+    background-color: $color-blue-5;
+    color: $color-white;
+    border: 1px solid $color-white;
+    
+    
+    .custom-toast-success {
+        color: $success-light-2;
+    }
+    
+    .custom-toast-danger {
+        color: $danger-light-1;
+    }
+
+    .custom-toast-info {
+        color: $color-blue-0;
+    }
+    
+    .toast-header {
+        background-color: $color-blue-5;
+        color: $color-white;
+        border: 1px solid $color-white;
+    }
+    
+    button.btn-close {
+        transition: 0.3s;
+        color: $color-white !important;
+        background-color: $color-light-orange;
+        padding: 5px;
+        content: "X";
+    }
+}

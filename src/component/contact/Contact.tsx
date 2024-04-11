@@ -13,20 +13,23 @@ const Contact = () => {
     //const captchasRef = useRef<ICaptcha[]>([]);
     //const jsonService = JsonService.getInstance();
     const mailService = MailService.getInstance();
-    //const submitForm = mailService.submitForm;
-
-    /*
-        const fct = async () => {
-            captchasRef.current = await (await jsonService).findAllCaptchas();
-            //console.log('captchasRef.current', captchasRef.current);
-        };
-        fct();
-      */  
+    //const submitForm = mailService.submitForm; 
    
 
-    const submitFormWrapper = (event: any, setResult: (result: string) => void) => {
+    // ajouter displayToast
+    const submitFormWrapper = (
+        event: any, 
+        setResult: (result: string) => void,
+        displayToast: (
+            title: string,
+            subtitle: string,
+            message: string,
+            mode: string
+        ) => void
+
+    ) => {
         const fct = async () => {
-            await (await mailService).submitForm(event, setResult);
+            await (await mailService).submitForm(event, setResult, displayToast);
         };
         fct();
     }
