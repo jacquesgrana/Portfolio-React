@@ -67,13 +67,13 @@ const CustomCaptcha = ({captcha, captchaComment, setAnswerFromUser}: CustomCaptc
                     <strong>Répondre à la question</strong>
                 </p>
                 <div id="custom-captcha-question-container" className="custom-captcha-container mb-3">
-                    <p className="text-center text-blue-5 mb-1">Question</p>
+                    <p className="text-center text-blue-0 mb-1">Question</p>
                     <div className="custom-captcha-input mb-0">
                         <p className="text-center text-blue-5"><strong>{captchaState.question}</strong></p>
                     </div>
                 </div>
                 <div id="custom-captcha-answer-container" className="custom-captcha-container mt-0">
-                    <p className="text-center text-blue-5 mb-1">Réponse</p>
+                    <p className="text-center text-blue-0 mb-1">Réponse</p>
                     <div 
                     className="custom-captcha-input-container mb-0"
                     >   
