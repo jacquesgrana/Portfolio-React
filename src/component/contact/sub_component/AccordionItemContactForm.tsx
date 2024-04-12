@@ -7,16 +7,14 @@ import CaptchaService from '../../../service/CaptchaService';
 import ConfigContact from '../../../config/ConfigContact';
 import ConfigCaptcha from '../../../config/ConfigCaptcha';
 import CustomToast from '../../common/CustomToast';
+import IToast from '../../../interface/IToast';
 
 // ajouter displayToast
 interface AccordionItemContactMobileProps {
     submitForm: (event: any,
          setResult: (result: string) => void,
          displayToast: (
-            title: string,
-            subtitle: string,
-            message: string,
-            mode: string
+            toast: IToast
         ) => void
     ) => void;
 }
@@ -39,35 +37,40 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
     useEffect(() => {
         const fct = async () => {
             captchaServiceRef.current = await CaptchaService.getInstance();
-            setCaptcha(captchaServiceRef.current.getRandomCaptcha());
+            reset();
         };
         fct();
     }, []); 
 
     const toggleShowToast = () => setShowToast(!showToast);
 
-    const displayToast = (title: string, subtitle: string, message: string, mode: string) => {
-        titleToastRef.current = title;
-        subtitleToastRef.current = subtitle;
-        messageToastRef.current = message;
-        modeToastRef.current = mode;
+    const displayToast = (toast: IToast) => {
+        titleToastRef.current = toast.title;
+        subtitleToastRef.current = toast.subtitle;
+        messageToastRef.current = toast.message;
+        modeToastRef.current = toast.mode;
         toggleShowToast();
+    }
+
+    const reset = () => {
+        setCaptcha(captchaServiceRef.current.getRandomCaptcha());
+        const inputElt = document.getElementById
+        ("custom-captcha-answer-input") as HTMLInputElement;
+        const zero: number = 0;
+        inputElt.value = zero.toString();
+        setCaptchaComment(ConfigCaptcha.RESULT_CAPTCHA_INIT);
+        setResult(ConfigContact.RESULT_FORM_INIT);
     }
 
     const submitForm = (event: any, setResult: (result: string) => void) => {
         event.preventDefault();
         if (validateForm()) {
-            props.submitForm(event, setResult, displayToast); // <-- ajouter displayToast
-            setCaptcha(captchaServiceRef.current.getRandomCaptcha());
-            const inputElt = document.getElementById
-            ("custom-captcha-answer-input") as HTMLInputElement;
-            const zero: number = 0;
-            inputElt.value = zero.toString();
+            props.submitForm(event, setResult, displayToast);
+            reset();
         }
         else {
             setResult(ConfigContact.RESULT_FORM_NOT_VALID);
-            // TODO afficher toast
-            //displayToast("Formulaire non envoyé", "Erreur", "Une erreur s'est produite", "danger");
+            reset();
         }
     };
 
@@ -79,7 +82,6 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
     };
 
       const setAnswerFromUser = (captchaId: number, answer: number) => {
-        //console.log("answer", answer);
         const isCaptchaValid = captchaServiceRef.current.validateAnswer(captchaId, answer);
         isCaptchaValidRef.current = isCaptchaValid;
         if(isCaptchaValid) {
@@ -244,7 +246,10 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                             <Button 
                             title="Envoyer le formulaire."
                             type="submit"
-                            className="btn-1 btn-sm bg-blue-4 text-white">Envoyer</Button>
+                            className="btn-1 btn-sm bg-blue-4 text-white"
+                            >
+                                Envoyer
+                            </Button>
                         </div>
 
                     </Form>

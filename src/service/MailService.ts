@@ -1,6 +1,7 @@
 
 import ConfigContact from '../config/ConfigContact';
 import ConfigW3Form from '../config/ConfigW3Form';
+import IToast from '../interface/IToast';
 
 export default class MailService {
 
@@ -8,6 +9,27 @@ export default class MailService {
 
     private _w3FormUrl = "";
     private _w3FormAccesKey = "";
+
+    private _toasts: IToast[] = [
+        {
+            title: "Formulaire en cours d'envoi.",
+            subtitle: "En cours.",
+            message: "Le formulaire est en cours d'envoi.",
+            mode: "info"
+        },
+        {
+            title: "Formulaire envoyé.",
+            subtitle: "Succès.",
+            message: "Le formulaire a été envoyé.",
+            mode: "success"
+        },
+        {
+            title: "Formulaire non envoyé.",
+            subtitle: "Erreur.",
+            message: "Le formulaire n'a pas été envoyé.",
+            mode: "danger"
+        }
+    ];
   
     private constructor() {}
   
@@ -29,20 +51,12 @@ export default class MailService {
         event: any, 
         setResult: (any),
         displayToast: (
-            title: string,
-            subtitle: string,
-            message: string,
-            mode: string
+            toast: IToast
         ) => void
     ): Promise<void> {
         setResult(ConfigContact.RESULT_FORM_WAITING);
         // TODO afficher toast ?
-        displayToast(
-            "Formulaire en cours d'envoi",
-            "En cours",
-            "Le formulaire est en cours d'envoi",
-            "info"
-        )
+        displayToast(this._toasts[0]);
         const formData = new FormData(event.target);
         const email = formData.get("email")?.toString() ?? "";
         formData.append("access_key", this._w3FormAccesKey);
@@ -55,23 +69,14 @@ export default class MailService {
         if (data.success) {
             setResult(ConfigContact.RESULT_FORM_DONE);
             // TODO afficher toast
-            displayToast(
-                "Formulaire envoyé.", 
-                "Succès.", 
-                "Le formulaire a bien été envoyé.", 
-                "success");
+            displayToast(this._toasts[1]);
             event.target.reset();
         } 
         else {
             console.log("Erreur", data);
             setResult(ConfigContact.RESULT_FORM_ERROR + data.message);
             // TODO afficher toast
-            displayToast(
-                "Formulaire non envoyé.",
-                "Erreur.",
-                `Une erreur s'est produite : ${data.message}.`,
-                "danger"
-            )
+            displayToast(this._toasts[2]);
         }
     }
 }
