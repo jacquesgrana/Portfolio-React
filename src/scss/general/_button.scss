@@ -17,9 +17,10 @@
 }
 
 .btn-3 {
-    width: 40px;
-    min-width: 40px;
-    height: 40px;
+    transition: 0.3s;
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
     border: 0px;
     padding: 3px;
     padding-top: 0px;
@@ -31,7 +32,7 @@
     justify-content: center;
     align-items: center;
     user-select: none;
-    border: 1px solid $color-white;
+    border: 1px solid $color-blue-1;
     background-color: $color-blue-4;
     text-align: center;
 }
@@ -39,8 +40,9 @@
 .btn-3:hover {
     transition: 0.3s;
     //@include set-alpha(background-color, $color-white, 0.33);
-    color: $color-dark-orange;
+    color: $color-orange;
     cursor: pointer;
     border: 1px solid $color-orange;
+    box-shadow: 0px 0px 5px 0px $color-orange;
     background-color: $color-blue-5;
 }

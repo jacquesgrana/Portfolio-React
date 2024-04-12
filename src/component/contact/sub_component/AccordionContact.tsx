@@ -2,6 +2,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import AccordionItemContactEmail from './AccordionItemContactEmail';
 import AccordionItemContactMobile from './AccordionItemContactMobile';
 import AccordionItemContactForm from './AccordionItemContactForm';
+import IToast from '../../../interface/IToast';
 
 // ajouter displayToast
 interface AccordionContactProps {
@@ -14,10 +15,7 @@ interface AccordionContactProps {
         event: any, 
         setResult: (result: string) => void,
         displayToast: (
-            title: string,
-            subtitle: string,
-            message: string,
-            mode: string
+            toast: IToast
         ) => void
     ) => void;
 }

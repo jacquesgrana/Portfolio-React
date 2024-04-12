@@ -3,6 +3,7 @@ import AccordionContact from "./sub_component/AccordionContact";
 import ConfigContact from "../../config/ConfigContact";
 import ConfigImage from "../../config/ConfigImage";
 import MailService from '../../service/MailService';
+import IToast from "../../interface/IToast";
 
 const Contact = () => {
     const email = ConfigContact.EMAIL_PERSO;
@@ -21,10 +22,7 @@ const Contact = () => {
         event: any, 
         setResult: (result: string) => void,
         displayToast: (
-            title: string,
-            subtitle: string,
-            message: string,
-            mode: string
+            toast: IToast
         ) => void
 
     ) => {
