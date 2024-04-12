@@ -32,7 +32,6 @@ const Header = () => {
   // détecte le changement de hauteur du Header
   useEffect(() => {
     const handleResize = () => {
-      //setHeaderHeight(getHeaderHeight());
       setPaddingTop(getHeaderHeight());
     };
     window.addEventListener("resize", handleResize);
