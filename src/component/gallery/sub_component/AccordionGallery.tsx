@@ -56,7 +56,7 @@ const AccordionGallery = (props: AccordionGalleryProps) => {
             <Accordion onSelect={() => props.handleToggleAccordion()} flush>
                 <Accordion.Item eventKey="1" className="mb-2">
                     <Accordion.Header>
-                    <h3 id="accordion-title-gallery" className="title-2-bold text-white text-center mt-2 ms-0">
+                    <h3 id="accordion-title-gallery" className="title-2-bold text-white mt-2 ms-0">
                         <span id="accordion-bullet-gallery" className="accordion-bullet text-orange me-1 transition-03s">•</span> <span id="accordion-title-contact-1" className="accordion-title transition-03s text-space-2">Trier & Filtrer</span>
                     </h3>
                     </Accordion.Header>

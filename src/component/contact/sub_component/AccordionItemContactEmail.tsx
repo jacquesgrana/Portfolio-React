@@ -9,7 +9,7 @@ const AccordionItemContactEmail = (props: AccordionItemContactEmailProps) => {
     return(
         <Accordion.Item eventKey="1" className="mb-2">
             <Accordion.Header>
-                <h3 className="title-2-bold text-white text-center mt-2 ms-0">
+                <h3 className="title-2-bold text-white mt-2 ms-0">
                     <span id="accordion-bullet-contact-1" className="accordion-bullet text-orange me-1 transition-03s">•</span> <span id="accordion-title-contact-1" className="accordion-title transition-03s text-space-2">E-mail</span>
                 </h3>
             </Accordion.Header>
