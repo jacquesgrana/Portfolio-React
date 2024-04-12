@@ -24,20 +24,23 @@ const Header = () => {
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
-  // détecte le changement de hauteur du Header
-  useEffect(() => {
     const handleResize = () => {
       setPaddingTop(getHeaderHeight());
     };
     window.addEventListener("resize", handleResize);
+    /* 
     return () => {
       window.removeEventListener("resize", handleResize);
     };
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };*/
+    
+  }, []);
+
+  // détecte le changement de hauteur du Header
+  useEffect(() => {
   }, []);
   const handleLinkClick = (index: number) => {
     setActiveLink(index);
@@ -58,6 +61,7 @@ const Header = () => {
   const getHeaderHeight = () => {
     const header = document.getElementById("app-header");
     if (header) {
+      //console.log('header.offsetHeight', header.offsetHeight);
       return header.offsetHeight;
     }
     return 0;

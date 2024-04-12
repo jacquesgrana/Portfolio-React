@@ -99,7 +99,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
             className=""
             >
                 <Accordion.Header>
-                    <h3 className="title-2-bold text-white text-center mt-2 ms-0">
+                    <h3 className="title-2-bold text-white mt-2 ms-0">
                         <span id="accordion-bullet-contact-3" className="accordion-bullet text-orange me-1 transition-03s">•</span>&nbsp;<span id="accordion-title-contact-3" className="accordion-title transition-03s text-space-2">Formulaire</span>
                     </h3>
                 </Accordion.Header>
