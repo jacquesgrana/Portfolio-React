@@ -66,6 +66,7 @@ const Contact = () => {
                 qrcodeEmail={qrcodeEmail}
                 qrcodeMobile={qrcodeMobile}
                 submitForm={submitFormWrapper}
+                displayToast={displayToast}
             />
         </div>
     );

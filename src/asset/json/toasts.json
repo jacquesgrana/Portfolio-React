@@ -17,6 +17,12 @@
             "subtitle": "Erreur.",
             "message": "Le formulaire n'a pas été envoyé : ",
             "mode": "danger"
+        },
+        {
+            "title": "Erreur Captcha",
+            "subtitle": "Alerte.",
+            "message": "Le captcha n'est pas correct. Veuillez reessayer.",
+            "mode": "warning"
         }
     ]
 }

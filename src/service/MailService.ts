@@ -87,4 +87,12 @@ export default class MailService {
             displayToast(toastToDisplay);
         }
     }
+
+    public async displayToastCaptachaNotValid(
+        displayToast: (toast: IToast) => void
+    )
+    {
+        const toastToDisplay: IToast = this._toasts[3];
+        displayToast(toastToDisplay);
+    }
 }

@@ -20,11 +20,12 @@ export default class JsonService {
     public static async getInstance(): Promise<JsonService> {
       if (this._instance === null) {
         this._instance = new JsonService();
-        await this._instance.init();
+        //await this._instance.init();
       }
       return await this._instance;
     }
 
+    /*
     private async init(): Promise<void> {
         this._tags = await this.getTags();
         this._projects = await this.getProjects();
@@ -32,6 +33,7 @@ export default class JsonService {
         this._captchas = await this.getCaptchas();
         this._toasts = await this.getToasts();
     }
+    */
 
     private async getTags(): Promise<ITag[]> {
         return await ConfigJson.TAGS_DATA.tags;
@@ -62,7 +64,7 @@ export default class JsonService {
         }
         return this._projects;
     }
-    
+
     public async findAllCaptchas(): Promise<ICaptcha[]> {
         if (this._captchas.length === 0) {
             this._captchas = await this.getCaptchas();
