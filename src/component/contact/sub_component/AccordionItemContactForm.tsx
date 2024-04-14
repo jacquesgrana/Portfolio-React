@@ -7,12 +7,15 @@ import CaptchaService from '../../../service/CaptchaService';
 import ConfigContact from '../../../config/ConfigContact';
 import ConfigCaptcha from '../../../config/ConfigCaptcha';
 //import { Toast } from 'react-bootstrap';
+import MailService from '../../../service/MailService';
+import IToast from '../../../interface/IToast';
 
 // ajouter displayToast
 interface AccordionItemContactMobileProps {
     submitForm: (event: any,
          setResult: (result: string) => void
     ) => void;
+    displayToast: (toast: IToast) => void
 }
 const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
     const MAX_TEXT_ADDRESS_LENGTH = 400;
@@ -31,10 +34,12 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
 
     const isCaptchaValidRef = useRef<boolean>(false);
     const captchaServiceRef: any = useRef(null);
+    const mailServiceRef: any = useRef(null);
 
     useEffect(() => {
         const fct = async () => {
             captchaServiceRef.current = await CaptchaService.getInstance();
+            mailServiceRef.current = await MailService.getInstance();
             reset();
         };
         fct();
@@ -70,6 +75,8 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
             reset();
         }
         else {
+            // ajouter displayToast
+            if(!isCaptchaValidRef.current) mailServiceRef.current.displayToastCaptachaNotValid(props.displayToast);
             setResult(ConfigContact.RESULT_FORM_NOT_VALID);
             reset();
         }

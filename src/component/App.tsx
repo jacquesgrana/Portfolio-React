@@ -38,7 +38,7 @@ const App = () => {
                 show={showToast}
                 toast={toastRef.current}
                 toggleShow={toggleShowToast}
-            />
+        />
     </div>
   );
 }
