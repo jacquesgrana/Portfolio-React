@@ -52,8 +52,8 @@ const Gallery = () => {
     useEffect(() => {
         const initData = async () => {
           jsonServiceRef.current = await JsonService.getInstance();
-          const tagsFromJson = jsonServiceRef.current.findAllTags();
-          const projectsFromJson = jsonServiceRef.current.findAllProjects();
+          const tagsFromJson = await jsonServiceRef.current.findAllTags();
+          const projectsFromJson = await jsonServiceRef.current.findAllProjects();
           const generatedProjects = ProjectLibrary.generateProjectsFromDto(projectsFromJson, tagsFromJson);
           allTagsRef.current = tagsFromJson;
           

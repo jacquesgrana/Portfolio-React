@@ -6,31 +6,29 @@ import ICaptcha from '../../../interface/ICaptcha';
 import CaptchaService from '../../../service/CaptchaService';
 import ConfigContact from '../../../config/ConfigContact';
 import ConfigCaptcha from '../../../config/ConfigCaptcha';
-import CustomToast from '../../common/CustomToast';
-import IToast from '../../../interface/IToast';
+//import { Toast } from 'react-bootstrap';
 
 // ajouter displayToast
 interface AccordionItemContactMobileProps {
     submitForm: (event: any,
-         setResult: (result: string) => void,
-         displayToast: (
-            toast: IToast
-        ) => void
+         setResult: (result: string) => void
     ) => void;
 }
 const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
     const MAX_TEXT_ADDRESS_LENGTH = 400;
-    //const MAX_TEXT_LENGTH = 30;
+    const MAX_TEXT_LENGTH = 40;
 
     const [result, setResult] = useState(ConfigContact.RESULT_FORM_INIT);
     const [captcha, setCaptcha] = useState<ICaptcha>({ id: -1, question: "", answer: -1 });
     const [captchaComment, setCaptchaComment] = useState<string>(ConfigCaptcha.RESULT_CAPTCHA_INIT);
-    const [showToast, setShowToast] = useState(false);
-
+    //const [showToast, setShowToast] = useState(false);
+/*
     const titleToastRef = useRef<string>("Formulaire envoyé.");
     const subtitleToastRef = useRef<string>("Succès.");
     const messageToastRef = useRef<string>("Votre formulaire a été envoyé avec succès.");
-    const modeToastRef = useRef<string>("info");
+    const modeToastRef = useRef<string>("success");
+*/
+
     const isCaptchaValidRef = useRef<boolean>(false);
     const captchaServiceRef: any = useRef(null);
 
@@ -42,18 +40,21 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
         fct();
     }, []); 
 
-    const toggleShowToast = () => setShowToast(!showToast);
+    //const toggleShowToast = () => setShowToast(!showToast);
 
+    /*
     const displayToast = (toast: IToast) => {
-        titleToastRef.current = toast.title;
-        subtitleToastRef.current = toast.subtitle;
-        messageToastRef.current = toast.message;
-        modeToastRef.current = toast.mode;
+        toastRef.current = toast;
         toggleShowToast();
-    }
+    }*/
 
     const reset = () => {
-        setCaptcha(captchaServiceRef.current.getRandomCaptcha());
+        let randomCaptcha: ICaptcha = { id: -1, question: "", answer: -1 };
+        randomCaptcha = captchaServiceRef.current.getRandomCaptcha();
+        //console.log("captchaServiceRef.current ", captchaServiceRef.current);
+        //console.log("randomCaptcha ", randomCaptcha);
+       
+        setCaptcha(randomCaptcha);
         const inputElt = document.getElementById
         ("custom-captcha-answer-input") as HTMLInputElement;
         const zero: number = 0;
@@ -65,7 +66,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
     const submitForm = (event: any, setResult: (result: string) => void) => {
         event.preventDefault();
         if (validateForm()) {
-            props.submitForm(event, setResult, displayToast);
+            props.submitForm(event, setResult);
             reset();
         }
         else {
@@ -77,7 +78,6 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
     const validateForm = () => {
         let toReturn: boolean = true;
         toReturn &&= isCaptchaValidRef.current;
-        //console.log('toReturn', toReturn);
         return toReturn;
     };
 
@@ -128,6 +128,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                             className="contact-form-control"
                             name="company_name" 
                             type="text" 
+                            maxLength={MAX_TEXT_LENGTH}
                             placeholder="Saisir le nom de votre entreprise (facultatif)"
                             title="Saisir le nom de votre entreprise (facultatif)"
                             />
@@ -145,6 +146,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                             className="contact-form-control"
                             name="first_name" 
                             type="text" 
+                            maxLength={MAX_TEXT_LENGTH}
                             placeholder="Saisir votre prénom (obligatoire)" 
                             title="Saisir votre prénom (obligatoire)" 
                             required
@@ -163,6 +165,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                             className="contact-form-control"
                             name="last_name" 
                             type="text" 
+                            maxLength={MAX_TEXT_LENGTH}
                             placeholder="Saisir votre nom (obligatoire)" 
                             title="Saisir votre nom (obligatoire)"
                             required
@@ -181,6 +184,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                             className="contact-form-control"
                             name="email" 
                             type="email" 
+                            maxLength={MAX_TEXT_LENGTH}
                             placeholder="Saisir votre email (obligatoire)"
                             title="Saisir votre email (obligatoire)" 
                             required 
@@ -204,6 +208,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                             className="contact-form-control"
                             name="phone_number" 
                             type="tel" 
+                            maxLength={MAX_TEXT_LENGTH}
                             placeholder="Saisir votre numéro de téléphone (facultatif)"
                             title="Saisir votre numéro de numéro (facultatif)" 
                             />
@@ -236,7 +241,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                             />
                         </Form.Group>
                         <CustomCaptcha
-                            captcha={captcha}
+                            captcha={captcha !== undefined ? captcha : {id: 0, question: "Combien font 6 fois 2 ?", answer: 12}}
                             captchaComment={captchaComment}
                             setAnswerFromUser={setAnswerFromUser}
                         />
@@ -257,20 +262,13 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
                     <div 
                     className="d-flex justify-content-center mt-2 mb-1"
                     >
-                            <p className={`text-center text-size-0-75 text-blue-5 mt-0 ${result === ConfigContact.RESULT_FORM_DONE ? 'text-success-dark-2 transition-03s' : 'text-blue-5 transition-03s'}`}>
+                            <p className={`text-center text-size-0-75 mt-0 transition-03s ${result === ConfigContact.RESULT_FORM_DONE ? 'text-success-dark-2 transition-03s' : 'text-blue-5'}`}>
                                 <strong>{result}</strong>
                             </p>
                     </div>
                 </Accordion.Body>
             </Accordion.Item>
-            <CustomToast
-                show={showToast}
-                title={titleToastRef.current}
-                subtitle={subtitleToastRef.current}
-                message={messageToastRef.current}
-                mode={modeToastRef.current}
-                toggleShow={toggleShowToast}
-            />
+
         </>
     );
 }
@@ -295,4 +293,11 @@ export default AccordionItemContactForm;
                         toggleShowToast();
                     }}
                     >Show toast</button>
+
+
+                <CustomToast
+                show={showToast}
+                toast={toastRef.current}
+                toggleShow={toggleShowToast}
+            />
                     */

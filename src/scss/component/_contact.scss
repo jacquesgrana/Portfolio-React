@@ -88,20 +88,12 @@
             align-items: center;
             flex-wrap: wrap;
         }
-        
 
         #custom-captcha-answer-input {
             border: 0px solid $color-white;
             text-align: center;
-            //flex-grow: 1 !important;
             width: 100%;
         }
-
-        /*
-        input[type="number"] {
-            //-moz-appearance: textfield;
-        }
-        */
 
         input[type="number"] {
             -webkit-appearance: textfield; /* Pour Chrome et Safari */
@@ -128,7 +120,6 @@
             @include set-alpha(background-color, $color-white, 0.66);
             padding: 10px;
             border-radius: $radius-1;
-            //width: 55vw;
             max-width: 340px;
             height:fit-content;
             display: flex;
@@ -137,7 +128,6 @@
             align-items: center;
             flex-wrap: wrap;
             width: 100%;
-            //-moz-appearance: textfield;
         }
 
         .custom-captcha-input p {
@@ -148,12 +138,4 @@
     .contact-form-result {
         color: $color-blue-4 !important;
     }
-
-    /*
-    input[type="number"]::-webkit-inner-spin-button,
-    input[type="number"]::-webkit-outer-spin-button {
-     -webkit-appearance: none;
-     margin: 0;
-    }
-    */
 }

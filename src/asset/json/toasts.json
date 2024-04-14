@@ -1,0 +1,22 @@
+{
+    "toasts": [
+        {
+            "title": "Formulaire en cours d'envoi.",
+            "subtitle": "En cours.",
+            "message": "Le formulaire est en cours d'envoi.",
+            "mode": "info"
+        },
+        {
+            "title": "Formulaire envoyé.",
+            "subtitle": "Succès.",
+            "message": "Le formulaire a été envoyé.",
+            "mode": "success"
+        },
+        {
+            "title": "Formulaire non envoyé.",
+            "subtitle": "Erreur.",
+            "message": "Le formulaire n'a pas été envoyé : ",
+            "mode": "danger"
+        }
+    ]
+}

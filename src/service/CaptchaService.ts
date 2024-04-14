@@ -21,8 +21,9 @@ export default class CaptchaService {
 
 
     private async init(): Promise<void> {
-        this._jsonService = await JsonService.getInstance();
-        this._captchas = this._jsonService.findAllCaptchas();
+        this._jsonService = await (await JsonService).getInstance();
+        this._captchas = await this._jsonService.findAllCaptchas();
+        //console.log('init : this._captchas :', this._captchas);
     }
 
     public validateAnswer(captchaId: number, answer: number): boolean {
@@ -34,10 +35,11 @@ export default class CaptchaService {
         return toReturn;
     }
 
-    public getRandomCaptcha(): ICaptcha {
+    public  getRandomCaptcha(): ICaptcha {
         const max = ConfigCaptcha.CAPTCHA_MAX_NUMBER - 1;
         const randomNumber = Math.floor(Math.random() * (max + 1));
         const randomCaptcha = this._captchas[randomNumber]; 
+        //console.log("randomCaptcha :", randomCaptcha);
         return randomCaptcha;        
     }
 

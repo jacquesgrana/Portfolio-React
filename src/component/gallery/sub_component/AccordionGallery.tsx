@@ -53,7 +53,11 @@ const AccordionGallery = (props: AccordionGalleryProps) => {
     
     return (
         <div className='d-flex flex-column align-items-center justify-content-start'>
-            <Accordion onSelect={() => props.handleToggleAccordion()} flush>
+            <Accordion 
+            onSelect={() => props.handleToggleAccordion()} 
+            flush
+            className="accordion-container"
+            >
                 <Accordion.Item eventKey="1" className="mb-2">
                     <Accordion.Header>
                     <h3 id="accordion-title-gallery" className="title-2-bold text-white mt-2 ms-0">
