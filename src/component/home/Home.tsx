@@ -3,6 +3,7 @@ import ConfigUrl from "../../config/ConfigUrl";
 import ConfigImage from "../../config/ConfigImage";
 import ConfigPdf from "../../config/ConfigPdf";
 import { useEffect, useRef } from "react";
+//import { useOutletContext } from "react-router-dom";
 
 const Home = () => {
     const accordionId = useRef(3);
@@ -25,7 +26,11 @@ const Home = () => {
     const opquastLogo =  ConfigImage.LOGO_OPQUAST;
 
     const cvPdf = ConfigPdf.CV_PDF;
-
+/*
+    const { message }: { message: string } = useOutletContext();
+    //console.log("props", props);
+    console.log('message :', message);
+*/
     const setAccordionId = (id: number): void => {
             accordionId.current = id;
             const accordions = document.getElementsByClassName("accordion-title");

@@ -1,41 +1,38 @@
 import { Toast } from "react-bootstrap"
+import IToast from "../../interface/IToast";
 
 interface CustomToastProps {
     show: boolean,
-    title: string,
-    subtitle: string,
-    message: string,
-    mode: string,
+    toast: IToast,
     toggleShow: () => void
 }
 const CustomToast = (props: CustomToastProps) => {
-
-    const TOAST_DELAY = 3000;
+    const TOAST_DELAY = 5000;
     return(
         <Toast 
         show={props.show} 
         onClose={props.toggleShow}
-        className={`custom-toast-${props.mode} custom-toast`}
+        className={`custom-toast-${props.toast.mode} custom-toast`}
         id="custom-toast"
         delay={TOAST_DELAY} 
         autohide
         >
             <Toast.Header>
                 <strong 
-                className={`custom-toast-${props.mode} me-auto`}
+                className={`custom-toast-${props.toast.mode} me-auto`}
                 >
-                    {props.title}
+                    {props.toast.title}
                 </strong>
                 <small 
-                className={`custom-toast-${props.mode}`}
+                className={`custom-toast-${props.toast.mode}`}
                 >
-                    {props.subtitle}
+                    {props.toast.subtitle}
                 </small>
             </Toast.Header>
             <Toast.Body
             className={`text-white`}
             >
-                {props.message}
+                {props.toast.message}
             </Toast.Body>
         </Toast>
     );

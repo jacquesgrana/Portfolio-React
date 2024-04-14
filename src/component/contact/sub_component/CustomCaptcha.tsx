@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+//import { useEffect, useState } from "react";
 import ICaptcha from "../../../interface/ICaptcha";
 import ConfigCaptcha from "../../../config/ConfigCaptcha";
 
@@ -14,28 +14,17 @@ const CustomCaptcha = ({captcha, captchaComment, setAnswerFromUser}: CustomCaptc
     const INPUT_MAX_VALUE : number = 16;
     const INPUT_STEP_VALUE : number = 1;
 
-    //const [answer, setAnswer] = useState<number>(INPUT_DEFAULT_VALUE);
 
-    const [captchaState, setCaptchaState] = useState<ICaptcha>({id: -1, question: "", answer: -1});
+    //const [captchaState, setCaptchaState] = useState<ICaptcha>({id: -1, question: "", answer: -1});
 
     /*
     useEffect(() => {
         setCaptchaState(() => {
-            const inputElt = document.getElementById
-            ("custom-captcha-answer-input");
-            if (inputElt) {
-                inputElt.addEventListener("change", (event: any) => {
-                    setAnswerFromUser(captcha.id, Number(event.target.value));
-                });
-            }
+            //console.log('captcha', captcha);
             return captcha
         });
-    } , [captcha, setAnswerFromUser]);
-    */
-
-    useEffect(() => {
-        setCaptchaState(captcha);
     }, [captcha])
+    */
 
     const handleClickPlus = (e: any) => {
         e.preventDefault();
@@ -69,7 +58,7 @@ const CustomCaptcha = ({captcha, captchaComment, setAnswerFromUser}: CustomCaptc
                 <div id="custom-captcha-question-container" className="custom-captcha-container mb-3">
                     <p className="text-center text-blue-0 mb-1">Question</p>
                     <div className="custom-captcha-input mb-0">
-                        <p className="text-center text-blue-5"><strong>{captchaState.question}</strong></p>
+                        <p className="text-center text-blue-5"><strong>{captcha.question}</strong></p>
                     </div>
                 </div>
                 <div id="custom-captcha-answer-container" className="custom-captcha-container mt-0">

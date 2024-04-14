@@ -31,6 +31,7 @@ const AccordionHome = (props: AccordionHomeProps) => {
         defaultActiveKey="4" 
         onSelect={(eventKey) => props.setAccordionId(Number(eventKey))} 
         flush
+        className="accordion-container"
         >
             <AccordionItemHomeAboutMe 
             />

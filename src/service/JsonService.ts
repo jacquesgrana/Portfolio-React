@@ -4,6 +4,7 @@ import ITag from "../interface/ITag";
 import IProjectDto from "../dto/IProjectDto";
 import ConfigJson from '../config/ConfigJson';
 import ICaptcha from '../interface/ICaptcha';
+import IToast from "../interface/IToast";
 
 export default class JsonService {
   
@@ -12,6 +13,7 @@ export default class JsonService {
     private _tags: ITag[] = [];
     private _projects: IProjectDto[] = [];
     private _captchas: ICaptcha[] = [];
+    private _toasts: IToast[] = [];
 
     private constructor() {}
   
@@ -20,7 +22,7 @@ export default class JsonService {
         this._instance = new JsonService();
         await this._instance.init();
       }
-      return this._instance;
+      return await this._instance;
     }
 
     private async init(): Promise<void> {
@@ -28,6 +30,7 @@ export default class JsonService {
         this._projects = await this.getProjects();
         this._projects = this._projects.sort((p1, p2) => p2.difficulty - p1.difficulty);
         this._captchas = await this.getCaptchas();
+        this._toasts = await this.getToasts();
     }
 
     private async getTags(): Promise<ITag[]> {
@@ -39,19 +42,39 @@ export default class JsonService {
     }
 
     private async getCaptchas(): Promise<ICaptcha[]> {
-        return await ConfigJson.CAPTCHAS_DATA.captchas;
+        return ConfigJson.CAPTCHAS_DATA.captchas;
     }
 
-    public findAllTags(): ITag[] {
+    private async getToasts(): Promise<IToast[]> {
+        return await ConfigJson.TOATS_DATA.toasts;
+    }
+
+    public async findAllTags(): Promise<ITag[]> {
+        if (this._tags.length === 0) {
+            this._tags = await this.getTags();
+        }
         return this._tags;
     }
 
-    public findAllProjects(): IProjectDto[] {
+    public async findAllProjects(): Promise<IProjectDto[]> {
+        if (this._projects.length === 0) {
+            this._projects = await this.getProjects();
+        }
         return this._projects;
     }
-
-    public findAllCaptchas(): ICaptcha[] {
+    
+    public async findAllCaptchas(): Promise<ICaptcha[]> {
+        if (this._captchas.length === 0) {
+            this._captchas = await this.getCaptchas();
+        }
         return this._captchas;
+    }
+
+    public async findAllToasts(): Promise<IToast[]> {
+        if (this._toasts.length === 0) {
+            this._toasts = await this.getToasts();
+        }
+        return this._toasts;
     }
 
     // méthode qui renvoie la liste des projets qui contiennent au moins un des tags passés en paramètre

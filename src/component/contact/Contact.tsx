@@ -4,6 +4,7 @@ import ConfigContact from "../../config/ConfigContact";
 import ConfigImage from "../../config/ConfigImage";
 import MailService from '../../service/MailService';
 import IToast from "../../interface/IToast";
+import { useOutletContext } from "react-router-dom";
 
 const Contact = () => {
     const email = ConfigContact.EMAIL_PERSO;
@@ -15,23 +16,19 @@ const Contact = () => {
     //const jsonService = JsonService.getInstance();
     const mailService = MailService.getInstance();
     //const submitForm = mailService.submitForm; 
-   
 
     // ajouter displayToast
+    const { displayToast }: { displayToast: (toast: IToast) => void } = useOutletContext();
+
     const submitFormWrapper = (
         event: any, 
-        setResult: (result: string) => void,
-        displayToast: (
-            toast: IToast
-        ) => void
-
+        setResult: (result: string) => void
     ) => {
         const fct = async () => {
             await (await mailService).submitForm(event, setResult, displayToast);
         };
         fct();
     }
-    //captchasRef.current = jsonServiceRef.current.findAllCaptchas();
 
     const setAccordionId = (id: number): void => {
         accordionId.current = id;
