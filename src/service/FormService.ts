@@ -4,44 +4,21 @@ import ConfigW3Form from '../config/ConfigW3Form';
 import IToast from '../interface/IToast';
 import JsonService from './JsonService';
 
-export default class MailService {
+export default class FormService {
 
-    private static _instance: MailService | null = null;
+    private static _instance: FormService | null = null;
 
     private _w3FormUrl = "";
     private _w3FormAccesKey = "";
 
     private _jsonService: JsonService | null = null;
     private _toasts: IToast[] = [];
-
-    /*
-    private _toasts: IToast[] = [
-        {
-            title: "Formulaire en cours d'envoi.",
-            subtitle: "En cours.",
-            message: "Le formulaire est en cours d'envoi.",
-            mode: "info"
-        },
-        {
-            title: "Formulaire envoyé.",
-            subtitle: "Succès.",
-            message: "Le formulaire a été envoyé.",
-            mode: "success"
-        },
-        {
-            title: "Formulaire non envoyé.",
-            subtitle: "Erreur.",
-            message: "Le formulaire n'a pas été envoyé.",
-            mode: "danger"
-        }
-    ];
-    */
   
     private constructor() {}
   
-    public static async getInstance(): Promise<MailService> {
+    public static async getInstance(): Promise<FormService> {
       if (this._instance === null) {
-        this._instance = new MailService();
+        this._instance = new FormService();
         await this._instance.init();
       }
       return this._instance;

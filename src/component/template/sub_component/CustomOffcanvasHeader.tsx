@@ -21,7 +21,11 @@ const CustomOffcanvasHeader = (props: CustomOffcanvasHeaderProps) => {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav className="flex-column gap-4">
-            <Nav.Item className="offcanvas-item-1" onClick={() => props.handleLinkClick(0)}>
+            <Nav.Item 
+            className="offcanvas-item-1" 
+            onClick={() => props.handleLinkClick(0)}
+            title="Accueil"
+            >
               <Link
                 id="link-home"
                 to="/home"
@@ -32,7 +36,11 @@ const CustomOffcanvasHeader = (props: CustomOffcanvasHeaderProps) => {
                 Accueil
               </Link>
             </Nav.Item>
-            <Nav.Item className="offcanvas-item-1" onClick={() => props.handleLinkClick(1)}>
+            <Nav.Item 
+            className="offcanvas-item-1" 
+            onClick={() => props.handleLinkClick(1)}
+            title="Galerie"
+            >
               <Link
                 id="link-gallery"
                 to="/gallery"
@@ -43,7 +51,11 @@ const CustomOffcanvasHeader = (props: CustomOffcanvasHeaderProps) => {
                 Galerie
               </Link>
             </Nav.Item>
-            <Nav.Item className="offcanvas-item-1" onClick={() => props.handleLinkClick(2)}>
+            <Nav.Item 
+            className="offcanvas-item-1" 
+            onClick={() => props.handleLinkClick(2)}
+            title="Contact"
+            >
               <Link
                 id="link-contact"
                 to="/contact"

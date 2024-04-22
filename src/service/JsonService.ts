@@ -20,20 +20,20 @@ export default class JsonService {
     public static async getInstance(): Promise<JsonService> {
       if (this._instance === null) {
         this._instance = new JsonService();
-        //await this._instance.init();
+        await this._instance.init();
       }
       return await this._instance;
     }
 
-    /*
+    
     private async init(): Promise<void> {
-        this._tags = await this.getTags();
-        this._projects = await this.getProjects();
+        if (this._tags.length === 0) this._tags = await this.getTags();
+        if (this._projects.length === 0) this._projects = await this.getProjects();
         this._projects = this._projects.sort((p1, p2) => p2.difficulty - p1.difficulty);
-        this._captchas = await this.getCaptchas();
-        this._toasts = await this.getToasts();
+        if (this._captchas.length === 0) this._captchas = await this.getCaptchas();
+        if (this._toasts.length === 0) this._toasts = await this.getToasts();
     }
-    */
+    
 
     private async getTags(): Promise<ITag[]> {
         return await ConfigJson.TAGS_DATA.tags;
