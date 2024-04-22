@@ -42,6 +42,10 @@ export default class ConfigImage {
         {
             id: 7,
             url: require("../asset/image/project/portfolio_perso.png")
+        },
+        {
+            id: 8,
+            url: require("../asset/image/project/life_game_conway.png")
         }
     ];
 }

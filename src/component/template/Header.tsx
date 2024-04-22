@@ -98,10 +98,14 @@ const Header = () => {
           PortFolio <span className="text-orange">Jacques Granarolo</span>
         </h1>
         <Nav className="link-header header-nav">
-          <Nav.Item onClick={toggleOffcanvas}>
+          <Nav.Item onClick={toggleOffcanvas} title="Menu de navigation.">
             <span className="text-orange hamburger-button">☰</span> 
           </Nav.Item>
-          <Nav.Item className="mt-1" onClick={() => handleLinkClick(0)}>
+          <Nav.Item 
+          className="mt-1" 
+          onClick={() => handleLinkClick(0)}
+          title="Accueil."
+          >
             <Link
               id="link-home"
               to="/home"
@@ -113,7 +117,10 @@ const Header = () => {
             </Link>
           </Nav.Item>
           <span className="text-orange mt-1"> • </span>
-          <Nav.Item className="mt-1" onClick={() => handleLinkClick(1)}>
+          <Nav.Item className="mt-1" 
+          onClick={() => handleLinkClick(1)}
+          title="Galerie."
+          >
             <Link
               id="link-gallery"
               to="/gallery"
@@ -125,7 +132,11 @@ const Header = () => {
             </Link>
           </Nav.Item>
           <span className="text-orange mt-1"> • </span>
-          <Nav.Item className="mt-1" onClick={() => handleLinkClick(2)}>
+          <Nav.Item 
+          className="mt-1" 
+          onClick={() => handleLinkClick(2)}
+          title="Contact."
+          >
             <Link
               id="link-contact"
               to="/contact"

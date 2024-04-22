@@ -7,7 +7,7 @@ import CaptchaService from '../../../service/CaptchaService';
 import ConfigContact from '../../../config/ConfigContact';
 import ConfigCaptcha from '../../../config/ConfigCaptcha';
 //import { Toast } from 'react-bootstrap';
-import MailService from '../../../service/MailService';
+import FormService from '../../../service/FormService';
 import IToast from '../../../interface/IToast';
 
 // ajouter displayToast
@@ -34,24 +34,16 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
 
     const isCaptchaValidRef = useRef<boolean>(false);
     const captchaServiceRef: any = useRef(null);
-    const mailServiceRef: any = useRef(null);
+    const formServiceRef: any = useRef(null);
 
     useEffect(() => {
         const fct = async () => {
             captchaServiceRef.current = await CaptchaService.getInstance();
-            mailServiceRef.current = await MailService.getInstance();
+            formServiceRef.current = await FormService.getInstance();
             reset();
         };
         fct();
     }, []); 
-
-    //const toggleShowToast = () => setShowToast(!showToast);
-
-    /*
-    const displayToast = (toast: IToast) => {
-        toastRef.current = toast;
-        toggleShowToast();
-    }*/
 
     const reset = () => {
         let randomCaptcha: ICaptcha = { id: -1, question: "", answer: -1 };
@@ -76,7 +68,7 @@ const AccordionItemContactForm = (props: AccordionItemContactMobileProps) => {
         }
         else {
             // ajouter displayToast
-            if(!isCaptchaValidRef.current) mailServiceRef.current.displayToastCaptachaNotValid(props.displayToast);
+            if(!isCaptchaValidRef.current) formServiceRef.current.displayToastCaptachaNotValid(props.displayToast);
             setResult(ConfigContact.RESULT_FORM_NOT_VALID);
             reset();
         }

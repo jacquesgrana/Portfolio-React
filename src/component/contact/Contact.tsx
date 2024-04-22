@@ -2,7 +2,7 @@ import {  useRef } from "react";
 import AccordionContact from "./sub_component/AccordionContact";
 import ConfigContact from "../../config/ConfigContact";
 import ConfigImage from "../../config/ConfigImage";
-import MailService from '../../service/MailService';
+import FormService from '../../service/FormService';
 import IToast from "../../interface/IToast";
 import { useOutletContext } from "react-router-dom";
 
@@ -14,8 +14,7 @@ const Contact = () => {
     const accordionId = useRef<number>(0);
     //const captchasRef = useRef<ICaptcha[]>([]);
     //const jsonService = JsonService.getInstance();
-    const mailService = MailService.getInstance();
-    //const submitForm = mailService.submitForm; 
+    const formService = FormService.getInstance();
 
     // ajouter displayToast
     const { displayToast }: { displayToast: (toast: IToast) => void } = useOutletContext();
@@ -25,7 +24,7 @@ const Contact = () => {
         setResult: (result: string) => void
     ) => {
         const fct = async () => {
-            await (await mailService).submitForm(event, setResult, displayToast);
+            await (await formService).submitForm(event, setResult, displayToast);
         };
         fct();
     }

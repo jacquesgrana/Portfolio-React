@@ -95,6 +95,18 @@
             "tagIds": [ 3, 4, 8, 11, 12 ],
             "date": "2024-04-04T12:00:00.000Z",
             "difficulty": 7
+        },
+        {
+            "id": 8,
+            "title": "Jeu de la vie",
+            "subTitle": "Application Processing-P5Js avec JavaScript",
+            "description": "Simulation du 'jeu de la vie' de Conway.",
+            "imageUrl": "../../asset/image/life_game_conway.png",
+            "githubUrl": "https://github.com/jacquesgrana/P5JS-Life-Game-Conway",
+            "projectUrl": "https://jacquesgrana.github.io/P5JS-Life-Game-Conway/",
+            "tagIds": [ 2 ],
+            "date": "2024-04-22T12:00:00.000Z",
+            "difficulty": 6
         }
     ]
 }
