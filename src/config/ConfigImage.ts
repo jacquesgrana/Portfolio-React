@@ -46,6 +46,10 @@ export default class ConfigImage {
         {
             id: 8,
             url: require("../asset/image/project/life_game_conway.png")
+        },
+        {
+            id: 9,
+            url: require("../asset/image/project/custom_lenia.png")
         }
     ];
 }
