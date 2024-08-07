@@ -50,6 +50,10 @@ export default class ConfigImage {
         {
             id: 9,
             url: require("../asset/image/project/custom_lenia.png")
+        },
+        {
+            id: 10,
+            url: require("../asset/image/project/french_towns_map.png")
         }
     ];
 }
