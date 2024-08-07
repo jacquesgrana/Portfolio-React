@@ -86,7 +86,7 @@ const Gallery = () => {
               handleShowModalShowProject={handleShowModalShowProject}
             />
         </div>
-
+ 
         {/* Modale */}
         <ModalShowProject
           showModalShowProject={showModalShowProject}

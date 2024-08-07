@@ -119,6 +119,18 @@
             "tagIds": [ 3, 4, 8, 12 ],
             "date": "2024-05-11T12:12:00.000Z",
             "difficulty": 7
+        },
+        {
+            "id": 10,
+            "title": "French Towns Map",
+            "subTitle": "Application en Symfony PHP/Js",
+            "description": "Carte interactive des communes françaises présentées avec certaines informations.",
+            "imageUrl": "../../asset/image/french_towns_map.png",
+            "githubUrl": "https://github.com/jacquesgrana/french_towns_map",
+            "projectUrl": "https://lightgreen-wallaby-205481.hostingersite.com/",
+            "tagIds": [ 1, 2, 7, 8, 12, 15, 17 ],
+            "date": "2024-08-01T12:12:00.000Z",
+            "difficulty": 8
         }
     ]
 }
